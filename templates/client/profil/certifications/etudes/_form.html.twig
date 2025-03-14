@@ -1,0 +1,32 @@
+{{ form_start(etudesForm) }}
+{{ form_errors(etudesForm) }}
+<p>
+		<strong> {% trans %}Level{% endtrans %} <i>*</i> : </strong>
+		{{ form_widget(etudesForm.lvl, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(etudesForm.lvl) }}
+</p>
+<p>
+		<strong> {% trans %}Institute{% endtrans %} : </strong>
+		{{ form_widget(etudesForm.institute, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(etudesForm.institute) }}
+</p>
+<p>
+		<strong> {% trans %}Specialization{% endtrans %} : </strong>
+		{{ form_widget(etudesForm.speciality, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(etudesForm.speciality) }}
+</p>
+<p>
+		<strong> {% trans %}Result{% endtrans %} : </strong>
+		{{ form_widget(etudesForm.result, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(etudesForm.result) }}
+</p>
+<p>
+		<strong> {% trans %}From{% endtrans %} : </strong>
+		{{ form_widget(etudesForm.start, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(etudesForm.start) }}
+</p>
+<p>
+		<strong> {% trans %}To{% endtrans %} : </strong>
+		{{ form_widget(etudesForm.end, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(etudesForm.end) }}
+</p>

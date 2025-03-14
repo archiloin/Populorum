@@ -1,0 +1,24 @@
+#vision {
+	margin:0 auto;
+	background-color:#262D33;}
+
+#vision .card {
+	text-align:center;
+	background-color:#262D33;
+}
+
+#vision h1 {color:#dddd10;}
+
+#vision h3 {
+	color:#bd1313;
+	margin-top:33px;
+}
+
+#vision p {
+  margin-top:0;
+  color:#FFF;
+  margin-bottom:1rem;}
+
+#vision th {color:#FFF}
+#vision td {color:#FFF}
+#vision span {color:#bd1313}

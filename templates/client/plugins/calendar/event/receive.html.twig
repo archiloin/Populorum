@@ -1,0 +1,33 @@
+eventReceive: function(info) {
+		var start = info.event._instance.range.start.toUTCString();
+		var end = info.event._instance.range.end.toUTCString();
+
+		var xhr = $.ajax({
+				{% if idSalarie is defined %}
+						url: '{{ path('cli_planning_calendar_ajout', {'id': idSalarie }) }}',
+				{% else %}
+						url: '{{ path('cli_planning_calendar_ajout', {'id': app.user.id }) }}',
+				{% endif %}
+				data: {
+							id:info.id,
+							title:info.draggedEl.innerText,
+							start:start,
+							end:end,
+							color:info.draggedEl.style.backgroundColor,
+				},
+				type: "POST",
+				success: function(data) {
+						window.location.reload(true);
+						//alert('json');
+				},
+				error: function() {
+						alert("erreur lors de l'appel de l'url dans POST event/drop : contactez l'administrateur du site");
+				},
+		});
+	/* // is the "remove after drop" checkbox checked?
+	if (checkbox.checked) {
+		// if so, remove the element from the "Draggable Events" list
+		info.draggedEl.parentNode.removeChild(info.draggedEl);
+	}
+	*/
+},

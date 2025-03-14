@@ -1,0 +1,30 @@
+    {# Left Sidebar #}
+    <div class="left main-sidebar">
+        <div class="sidebar-inner leftscroll">
+            <div id="sidebar-menu">
+                <ul>
+                    <li class="submenu {% if menuDashboard is defined %}{{ menuDashboard }}{% endif %}">
+                        <a href="{{ path('adm_dashboard') }}"><i class="fa fa-fw fa-desktop"></i><span>Accueil </span> </a>
+                    </li>
+                    <li class="submenu fixmenu" style="padding: 5%;">
+                        <i class="fa fa-gears"></i><span> Gestion </span>
+                    </li>
+                    <li class="submenu {% if menuListing is defined %}{{ menuListing }}{% endif %}">
+                        <a href="{{ path('adm_client_listing') }}"><i class="fa fa-fw fa-users"></i><span>Les clients </span></a>
+                    </li>
+                    <li class="submenu fixmenu" style="padding: 5%;">
+                        <i class="fa fa-envelope"></i><span> Support </span>
+                    </li>
+                    <li class="submenu {% if menuReport is defined %}{{ menuReport }}{% endif %}">
+                        <a href="{{ path('adm_support_report') }}"><i class="fa fa-bug"></i><span>Les reports </span></a>
+                    </li>
+                    <li class="submenu fixmenu" style="padding: 5%;">
+                        <i class="fa fa-ra"></i><span> Sécurité </span>
+                    </li>
+                    <li class="submenu {% if menuSecurity is defined %}{{ menuSecurity }}{% endif %}">
+                        <a href="{{ path('adm_alerte') }}"><i class="fa fa-bell"></i><span>Les alertes </span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

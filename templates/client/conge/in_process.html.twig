@@ -1,0 +1,42 @@
+
+		{% set nothing = 0 %}
+
+		<div class="{{ congeSize }}">
+				<div class="card align-center">
+						<div class="card-header text-center">
+								<h3>{% trans %}Leave requests to be processed{% endtrans %}</h3>
+						</div>
+						<div id="content">
+								<table class="table table-stripped">
+										<tr>
+												<th>{% trans %}Full name{% endtrans %}</th>
+												<th>{% trans %}Reason{% endtrans %}</th>
+												<th>{% trans %}From{% endtrans %}</th>
+												<th>{% trans %}To{% endtrans %}</th>
+												<th>{% trans %}Management{% endtrans %}</th>
+										</tr>
+										{% for salarie in salaries %}
+												{% for absence in salarie.absences %}
+														{% if absence.isActive is null %}
+																<tr>
+																		<td>{{ salarie.profil.informationsPersonnelles.lastname }} {{ salarie.profil.informationsPersonnelles.firstname }}</td>
+																		<td>{{ absence.note }}</td>
+																		<td>{{ absence.debut|date('d-m-Y') }}</td>
+																		<td>{{ absence.fin|date('d-m-Y') }}</td>
+																		<td><a href="{{ path('cli_conges_gestion', {id: absence.id}) }}" class="btn btn-primary btn-xs"><span class="fa fa-balance-scale"></span> Manage</a></td>
+																</tr>
+														{% endif %}
+												{% else %}
+														{% if nothing == 0 %}
+																</table>
+																<span>
+																		{% trans %}No request to process{% endtrans %}
+																</span>
+														{% endif %}
+														{% set nothing = nothing + 1 %}
+												{% endfor %}
+										{% endfor %}
+								</table>
+						</div>
+				</div>
+		</div>

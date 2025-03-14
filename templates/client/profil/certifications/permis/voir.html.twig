@@ -1,0 +1,16 @@
+<table class="table table-striped">
+		<tr>
+				<th class="table-bg radius-left">{% trans %}Type of permit{% endtrans %}</th>
+				<th class="table-bg">{% trans %}Number{% endtrans %}</th>
+				<th class="table-bg">{% trans %}Publication date{% endtrans %}</th>
+				<th class="table-bg radius-right">{% trans %}Expiration date{% endtrans %}</th>
+		</tr>
+		{% for permis in permiss %}
+			<tr>
+					<td> {{ permis.type }} </td>
+					<td> {{ permis.number }} </td>
+					<td> {% if permis.start != null %} {{ permis.start|date('d-m-Y') }} {% endif %} </td>
+					<td> {% if permis.end != null %} {{ permis.end|date('d-m-Y') }} {% endif %} </td>
+			</tr>
+		{% endfor %}
+</table>

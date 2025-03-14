@@ -1,0 +1,38 @@
+{% extends "client/profil/voir.html.twig" %}
+
+{% set immigration = 'subdrop' %}
+{% set page = 'immigration' %}
+{% set page_title = 'Immigration' %}
+{% set page_icon = 'fa-globe' %}
+{% set modalLabel = 'Add immigration information' %}
+{% set title = 'Immigration files' %}
+{% set owlCarousel = 'cli_salaries_profil_immigration' %}
+
+{% block profil %}
+
+    {% include 'client/profil/modal.html.twig' %}
+
+    <table class="table table-striped">
+        <tr>
+            <th class="table-bg radius-left">{% trans %}Document{% endtrans %}</th>
+            <th class="table-bg">{% trans %}Number{% endtrans %}</th>
+            <th class="table-bg">{% trans %}Published by{% endtrans %}</th>
+            <th class="table-bg">{% trans %}Publication date{% endtrans %}</th>
+            <th class="table-bg">{% trans %}Expiration date{% endtrans %}</th>
+            <th class="table-bg radius-right">{% trans %}Comment{% endtrans %}</th>
+        </tr>
+        {% for immigration in immigrations %}
+          <tr>
+              <td> {{ immigration.document }} </td>
+              <td> {{ immigration.number }} </td>
+              <td> {{ immigration.publishedby }} </td>
+              <td> {% if immigration.publish != null %} {{ immigration.publish|date('d-m-Y') }} {% endif %} </td>
+              <td> {% if immigration.exp != null %} {{ immigration.exp|date('d-m-Y') }} {% endif %} </td>
+              <td> {{ immigration.comment }} </td>
+          </tr>
+        {% endfor %}
+    </table>
+
+    {% include 'client/profil/pj.html.twig' %}
+
+{% endblock %}

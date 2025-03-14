@@ -1,0 +1,35 @@
+		<h4>
+				<i class="fa {{ page_icon }}"></i>
+				{{ title|trans }}
+
+				<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#{{ page }}-{{ page_icon }}-Modal" style="float:right;">
+						<i class="fa fa-plus"></i>
+						{% trans %}Add{% endtrans %}
+				</button>
+		</h4>
+
+		<div class="modal fade" id="{{ page }}-{{ page_icon }}-Modal" tabindex="-1" role="dialog" aria-labelledby="{{ page }}-{{ page_icon }}-ModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+						<div class="modal-content">
+								<div class="modal-header">
+										<h5 class="modal-title" id="{{ page }}-{{ page_icon }}-ModalLabel"><i class="fa {{ page_icon }}"></i> {{ modalLabel|trans }}</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+								</div>
+								{% if filename_html is not defined %}
+										{% set filename_html = '_form.html.twig' %}
+								{% endif %}
+								<div class="modal-body">
+										{% include 'client/profil/' ~ page ~ '/' ~ filename_html %}</min>
+								</div>
+								<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans %}Close{% endtrans %}</button>
+										<button type="submit" class="btn btn-primary">{% trans %}Save{% endtrans %}</button>
+								</div>
+								{% if form_end is not defined %}
+										{{ form_end(profilForm) }}
+								{% endif %}
+						</div>
+				</div>
+		</div>

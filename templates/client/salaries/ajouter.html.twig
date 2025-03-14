@@ -1,0 +1,37 @@
+{% extends "client/core/content.html.twig" %}
+
+{% set page_title = 'Adding an employee' %}
+{% set menuUL = 'display:block' %}
+{% set menuSalaries = 'subdrop' %}
+{% set menuAjouterSalaries = 'subMenuActive' %}
+{% set breadcrumb = 'Add' %}
+{% set breadcrumb_un = 'Employees' %}
+
+{% block content %}
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <div class="card-header">
+            <h3>{% trans %}Employee email to invite{% endtrans %}</h3>
+        </div>
+        <div class="card">
+            <div style="margin:0 auto; margin-top:13px;margin-bottom:13px">
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
+
+                    {{ form_widget(form.email) }}
+                    {{ form_errors(form.email) }}
+                    <input type="submit" style="margin-top:20px:; margin:0 auto;" class="btn btn-primary" value="{% trans %}Send{% endtrans %}" />
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+        <div class="card">
+            <div style="margin:0 auto; margin-top:13px;margin-bottom:13px">
+                <p>
+                    {% trans %}By clicking on the send button, a password will be generated randomly and sent by email.{% endtrans %}<br>
+                    {% trans %}Allowing your employee to connect to his user space{% endtrans %}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

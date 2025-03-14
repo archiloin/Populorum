@@ -1,0 +1,14 @@
+<table class="table table-striped">
+		<tr>
+				<th class="table-bg radius-left">{% trans %}Skill{% endtrans %}</th>
+				<th class="table-bg">{% trans %}Years of experience{% endtrans %}</th>
+				<th class="table-bg radius-right">{% trans %}Comment{% endtrans %}</th>
+		</tr>
+		{% for skill in skills %}
+			<tr>
+					<td> {{ skill.skill }} </td>
+					<td> {{ skill.yearsExp }} </td>
+					<td> {{ skill.comment }} </td>
+			</tr>
+		{% endfor %}
+</table>

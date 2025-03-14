@@ -1,0 +1,57 @@
+{% extends "client/profil/voir.html.twig" %}
+
+{% set page_title = 'Company information' %}
+{% set informationsEntreprise = 'subdrop' %}
+{% set page_icon = 'fa-building' %}
+
+{% block profil %}
+
+    <table class="table table-striped">
+        <tr>
+            <th class="table-bg radius-left"><i class="fa fa-building"></i> {{ page_title|trans }}</th>
+            <td class="table-bg radius-right"></td>
+        </tr>
+        <tr>
+            <th>{% trans %}Company name{% endtrans %}:</th>
+            <td>{{ profil.nomEntreprise }}</td>
+        </tr>
+        <tr>
+            <th>{% trans %}Logo{% endtrans %}:</th>
+            <td>
+                <div class="image" style="float:left;margin-left:33px;">
+                    {% if profil %}
+                        {% if profil.logo %}
+                            {% if profil.logo.imageName %}
+                                <img
+                                    src="{{ vich_uploader_asset(profil.logo, 'imageFile') }}"
+                                    width="100px"
+                                    alt="{% trans %}Logo{% endtrans %}"
+                                />
+                            {% else %}
+                                <img src="{{ asset('assets/img/logo.jpg') }}"
+                                     width="100px"
+                                     alt="{% trans %}Logo{% endtrans %}"
+                                />
+                            {% endif %}
+                        {% else %}
+                            <img src="{{ asset('assets/img/logo.jpg') }}"
+                                 width="100px"
+                                 alt="{% trans %}Logo{% endtrans %}"
+                            />
+                        {% endif %}
+                    {% else %}
+                        <img src="{{ asset('assets/img/logo.jpg') }}"
+                             width="100px"
+                             alt="{% trans %}Logo{% endtrans %}"
+                        />
+                    {% endif %}
+                </div>
+            </td>
+        </tr>
+    </table>
+    <a href="{{ path('cli_profil_modifier_informations_entreprise') }}" class="btn btn-primary">{% trans %}Edit{% endtrans %}</a>
+
+    {% include 'client/profil/profilUpdate.html.twig' %}
+    {% include 'client/profil/pj.html.twig' %}
+
+    {% endblock %}

@@ -1,0 +1,102 @@
+{% extends "client/profil/voir.html.twig" %}
+
+{% set page_title = 'Personal informations' %}
+{% set informationsPersonnelles = 'subdrop' %}
+{% set page_icon = 'fa-info' %}
+{% set owlCarousel = 'cli_salaries_profil_informations_personnelles' %}
+
+{% block profil %}
+
+    <table class="table table-striped">
+        <tr>
+            <th class="table-bg radius-left"><i class="fa fa-info"></i> {{ page_title|trans }}</th>
+            <td class="table-bg radius-right"></td>
+        </tr>
+        <tr>
+            <th>{% trans %}Civility{% endtrans %}:</th>
+            <td> {{ profil.civilite }} </td>
+        </tr>
+        <tr>
+            <th style="width:20%">{% trans %}Employee ID{% endtrans %}:</th>
+            <td> {{ profil.identifiant }} </td>
+        </tr>
+        <tr>
+            <th style="width:20%">{% trans %}Firstname{% endtrans %}:</th>
+            <td> {{ profil.firstname }} </td>
+        </tr>
+        <tr>
+            <th style="width:20%">{% trans %}Middle name{% endtrans %}:</th>
+            <td> {{ profil.middlename }} </td>
+        </tr>
+        <tr>
+            <th style="width:20%">{% trans %}Lastname{% endtrans %}:</th>
+            <td> {{ profil.lastname }} </td>
+        </tr>
+        <tr>
+            <th>{% trans %}Nickname{% endtrans %}:</th>
+            <td> {{ profil.nickname }} </td>
+        </tr>
+        <tr>
+            <th>{% trans %}Mug shot{% endtrans %}:</th>
+            <td>
+                <div class="image" style="float:left;margin-left:33px;">
+                    {% if profil %}
+                        {% if profil.identity %}
+                            {% if profil.identity.imageName %}
+                                <img
+                                    src="{{ vich_uploader_asset(profil.identity, 'imageFile') }}"
+  																 	width="100px"
+                                    alt="{% trans %}Mug shot{% endtrans %}"
+                                />
+                            {% else %}
+                                <img src="{{ asset('images/identite.png') }}"
+                                     width="100px"
+                                     alt="{% trans %}Mug shot{% endtrans %}"
+                                />
+                            {% endif %}
+                        {% else %}
+                            <img src="{{ asset('images/identite.png') }}"
+                                 width="100px"
+                                 alt="{% trans %}Mug shot{% endtrans %}"
+                            />
+                        {% endif %}
+                    {% else %}
+                        <img src="{{ asset('images/identite.png') }}"
+                             width="100px"
+                             alt="{% trans %}Mug shot{% endtrans %}"
+                        />
+                    {% endif %}
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>{% trans %}Family situation{% endtrans %}:</th>
+            <td> {{ profil.familysituation }} </td>
+        </tr>
+        <tr>
+            <th>{% trans %}Date of birth{% endtrans %}:</th>
+            <td>
+                {% if profil.dob %}
+                  {{ profil.dob|date('d-m-Y') }}
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>{% trans %}Place of birth{% endtrans %}:</th>
+            <td> {{ profil.birthplace }} </td>
+        </tr>
+        <tr>
+            <th>{% trans %}Social security number{% endtrans %}:</th>
+            <td> {{ profil.ssn }} </td>
+        </tr>
+    </table>
+    {% if salarie is not defined %}
+        <a href="{{ path('cli_profil_modifier_informations_personnelles') }}" class="btn btn-primary">{% trans %}Edit{% endtrans %}</a>
+    {% else %}
+        <a href="{{ path('cli_salaries_profil_modifier_informations_personnelles', {'id':salarie.id}) }}" class="btn btn-primary">{% trans %}Edit{% endtrans %}</a>
+    {% endif %}
+
+    {% include 'client/profil/profilUpdate.html.twig' %}
+    {% include 'client/profil/pj.html.twig' %}
+
+    {% endblock %}

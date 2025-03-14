@@ -1,0 +1,12 @@
+{% extends "client/core/content.html.twig" %}
+
+{% set page_title = 'Employees' %}
+{% set menuUL = 'display:block' %}
+{% set menuSalaries = 'subdrop' %}
+{% set menuVoirSalaries = 'subMenuActive' %}
+{% set owlCarousel = 'cli_salaries_profil_informations_personnelles' %}
+{% set breadcrumb = 'Employees' %}
+
+{% block content %}
+    {% include ('client/plugins/dataTable.html.twig') %}
+{% endblock %}

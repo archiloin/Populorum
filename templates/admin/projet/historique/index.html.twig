@@ -1,0 +1,104 @@
+{% extends "admin/base.html.twig" %}
+
+{% set page_title = 'Les projets' %}
+{% set menuProjet = 'subdrop' %}
+
+{% block body %}
+
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb-holder">
+                            <h1 class="main-title float-left">Les projets</h1>
+                            <ol class="breadcrumb float-right">
+                                <li class="breadcrumb-item">Accueil</li>
+                                <li class="breadcrumb-item">Les projets</li>
+                                <li class="breadcrumb-item active">Voir</li>
+                            </ol>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+
+                            {% if projets %}
+                            <table class="table table-scroll table-striped">
+                                <tr>
+                                    <th class="table-bg radius-left">Nombre de tâche</th>
+                                    <th class="table-bg">Nom</th>
+                                    <th class="table-bg">Client</th>
+                                    <th class="table-bg">Du</th>
+                                    <th class="table-bg">Au</th>
+                                    <th class="table-bg">Lieu</th>
+                                    <th class="table-bg">Gestionnaire(s)</th>
+                                    <th class="table-bg">Approbation</th>
+                                    <th class="table-bg">Projet</th>
+                                    <th class="table-bg radius-right">Tâche(s)</th>
+                                </tr>
+                            {% else %}
+                                <div id="content">
+                                    <h3><em>Vous n'avez aucun projet en cours</em></h3>
+                                </div>
+                            {% endif %}
+                                {% for projet in projets if projet.dateFin < date %}
+                                <tr>
+                                    <td>{{ projet.slide.count }}</td>
+                                    <td>{{ projet.nom }}</td>
+                                    <td>{{ projet.utilisateur.profil.nomEntreprise }}</td>
+                                    <td>{{ projet.date|date('d-m-Y H:i') }}</td>
+                                    <td>{{ projet.dateFin|date('d-m-Y H:i') }}</td>
+                                    <td>{{ projet.lieu }}</td>
+                                    <td>
+                                        {% for gestionnaires in projet.gestionnaires %}
+                                            {{ gestionnaires.profil.firstname }}
+                                            {{ gestionnaires.profil.lastname }}
+                                        {% endfor %}
+                                    </td>
+                                    <td>{{ projet.isActive }}</td>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                      <td>
+                                          <a class="btn btn-primary btn-xs" href="{{ path('adm_projet_historique_modifier', { 'id': projet.id }) }}">
+                                              <span class="fa fa-edit"></span> Modifier
+                                          </a>
+                                          {{ include('admin/projet/historique/_delete_form.html.twig') }}
+                                      </td>
+                                      <td>
+                                          <a class="btn btn-primary btn-xs" href="{{ path('adm_projet_historique_slide', { 'id': projet.id }) }}">
+                                              <span class="fa fa-eye"></span> Voir
+                                          </a>
+                                      </td>
+                                    {% else %}
+                                      <td>
+                                          <a class="btn btn-primary btn-xs" href="{{ path('gestion_projet_historique_modifier', { 'id': projet.id }) }}">
+                                              <span class="fa fa-edit"></span> Modifier
+                                          </a>
+                                      </td>
+                                      <td>
+                                          <a class="btn btn-primary btn-xs" href="{{ path('gestion_projet_historique_slide', { 'id': projet.id }) }}">
+                                              <span class="fa fa-eye"></span> Voir
+                                          </a>
+                                      </td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/inline/ckeditor.js"></script>
+        <script>
+    InlineEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+{% endblock %}

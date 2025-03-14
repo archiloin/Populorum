@@ -1,0 +1,81 @@
+
+	{{ form_start(form) }}
+	{{ form_errors(form) }}
+<hr><br>
+		<ul class="criteres" data-prototype="{{ form_widget(form.criteres.vars.prototype)|e }}">
+				<li>
+						<h6>{% trans %}Competency name{% endtrans %}:</h6>
+						{{ form_widget(form.name) }}
+						{{ form_errors(form.name) }}
+				</li>
+				<hr>
+		</ul>
+	<input type="submit" class="btn btn-primary" value="{% trans %}Save{% endtrans %}" />
+	{{ form_end(form) }}
+
+
+
+<style>
+		.criteres .required {
+				margin-top:13px
+		}
+		.criteres {
+				overflow: auto;
+				max-height: 483px;
+		}
+		.criteres li {
+				margin: 33px
+		}
+</style>
+
+	<script>
+
+	var $collectionHolder;
+
+	// setup an "add a critere" link
+	var $addCritereButton = $('<button type="button" class="add_critere_link">{% trans %}Add criteria{% endtrans %}</button>');
+	var $newLinkLi = $('<li></li>').append($addCritereButton);
+
+	jQuery(document).ready(function() {
+	    // Get the ul that holds the collection of criteres
+	    $collectionHolder = $('ul.criteres');
+
+	    // add the "add a critere" anchor and li to the criteres ul
+	    $collectionHolder.append($newLinkLi);
+
+	    // count the current form inputs we have (e.g. 2), use that as the new
+	    // index when inserting a new item (e.g. 2)
+	    $collectionHolder.data('index', $collectionHolder.find('input').length);
+
+	    $addCritereButton.on('click', function(e) {
+	        // add a new critere form (see next code block)
+	        addCritereForm($collectionHolder, $newLinkLi);
+	    });
+	});
+
+	function addCritereForm($collectionHolder, $newLinkLi) {
+    // Get the data-prototype explained earlier
+    var prototype = $collectionHolder.data('prototype');
+
+    // get the new index
+    var index = $collectionHolder.data('index');
+
+    var newForm = prototype;
+    // You need this only if you didn't set 'label' => false in your criteres field in TaskType
+    // Replace '__name__label__' in the prototype's HTML to
+    // instead be a number based on how many items we have
+    // newForm = newForm.replace(/__name__label__/g, index);
+
+    // Replace '__name__' in the prototype's HTML to
+    // instead be a number based on how many items we have
+    newForm = newForm.replace(/__name__/g, index);
+
+    // increase the index with one for the next item
+    $collectionHolder.data('index', index + 1);
+
+    // Display the form in the page in an li, before the "Add a critere" link li
+    var $newFormLi = $('<li></li>').append(newForm);
+    $newLinkLi.before($newFormLi);
+}
+
+	</script>

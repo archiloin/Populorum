@@ -1,0 +1,37 @@
+{% extends "client/profil/voir.html.twig" %}
+
+{% set contact = 'subdrop' %}
+{% set page = 'contact' %}
+{% set page_title = 'Emergency contact' %}
+{% set page_icon = 'fa-ambulance' %}
+{% set modalLabel = 'Add an emergency contact person' %}
+{% set title = 'Contact en cas d\'urgence' %}
+{% set owlCarousel = 'cli_salaries_profil_contact' %}
+
+{% block profil %}
+
+    {% include 'client/profil/modal.html.twig' %}
+
+    <table class="table table-striped">
+        <tr>
+            <th class="table-bg radius-left">{% trans %}Name{% endtrans %}</th>
+            <th class="table-bg">{% trans %}Relation{% endtrans %}</th>
+            <th class="table-bg">{% trans %}Phone{% endtrans %}</th>
+            <th class="table-bg">{% trans %}Cellphone{% endtrans %}</th>
+            <th class="table-bg">{% trans %}Professional phone{% endtrans %}</th>
+        </tr>
+        {% for contact in contacts %}
+        <tr>
+            <td> {{ contact.name }} </td>
+            <td> {{ contact.relation }} </td>
+            <td> {{ contact.landline }} </td>
+            <td> {{ contact.phone }} </td>
+            <td> {{ contact.professionalphone }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% include 'client/profil/pj.html.twig' %}
+
+
+{% endblock %}

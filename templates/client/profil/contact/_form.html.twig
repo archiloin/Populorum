@@ -1,0 +1,30 @@
+
+								{{ form_start(profilForm) }}
+								{{ form_errors(profilForm) }}
+
+								<p>
+										<strong> {% trans %}Name{% endtrans %} <i>*</i> : </strong>
+										{{ form_widget(profilForm.name, {'attr':{'class':'form-control'}}) }}
+										{{ form_errors(profilForm.name) }}
+								</p>
+
+								<p>
+										<strong> {% trans %}Relationship{% endtrans %} <i>*</i> : </strong>
+										{{ form_widget(profilForm.relation, {'attr':{'class':'form-control'}}) }}
+										{{ form_errors(profilForm.relation) }}
+								</p>
+								<p>
+										<strong> {% trans %}Phone{% endtrans %} : </strong>
+										{{ form_widget(profilForm.landline, {'attr':{'class':'form-control'}}) }}
+										{{ form_errors(profilForm.landline) }}
+								</p>
+								<p>
+										<strong> {% trans %}Cellphone{% endtrans %} : </strong>
+										{{ form_widget(profilForm.phone, {'attr':{'class':'form-control'}}) }}
+										{{ form_errors(profilForm.phone) }}
+								</p>
+								<p>
+										<strong> {% trans %}Professional phone{% endtrans %} : </strong>
+										{{ form_widget(profilForm.professionalphone, {'attr':{'class':'form-control'}}) }}
+										{{ form_errors(profilForm.professionalphone) }}
+								</p>

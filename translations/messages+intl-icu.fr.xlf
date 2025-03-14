@@ -1,0 +1,1090 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="OnhpU4i" resname="Home">
+        <source>Home</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="1wfcLxk" resname="Logo">
+        <source>Logo</source>
+        <target>Logo</target>
+      </trans-unit>
+      <trans-unit id="H47MJCb" resname="Help &amp; Support">
+        <source>Help &amp; Support</source>
+        <target><![CDATA[Aide & support]]></target>
+      </trans-unit>
+      <trans-unit id="E0BwkqL" resname="Contact us ?">
+        <source>Contact us ?</source>
+        <target>Nous contacter ?</target>
+      </trans-unit>
+      <trans-unit id="E69k1mh" resname="View all notifications">
+        <source>View all notifications</source>
+        <target>Voir toutes les notifications</target>
+      </trans-unit>
+      <trans-unit id="BNe0gzk" resname="Messages">
+        <source>Messages</source>
+        <target>Messages</target>
+      </trans-unit>
+      <trans-unit id="1AQXS3f" resname="View all messages">
+        <source>View all messages</source>
+        <target>Voir tous les messages</target>
+      </trans-unit>
+      <trans-unit id="Jxxi_i3" resname="My profile">
+        <source>My profile</source>
+        <target>Mon profil</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="WiNESCj" resname="Manage">
+        <source>Manage</source>
+        <target>Gérer</target>
+      </trans-unit>
+      <trans-unit id="JJQBu08" resname="Employee lists">
+        <source>Employee lists</source>
+        <target>Listes des salariés</target>
+      </trans-unit>
+      <trans-unit id="Cm7GVfp" resname="Add an employee">
+        <source>Add an employee</source>
+        <target>Ajouter un salarié</target>
+      </trans-unit>
+      <trans-unit id="IcwwUJV" resname="Planning">
+        <source>Planning</source>
+        <target>Planning</target>
+      </trans-unit>
+      <trans-unit id="ZtD1I6N" resname="Skills">
+        <source>Skills</source>
+        <target>Compétences</target>
+      </trans-unit>
+      <trans-unit id="iwg0uHu" resname="Leave &amp; Absence">
+        <source>Leave &amp; Absence</source>
+        <target><![CDATA[Congés & Absence]]></target>
+      </trans-unit>
+      <trans-unit id="OYl_bA_" resname="Demo account password cannot be changed">
+        <source>Demo account password cannot be changed</source>
+        <target>Le mot de passe du compte de démonstration n'est pas modifiable</target>
+      </trans-unit>
+      <trans-unit id="_Dw4_iO" resname="Change my password">
+        <source>Change my password</source>
+        <target>Modifier mon mot de passe</target>
+      </trans-unit>
+      <trans-unit id="FQn1YfJ" resname="Save">
+        <source>Save</source>
+        <target>Enregistrer</target>
+      </trans-unit>
+      <trans-unit id="Ro2z2oq" resname="Password renewal">
+        <source>Password renewal</source>
+        <target>Renouvellement du mot de passe</target>
+      </trans-unit>
+      <trans-unit id="GF_NsyJ" resname="Hello">
+        <source>Hello</source>
+        <target>Bonjour</target>
+      </trans-unit>
+      <trans-unit id="aq2uofv" resname="Click on this link to change your password.">
+        <source>Click on this link to change your password.</source>
+        <target>Cliquez sur ce lien pour changer votre mot de passe.</target>
+      </trans-unit>
+      <trans-unit id="CHZSHd." resname="Change the password">
+        <source>Change the password</source>
+        <target>Changer le mot de passe</target>
+      </trans-unit>
+      <trans-unit id="fEUeD0N" resname="New Password">
+        <source>New Password</source>
+        <target>Nouveau mot de passe</target>
+      </trans-unit>
+      <trans-unit id="cHC.LCy" resname="Password Confirmation">
+        <source>Password Confirmation</source>
+        <target>Confirmation du mot de passe</target>
+      </trans-unit>
+      <trans-unit id="9vRoj.I" resname="Send">
+        <source>Send</source>
+        <target>Envoyer</target>
+      </trans-unit>
+      <trans-unit id="p2y1uMo" resname="forgotten password?">
+        <source>forgotten password?</source>
+        <target>Mot de passe oublier ?</target>
+      </trans-unit>
+      <trans-unit id="4_Cad7j" resname="Ask to reset your password by entering your email">
+        <source>Ask to reset your password by entering your email</source>
+        <target>Demandez à réinitialiser votre mot de passe en renseignant votre mail</target>
+      </trans-unit>
+      <trans-unit id="Bi.UB05" resname="Mail address">
+        <source>Mail address</source>
+        <target>Adresse mail</target>
+      </trans-unit>
+      <trans-unit id="v9QCsvb" resname="Sign in">
+        <source>Sign in</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="_TJnqhH" resname="Remember me">
+        <source>Remember me</source>
+        <target>Se souvenir de moi</target>
+      </trans-unit>
+      <trans-unit id="r9Jf3xf" resname="Forgot your password?">
+        <source>Forgot your password?</source>
+        <target>Mot de passe oublié ?</target>
+      </trans-unit>
+      <trans-unit id="qGGTVmC" resname="G.C.U">
+        <source>G.C.U</source>
+        <target>C.G.U</target>
+      </trans-unit>
+      <trans-unit id="fZ63rLE" resname="Close">
+        <source>Close</source>
+        <target>Fermer</target>
+      </trans-unit>
+      <trans-unit id="x5Pg2aH" resname="Registration">
+        <source>Registration</source>
+        <target>Inscription</target>
+      </trans-unit>
+      <trans-unit id="TsH06jq" resname="Already a member ?">
+        <source>Already a member ?</source>
+        <target>Vous êtes déjà membre ?</target>
+      </trans-unit>
+      <trans-unit id="qOGRZMx" resname="Tell us about the problems you encounter while browsing">
+        <source>Tell us about the problems you encounter while browsing</source>
+        <target>Faites nous part des problèmes rencontrer lors de votre navigation</target>
+      </trans-unit>
+      <trans-unit id="AC.l4bP" resname="Choose the problem encountered">
+        <source>Choose the problem encountered</source>
+        <target>Choisissez le problème rencontré</target>
+      </trans-unit>
+      <trans-unit id="69ppXnZ" resname="Add attachment">
+        <source>Add attachment</source>
+        <target>Ajouter une pièce jointe</target>
+      </trans-unit>
+      <trans-unit id="pXPsuhv" resname="(Optional, but it can help us better understand the problem)">
+        <source>(Optional, but it can help us better understand the problem)</source>
+        <target>( Facultatif, mais cela peut nous aider à mieux cerner le problème )</target>
+      </trans-unit>
+      <trans-unit id="r7yGCrD" resname="Explain the problem encountered">
+        <source>Explain the problem encountered</source>
+        <target>Expliquer le problème rencontré</target>
+      </trans-unit>
+      <trans-unit id="fTG4MxO" resname="Notification">
+        <source>Notification</source>
+        <target>Notification</target>
+      </trans-unit>
+      <trans-unit id="owPPynL" resname="Competency name">
+        <source>Competency name</source>
+        <target>Nom de la compétence</target>
+      </trans-unit>
+      <trans-unit id="OWFu_Zv" resname="Mug shot">
+        <source>Mug shot</source>
+        <target>Photo d'identité</target>
+      </trans-unit>
+      <trans-unit id="59GXk2b" resname="Goal to achieve">
+        <source>Goal to achieve</source>
+        <target>Objectif à atteindre</target>
+      </trans-unit>
+      <trans-unit id="kK9A96M" resname="Select the skill objective to display">
+        <source>Select the skill objective to display</source>
+        <target>Sélectionnez l'objectif de compétence à afficher</target>
+      </trans-unit>
+      <trans-unit id="42FjVHw" resname="Select of objective">
+        <source>Select of objective</source>
+        <target>Sélection d'objectif</target>
+      </trans-unit>
+      <trans-unit id=".It__87" resname="Add a skill to generate the objectives to be achieved">
+        <source>Add a skill to generate the objectives to be achieved</source>
+        <target>Ajouter une compétence pour générer les objectifs à atteindre</target>
+      </trans-unit>
+      <trans-unit id="8tv91jn" resname="Please select the skill to display">
+        <source>Please select the skill to display</source>
+        <target>Veuillez sélectionner la compétence à afficher</target>
+      </trans-unit>
+      <trans-unit id="Wrc5oFO" resname="select a graphic">
+        <source>select a graphic</source>
+        <target>sélectionner un graphique</target>
+      </trans-unit>
+      <trans-unit id="WaxiJer" resname="Add a skill to generate a graph">
+        <source>Add a skill to generate a graph</source>
+        <target>Ajouter une compétence pour générer un graphique</target>
+      </trans-unit>
+      <trans-unit id="DfbxytN" resname="Show">
+        <source>Show</source>
+        <target>Afficher</target>
+      </trans-unit>
+      <trans-unit id="ngGodHy" resname="Hide Employees">
+        <source>Hide Employees</source>
+        <target>Masquer les salariés</target>
+      </trans-unit>
+      <trans-unit id="FAFOalc" resname="Employee">
+        <source>Employee</source>
+        <target>Salarié</target>
+      </trans-unit>
+      <trans-unit id="yYJwMXt" resname="Employees">
+        <source>Employees</source>
+        <target>Salariés</target>
+      </trans-unit>
+      <trans-unit id="OYKMvP3" resname="in the business">
+        <source>in the business</source>
+        <target>dans l'entreprise</target>
+      </trans-unit>
+      <trans-unit id="wITz_s3" resname="Add a new Employee">
+        <source>Add a new Employee</source>
+        <target>Ajouter un nouveau Salarié</target>
+      </trans-unit>
+      <trans-unit id="8Tpkui." resname="Full name">
+        <source>Full name</source>
+        <target>Nom complet</target>
+      </trans-unit>
+      <trans-unit id="MG8bsgZ" resname="Phone number">
+        <source>Phone number</source>
+        <target>Numéro de téléphone</target>
+      </trans-unit>
+      <trans-unit id="cgPCs9r" resname="Structure">
+        <source>Structure</source>
+        <target>Structure</target>
+      </trans-unit>
+      <trans-unit id="rWF6D91" resname="Job">
+        <source>Job</source>
+        <target>Poste</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="aGMGfrC" resname="See">
+        <source>See</source>
+        <target>Voir</target>
+      </trans-unit>
+      <trans-unit id="1pajW90" resname="Profile">
+        <source>Profile</source>
+        <target>Profil</target>
+      </trans-unit>
+      <trans-unit id="r06gKFL" resname="Invitation">
+        <source>Invitation</source>
+        <target>Invitation</target>
+      </trans-unit>
+      <trans-unit id="1ihd9sw" resname="You have been invited to join POPULORUM.FR">
+        <source>You have been invited to join POPULORUM.FR</source>
+        <target>Vous avez été inviter à rejoindre POPULORUM.FR</target>
+      </trans-unit>
+      <trans-unit id="70mSdkI" resname="Here are your identifiers">
+        <source>Here are your identifiers</source>
+        <target>Voici vos identifiants</target>
+      </trans-unit>
+      <trans-unit id="nWMiwfT" resname="Login">
+        <source>Login</source>
+        <target>Se connecter</target>
+      </trans-unit>
+      <trans-unit id="JeMPgYM" resname="Employee email to invite">
+        <source>Employee email to invite</source>
+        <target>Email du salarié à inviter</target>
+      </trans-unit>
+      <trans-unit id="37aXnFA" resname="By clicking on the send button, a password will be generated randomly and sent by email.">
+        <source>By clicking on the send button, a password will be generated randomly and sent by email.</source>
+        <target>En cliquant sur le boutton envoyer, un mot de passe sera générer aléatoirement et transmis par mail.</target>
+      </trans-unit>
+      <trans-unit id="Cwl0ZVj" resname="Allowing your employee to connect to his user space">
+        <source>Allowing your employee to connect to his user space</source>
+        <target>Permettant à votre salarié de se connecter à son espace utilisateur</target>
+      </trans-unit>
+      <trans-unit id="l_G758k" resname="Personal informations">
+        <source>Personal informations</source>
+        <target>Informations personnelles</target>
+      </trans-unit>
+      <trans-unit id="y8cxHpU" resname="Contact information">
+        <source>Contact information</source>
+        <target>Coordonnées</target>
+      </trans-unit>
+      <trans-unit id="FvY3kh6" resname="Certificates">
+        <source>Certificates</source>
+        <target>Certifications</target>
+      </trans-unit>
+      <trans-unit id="ngRIn4C" resname="Emergency contact">
+        <source>Emergency contact</source>
+        <target>Contact en cas d'urgence</target>
+      </trans-unit>
+      <trans-unit id="mqO3Jhe" resname="Dependents">
+        <source>Dependents</source>
+        <target>Personnes à charge</target>
+      </trans-unit>
+      <trans-unit id="1KUP1Nc" resname="Immigration">
+        <source>Immigration</source>
+        <target>Immigration</target>
+      </trans-unit>
+      <trans-unit id=".j9ezQt" resname="Employment">
+        <source>Employment</source>
+        <target>Emploi</target>
+      </trans-unit>
+      <trans-unit id="fozSBW2" resname="Title">
+        <source>Title</source>
+        <target>Titre</target>
+      </trans-unit>
+      <trans-unit id="a3MZGgp" resname="Color">
+        <source>Color</source>
+        <target>Couleur</target>
+      </trans-unit>
+      <trans-unit id="IYGXaTQ" resname="From">
+        <source>From</source>
+        <target>Du</target>
+      </trans-unit>
+      <trans-unit id="9LBu9tP" resname="To">
+        <source>To</source>
+        <target>Au</target>
+      </trans-unit>
+      <trans-unit id="ukI6RkA" resname="Add task">
+        <source>Add task</source>
+        <target>Ajout de tâche</target>
+      </trans-unit>
+      <trans-unit id="4pzoKhK" resname="Assign tasks">
+        <source>Assign tasks</source>
+        <target>Assigner les tâches</target>
+      </trans-unit>
+      <trans-unit id="4zNrmZH" resname="Move and place the task to be assigned">
+        <source>Move and place the task to be assigned</source>
+        <target>Déplacer et placer la tâche à attribuer</target>
+      </trans-unit>
+      <trans-unit id="6Ubvuhw" resname="Current requests">
+        <source>Current requests</source>
+        <target>Les demandes en cours</target>
+      </trans-unit>
+      <trans-unit id="2NosSd8" resname="Note">
+        <source>Note</source>
+        <target>Note</target>
+      </trans-unit>
+      <trans-unit id="QGEau92" resname="Validate">
+        <source>Validate</source>
+        <target>Valider</target>
+      </trans-unit>
+      <trans-unit id="4zAJWeE" resname="Request leave, absence or illness">
+        <source>Request leave, absence or illness</source>
+        <target>Faire une demande de congé, absence ou maladie</target>
+      </trans-unit>
+      <trans-unit id="AIk9MBs" resname="Leave requests to be processed">
+        <source>Leave requests to be processed</source>
+        <target>Les demandes de congés à traiter</target>
+      </trans-unit>
+      <trans-unit id="_Bq4NN5" resname="Reason">
+        <source>Reason</source>
+        <target>Raison</target>
+      </trans-unit>
+      <trans-unit id="5RJIdzu" resname="Management">
+        <source>Management</source>
+        <target>Gestion</target>
+      </trans-unit>
+      <trans-unit id="MD_X5br" resname="Accepted requests">
+        <source>Accepted requests</source>
+        <target>Les demandes acceptées</target>
+      </trans-unit>
+      <trans-unit id="n5zXm3b" resname="Rejected requests">
+        <source>Rejected requests</source>
+        <target>Les demandes refusées</target>
+      </trans-unit>
+      <trans-unit id="0y7ELrW" resname="Accept or refuse">
+        <source>Accept or refuse</source>
+        <target>Accepter ou Refuser</target>
+      </trans-unit>
+      <trans-unit id="pwpEeEQ" resname="Type of permit">
+        <source>Type of permit</source>
+        <target>Type de permis</target>
+      </trans-unit>
+      <trans-unit id="vYLPFmm" resname="Number">
+        <source>Number</source>
+        <target>Numéro</target>
+      </trans-unit>
+      <trans-unit id="KUc83Og" resname="Publication date">
+        <source>Publication date</source>
+        <target>Date de publication</target>
+      </trans-unit>
+      <trans-unit id="jMw.1Dq" resname="Expiration date">
+        <source>Expiration date</source>
+        <target>Date d'expiration</target>
+      </trans-unit>
+      <trans-unit id="q2K1j6i" resname="License number">
+        <source>License number</source>
+        <target>Numéro de permis</target>
+      </trans-unit>
+      <trans-unit id="dvaKdfA" resname="Business">
+        <source>Business</source>
+        <target>Entreprise</target>
+      </trans-unit>
+      <trans-unit id="UqYmyyl" resname="Title of job">
+        <source>Title of job</source>
+        <target>Titre du poste</target>
+      </trans-unit>
+      <trans-unit id="RPXj__x" resname="Comment">
+        <source>Comment</source>
+        <target>Commentaire</target>
+      </trans-unit>
+      <trans-unit id="bfG7GKW" resname="Skill">
+        <source>Skill</source>
+        <target>Compétence</target>
+      </trans-unit>
+      <trans-unit id="Ket05Ad" resname="Years of experience">
+        <source>Years of experience</source>
+        <target>Années d'expérience</target>
+      </trans-unit>
+      <trans-unit id="chSusW6" resname="Specialization">
+        <source>Specialization</source>
+        <target>Spécialisation</target>
+      </trans-unit>
+      <trans-unit id="FwkwXJ_" resname="Level">
+        <source>Level</source>
+        <target>Niveau</target>
+      </trans-unit>
+      <trans-unit id="ifaDJWD" resname="Year">
+        <source>Year</source>
+        <target>Année</target>
+      </trans-unit>
+      <trans-unit id="bn1Q6E9" resname="Result">
+        <source>Result</source>
+        <target>Résultat</target>
+      </trans-unit>
+      <trans-unit id="Bn3qDjU" resname="Institute">
+        <source>Institute</source>
+        <target>Institut</target>
+      </trans-unit>
+      <trans-unit id="pP5lJk7" resname="Language">
+        <source>Language</source>
+        <target>Langue</target>
+      </trans-unit>
+      <trans-unit id="naYVAtv" resname="Ease">
+        <source>Ease</source>
+        <target>Aisance</target>
+      </trans-unit>
+      <trans-unit id="i1zhXK3" resname="Civility">
+        <source>Civility</source>
+        <target>Civilité</target>
+      </trans-unit>
+      <trans-unit id="VkvATrt" resname="Employee ID">
+        <source>Employee ID</source>
+        <target>Identifiant du salarié</target>
+      </trans-unit>
+      <trans-unit id="ZHz6kbI" resname="Firstname">
+        <source>Firstname</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="EUU8qfN" resname="Middle name">
+        <source>Middle name</source>
+        <target>Deuxième prénom</target>
+      </trans-unit>
+      <trans-unit id="htiPHRy" resname="Lastname">
+        <source>Lastname</source>
+        <target>Nom de famille</target>
+      </trans-unit>
+      <trans-unit id="1yD2HIx" resname="Nickname">
+        <source>Nickname</source>
+        <target>Surnom</target>
+      </trans-unit>
+      <trans-unit id="sSOF9BQ" resname="Family situation">
+        <source>Family situation</source>
+        <target>Situation familiale</target>
+      </trans-unit>
+      <trans-unit id="60xOI5E" resname="Date of birth">
+        <source>Date of birth</source>
+        <target>Date de naissance</target>
+      </trans-unit>
+      <trans-unit id="He0x9dP" resname="Place of birth">
+        <source>Place of birth</source>
+        <target>Lieu de naissance</target>
+      </trans-unit>
+      <trans-unit id="RvXiEv8" resname="Social security number">
+        <source>Social security number</source>
+        <target>Numéro de sécurité social</target>
+      </trans-unit>
+      <trans-unit id="RkxP.QG" resname="Edit">
+        <source>Edit</source>
+        <target>Modifier</target>
+      </trans-unit>
+      <trans-unit id="1r2MCu7" resname="Document">
+        <source>Document</source>
+        <target>Document</target>
+      </trans-unit>
+      <trans-unit id="0iUhajp" resname="Published by">
+        <source>Published by</source>
+        <target>Publiée par</target>
+      </trans-unit>
+      <trans-unit id="NWuJMZx" resname="Eligible status">
+        <source>Eligible status</source>
+        <target>Statut éligible</target>
+      </trans-unit>
+      <trans-unit id="znwNi_W" resname="Eligible assessment date">
+        <source>Eligible assessment date</source>
+        <target>Date éligible d'évaluation</target>
+      </trans-unit>
+      <trans-unit id="3NHVIj9" resname="Name">
+        <source>Name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="E2dIXcP" resname="Relation">
+        <source>Relation</source>
+        <target>Relation</target>
+      </trans-unit>
+      <trans-unit id="Y9zriAC" resname="Phone">
+        <source>Phone</source>
+        <target>Téléphone fixe</target>
+      </trans-unit>
+      <trans-unit id="ULbA6fD" resname="Cellphone">
+        <source>Cellphone</source>
+        <target>Téléphone portable</target>
+      </trans-unit>
+      <trans-unit id="wzaSdZd" resname="Professional phone">
+        <source>Professional phone</source>
+        <target>Téléphone professionnel</target>
+      </trans-unit>
+      <trans-unit id="JUkKENB" resname="Relationship">
+        <source>Relationship</source>
+        <target>Relation</target>
+      </trans-unit>
+      <trans-unit id="bfraE9L" resname="Company name">
+        <source>Company name</source>
+        <target>Nom d'entreprise</target>
+      </trans-unit>
+      <trans-unit id="RqhOxSB" resname="Company information">
+        <source>Company information</source>
+        <target>Informations entreprise</target>
+      </trans-unit>
+      <trans-unit id="9knq2ll" resname="Job description">
+        <source>Job description</source>
+        <target>Description du poste</target>
+      </trans-unit>
+      <trans-unit id="kg5BPH1" resname="Status">
+        <source>Status</source>
+        <target>Statut</target>
+      </trans-unit>
+      <trans-unit id="7VQz7lJ" resname="Start of activity">
+        <source>Start of activity</source>
+        <target>Début d'activité</target>
+      </trans-unit>
+      <trans-unit id="pii_7U5" resname="Beginning of contract">
+        <source>Beginning of contract</source>
+        <target>Début de contrat</target>
+      </trans-unit>
+      <trans-unit id="IkJF0wz" resname="End of contract">
+        <source>End of contract</source>
+        <target>Fin de contrat</target>
+      </trans-unit>
+      <trans-unit id="of8H08U" resname="Contract details">
+        <source>Contract details</source>
+        <target>Détails du contrat</target>
+      </trans-unit>
+      <trans-unit id="Vu_PIJV" resname="Address">
+        <source>Address</source>
+        <target>Adresse</target>
+      </trans-unit>
+      <trans-unit id="FEjBQKT" resname="Address (continued)">
+        <source>Address (continued)</source>
+        <target>Adresse (suite)</target>
+      </trans-unit>
+      <trans-unit id=".DP3Mkb" resname="City">
+        <source>City</source>
+        <target>Ville</target>
+      </trans-unit>
+      <trans-unit id="rlPOqCK" resname="Postal code">
+        <source>Postal code</source>
+        <target>Code postal</target>
+      </trans-unit>
+      <trans-unit id="cB0CHQj" resname="Country">
+        <source>Country</source>
+        <target>Pays</target>
+      </trans-unit>
+      <trans-unit id="p7h1R_." resname="Professional email">
+        <source>Professional email</source>
+        <target>Email professionnel</target>
+      </trans-unit>
+      <trans-unit id="xNBgfqh" resname="Add criteria">
+        <source>Add criteria</source>
+        <target>Ajouter un critère</target>
+      </trans-unit>
+      <trans-unit id="n9coxmy" resname="Add">
+        <source>Add</source>
+        <target>Ajouter</target>
+      </trans-unit>
+      <trans-unit id="BA0rNon" resname="Attachment">
+        <source>Attachment</source>
+        <target>Pièce jointe</target>
+      </trans-unit>
+      <trans-unit id="Um4Ah8w" resname="Description">
+        <source>Description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="zFnRMtT" resname="Required Field">
+        <source>Required Field</source>
+        <target>Champ obligatoire</target>
+      </trans-unit>
+      <trans-unit id="lxuXQjW" resname="Filename">
+        <source>Filename</source>
+        <target>Nom du fichier</target>
+      </trans-unit>
+      <trans-unit id="GvhRkHM" resname="Size">
+        <source>Size</source>
+        <target>Taille</target>
+      </trans-unit>
+      <trans-unit id="uq3fcPt" resname="Type">
+        <source>Type</source>
+        <target>Type</target>
+      </trans-unit>
+      <trans-unit id="Wsz6LEG" resname="Add the">
+        <source>Add the</source>
+        <target>Ajouté le</target>
+      </trans-unit>
+      <trans-unit id="uwxGwem" resname="Added by">
+        <source>Added by</source>
+        <target>Ajouté par</target>
+      </trans-unit>
+      <trans-unit id="1ur_gjW" resname="Download">
+        <source>Download</source>
+        <target>Télécharger</target>
+      </trans-unit>
+      <trans-unit id="3yp30nb" resname="The profile was last updated by">
+        <source>The profile was last updated by</source>
+        <target>Le profil a été mis à jour la dernière fois par</target>
+      </trans-unit>
+      <trans-unit id="uXdtfd9" resname="the">
+        <source>the</source>
+        <target>le</target>
+      </trans-unit>
+      <trans-unit id="4lngdrQ" resname="Your account has been suspended!">
+        <source>Your account has been suspended!</source>
+        <target>Votre compte a été suspendu !</target>
+      </trans-unit>
+      <trans-unit id="QMLRsJF" resname="You see this message because">
+        <source>You see this message because</source>
+        <target>Vous voyez ce message car</target>
+      </trans-unit>
+      <trans-unit id="JViJFmQ" resname="Your account has not yet been activated">
+        <source>Your account has not yet been activated</source>
+        <target>Votre compte n'a pas encore été activer</target>
+      </trans-unit>
+      <trans-unit id="tGDeeyT" resname="Attempt to access unauthorized data">
+        <source>Attempt to access unauthorized data</source>
+        <target>Tentative d'accès à des données non autorisés</target>
+      </trans-unit>
+      <trans-unit id="uETOWry" resname="You have been banned">
+        <source>You have been banned</source>
+        <target>Vous avez été banni</target>
+      </trans-unit>
+      <trans-unit id="rhZ.Fte" resname="Your account has been suspended or is not active!">
+        <source>Your account has been suspended or is not active!</source>
+        <target>Votre compte a été suspendu ou n'est pas actif!</target>
+      </trans-unit>
+      <trans-unit id="bbb0KCn" resname="The account of the user has been saved">
+        <source>The account of the user has been saved</source>
+        <target>Le compte de votre salarié a correctement été enregistré</target>
+      </trans-unit>
+      <trans-unit id="aXm_vMc" resname="The user has been deleted">
+        <source>The user has been deleted</source>
+        <target>Le salarié a correctement été supprimé</target>
+      </trans-unit>
+      <trans-unit id="KQi.48D" resname="The user hasn't been deleted">
+        <source>The user hasn't been deleted</source>
+        <target>L'utilisateur n'a pas été supprimé</target>
+      </trans-unit>
+      <trans-unit id="PWU8Z_D" resname="The leave request has been correctly processed">
+        <source>The leave request has been correctly processed</source>
+        <target>La demande d'absence à correctement été traité</target>
+      </trans-unit>
+      <trans-unit id="1gs_VP4" resname="Task added">
+        <source>Task added</source>
+        <target>Tâche ajouté</target>
+      </trans-unit>
+      <trans-unit id="AXt7bYv" resname="Absence request sent">
+        <source>Absence request sent</source>
+        <target>Demande d'absence envoyé</target>
+      </trans-unit>
+      <trans-unit id="2YaoXn8" resname="Task deleted">
+        <source>Task deleted</source>
+        <target>Tâche supprimé</target>
+      </trans-unit>
+      <trans-unit id="6ieNvAZ" resname="Profile saved">
+        <source>Profile saved</source>
+        <target>Profil enregistré</target>
+      </trans-unit>
+      <trans-unit id="WVB2uBt" resname="Your attachment has been added">
+        <source>Your attachment has been added</source>
+        <target>Votre pièce jointe a été ajouté</target>
+      </trans-unit>
+      <trans-unit id="8eoENkQ" resname="Added skill">
+        <source>Added skill</source>
+        <target>compétence ajouté</target>
+      </trans-unit>
+      <trans-unit id="TTbtqfm" resname="Your message has been sent">
+        <source>Your message has been sent</source>
+        <target>Votre message a été envoyé</target>
+      </trans-unit>
+      <trans-unit id="uqggXaR" resname="Your account has been saved">
+        <source>Your account has been saved</source>
+        <target>Votre compte a été sauvegardé</target>
+      </trans-unit>
+      <trans-unit id="Of1YFYq" resname="Password has been changed">
+        <source>Password has been changed</source>
+        <target>Le mot de passe a été changé</target>
+      </trans-unit>
+      <trans-unit id="QH5a5b." resname="This email doesn't exist">
+        <source>This email doesn't exist</source>
+        <target>Cet adresse mail n'existe pas</target>
+      </trans-unit>
+      <trans-unit id="wbJd3Cu" resname="An email has been sent for change your password. The link has been available for 24h">
+        <source>An email has been sent for change your password. The link has been available for 24h</source>
+        <target>Un mail va vous être envoyé afin que vous puissiez renouveller votre mot de passe. Le lien que vous recevrez sera valide 24h</target>
+      </trans-unit>
+      <trans-unit id="00fBBoR" resname="Your password has been changed">
+        <source>Your password has been changed</source>
+        <target>Votre mot de passe a été changé</target>
+      </trans-unit>
+      <trans-unit id="VlM5vE0" resname="OK">
+        <source>OK</source>
+        <target>OK</target>
+      </trans-unit>
+      <trans-unit id="7r3SSnf" resname="Confirm">
+        <source>Confirm</source>
+        <target>Confirmer</target>
+      </trans-unit>
+      <trans-unit id="GXZu1sy" resname="Cancel">
+        <source>Cancel</source>
+        <target>Annuler</target>
+      </trans-unit>
+      <trans-unit id="sWsWhe2" resname="Do you really want to delete this task?">
+        <source>Do you really want to delete this task?</source>
+        <target>Voulez-vous réelement supprimé cet tâche ?</target>
+      </trans-unit>
+      <trans-unit id="DarlCsz" resname="Add a dependent">
+        <source>Add a dependent</source>
+        <target>Ajouter une personne à charge</target>
+      </trans-unit>
+      <trans-unit id="SmJ3Rxi" resname="Add professional experience">
+        <source>Add professional experience</source>
+        <target>Ajouter une expérience professionnelle</target>
+      </trans-unit>
+      <trans-unit id="r34wvjo" resname="Add degree">
+        <source>Add degree</source>
+        <target>Ajouter un diplôme</target>
+      </trans-unit>
+      <trans-unit id="vE210zd" resname="Add skill">
+        <source>Add skill</source>
+        <target>Ajouter une compétence</target>
+      </trans-unit>
+      <trans-unit id="fvfEQVy" resname="Add language">
+        <source>Add language</source>
+        <target>Ajouter une langue</target>
+      </trans-unit>
+      <trans-unit id="3.tLCP0" resname="Add driver license">
+        <source>Add driver license</source>
+        <target>Ajouter un permis</target>
+      </trans-unit>
+      <trans-unit id="c6XmJ4E" resname="Professional experience">
+        <source>Professional experience</source>
+        <target>Expérience professionnelle</target>
+      </trans-unit>
+      <trans-unit id="wKzs7fz" resname="Studies">
+        <source>Studies</source>
+        <target>Etudes</target>
+      </trans-unit>
+      <trans-unit id="MYZVzqS" resname="Languages">
+        <source>Languages</source>
+        <target>Langues</target>
+      </trans-unit>
+      <trans-unit id="YEVM9dt" resname="Driver license">
+        <source>Driver license</source>
+        <target>Permis</target>
+      </trans-unit>
+      <trans-unit id="Y03hFHd" resname="Attachments">
+        <source>Attachments</source>
+        <target>Pièces jointes</target>
+      </trans-unit>
+      <trans-unit id="e3g.0od" resname="You have no notifications">
+        <source>You have no notifications</source>
+        <target>Vous n'avez aucune notification</target>
+      </trans-unit>
+      <trans-unit id="cVP6_vq" resname="You have no messages">
+        <source>You have no messages</source>
+        <target>Vous n'avez aucun message</target>
+      </trans-unit>
+      <trans-unit id="aZxGDJw" resname="Populorum is a platform for the creation of an HRMS human resource information system">
+        <source>Populorum is a platform for the creation of an HRMS human resource information system</source>
+        <target>Populorum est une plateforme permettant la création d'un SIRH système d'information de ressource humaine</target>
+      </trans-unit>
+      <trans-unit id="pX7VzrX" resname="HRMS">
+        <source>HRMS</source>
+        <target>SIRH</target>
+      </trans-unit>
+      <trans-unit id="u1lIFNv" resname="A human resource information management system">
+        <source>A human resource information management system</source>
+        <target>Un système de gestion d'information de ressource humaine</target>
+      </trans-unit>
+      <trans-unit id="l8hc.Ux" resname="Demonstration">
+        <source>Demonstration</source>
+        <target>Démonstration</target>
+      </trans-unit>
+      <trans-unit id="VpfQPa7" resname="Features">
+        <source>Features</source>
+        <target>Fonctionnalités</target>
+      </trans-unit>
+      <trans-unit id="cVzfnC2" resname="Different prices for different needs">
+        <source>Different prices for different needs</source>
+        <target>Plusieurs prix pour différents besoin</target>
+      </trans-unit>
+      <trans-unit id="6DP2o3k" resname="Manage the skills of your employees">
+        <source>Manage the skills of your employees</source>
+        <target>Gérer les compétences de vos salariés</target>
+      </trans-unit>
+      <trans-unit id="KGIMXc_" resname="Expense report">
+        <source>Expense report</source>
+        <target>Note de frais</target>
+      </trans-unit>
+      <trans-unit id="IQKvfaE" resname="Approve, view, manage the expense reports of your employees">
+        <source>Approve, view, manage the expense reports of your employees</source>
+        <target>Approuver, visionner, gérer les notes de frais de vos salariés</target>
+      </trans-unit>
+      <trans-unit id=".G5KQI1" resname="Leave">
+        <source>Leave</source>
+        <target>Congé</target>
+      </trans-unit>
+      <trans-unit id="HagYH0f" resname="Your employees can manage their absence">
+        <source>Your employees can manage their absence</source>
+        <target>Vos salariés peuvent gérer leur absence</target>
+      </trans-unit>
+      <trans-unit id="7whNxqj" resname="leave and sickness">
+        <source>leave and sickness</source>
+        <target>congés et maladie</target>
+      </trans-unit>
+      <trans-unit id="VNST2ev" resname="Schedule tasks to assign to your team in advance">
+        <source>Schedule tasks to assign to your team in advance</source>
+        <target>Programmer à l'avance les tâches à assigner à votre équipe</target>
+      </trans-unit>
+      <trans-unit id="dhn11D6" resname="Why choose">
+        <source>Why choose</source>
+        <target>Pourquoi choisir</target>
+      </trans-unit>
+      <trans-unit id="tTUfEQQ" resname="Instant installation">
+        <source>Instant installation</source>
+        <target>Mise en place instantanée</target>
+      </trans-unit>
+      <trans-unit id="s09kO7Z" resname="No more long waiting periods, no need to make a quote, to wait again and again for creation, implementation...">
+        <source>No more long waiting periods, no need to make a quote, to wait again and again for creation, implementation...</source>
+        <target>Finis les longues périodes d'attente, inutile d'éffectuer un devis, d'attendre encore et encore pour la création, la mise en place...</target>
+      </trans-unit>
+      <trans-unit id="mj349p8" resname="With Populorum take advantage of an immediate installation of your space allowing you to manage the registration of your employees from your registration in a few minutes and those very easily">
+        <source>With Populorum take advantage of an immediate installation of your space allowing you to manage the registration of your employees from your registration in a few minutes and those very easily</source>
+        <target>Avec Populorum profiter d'une mise en place immédiate de votre espace vous permettant ainsi de gérer l'inscription de vos salariés dès votre inscription en quelques minutes et ceux très facilement</target>
+      </trans-unit>
+      <trans-unit id="j2_0639" resname="Security">
+        <source>Security</source>
+        <target>La sécurité</target>
+      </trans-unit>
+      <trans-unit id="M9CkxRg" resname="Populorum is equipped with a draconian security system allowing it to be very reactive in the event of an anomaly within the network">
+        <source>Populorum is equipped with a draconian security system allowing it to be very reactive in the event of an anomaly within the network</source>
+        <target>Populorum est équiper d'un système de sécurité draconien permettants d'être très réactif en cas d'anomalie au sein du réseau</target>
+      </trans-unit>
+      <trans-unit id="dbLM0vx" resname="No analysis of your behavior and no tracking on your use of the site">
+        <source>No analysis of your behavior and no tracking on your use of the site</source>
+        <target>Aucune analyse de votre comportement et aucun traçage sur votre utilisation du site</target>
+      </trans-unit>
+      <trans-unit id="9BGh_2J" resname="Free">
+        <source>Free</source>
+        <target>La gratuité</target>
+      </trans-unit>
+      <trans-unit id="AuTEbpU" resname="Populorum is made available for free and those regardless of the number of users or features used">
+        <source>Populorum is made available for free and those regardless of the number of users or features used</source>
+        <target>Populorum est mis à disposition gratuitement et ceux peu importe le nombre d'utilisateur ou de fonctionnalités utilisé</target>
+      </trans-unit>
+      <trans-unit id="Qsa4GNy" resname="Made with">
+        <source>Made with</source>
+        <target>Fais avec</target>
+      </trans-unit>
+      <trans-unit id="ohD_8h7" resname="Register to use Populorum for free">
+        <source>Register to use Populorum for free</source>
+        <target>Inscrivez-vous pour utiliser gratuitement Populorum</target>
+      </trans-unit>
+      <trans-unit id="Dv43abu" resname="Acquire access to Populorum">
+        <source>Acquire access to Populorum</source>
+        <target>Acquérir l'accès à Populorum</target>
+      </trans-unit>
+      <trans-unit id="ElRmuCH" resname="By">
+        <source>By</source>
+        <target>Par</target>
+      </trans-unit>
+      <trans-unit id="1NEKy55" resname="I accept">
+        <source>I accept</source>
+        <target>J'accepte les</target>
+      </trans-unit>
+      <trans-unit id="t0Bw_Q6" resname="Repeat password">
+        <source>Repeat password</source>
+        <target>Répeter le mot de passe</target>
+      </trans-unit>
+      <trans-unit id="PdnfREH" resname="New password">
+        <source>New password</source>
+        <target>Nouveau mot de passe</target>
+      </trans-unit>
+      <trans-unit id="EhVukhv" resname="Id">
+        <source>Id</source>
+        <target>Id</target>
+      </trans-unit>
+      <trans-unit id="t0niBTA" resname="Copy to clipboard">
+        <source>Copy to clipboard</source>
+        <target>Copier dans le presse papier</target>
+      </trans-unit>
+      <trans-unit id="3w.nmJj" resname="Print">
+        <source>Print</source>
+        <target>Impression</target>
+      </trans-unit>
+      <trans-unit id="zpU6DrC" resname="print">
+        <source>print</source>
+        <target>impression</target>
+      </trans-unit>
+      <trans-unit id="Z7aWRoY" resname="Dashboard">
+        <source>Dashboard</source>
+        <target>Tableau de bord</target>
+      </trans-unit>
+      <trans-unit id="CPWYO42" resname="Name of skill">
+        <source>Name of skill</source>
+        <target>Nom de la compétence :</target>
+      </trans-unit>
+      <trans-unit id="Tae9Qqu" resname="Forum">
+        <source>Forum</source>
+        <target>Salon de discussion</target>
+      </trans-unit>
+      <trans-unit id="vWNEVy8" resname="Microbusiness">
+        <source>Microbusiness</source>
+        <target>Micro Entreprise</target>
+      </trans-unit>
+      <trans-unit id="lWlfByQ" resname="Host:">
+        <source>Host:</source>
+        <target>Hébergeur :</target>
+      </trans-unit>
+      <trans-unit id="KQUfBgD" resname="Website realized &amp; maintained by">
+        <source>Website realized &amp; maintained by</source>
+        <target>Site réalisé et maintenu par</target>
+      </trans-unit>
+      <trans-unit id="BY0hgr0" resname="Legal Notice">
+        <source>Legal Notice</source>
+        <target>Mentions Légales</target>
+      </trans-unit>
+      <trans-unit id="SvpVv3r" resname="Terms of Service">
+        <source>Terms of Service</source>
+        <target>Conditions Générales d'Utilisation</target>
+      </trans-unit>
+      <trans-unit id="Pb.F7yb" resname="Manage your employees">
+        <source>Manage your employees</source>
+        <target>Gérer vos salariés</target>
+      </trans-unit>
+      <trans-unit id="zW6ibq3" resname="Demo account mail address cannot be changed">
+        <source>Demo account mail address cannot be changed</source>
+        <target>L'adresse mail du compte de démonstration n'est pas modifiable</target>
+      </trans-unit>
+      <trans-unit id="cuYdfH3" resname="Change my mail address">
+        <source>Change my mail address</source>
+        <target>Modifier mon adresse mail</target>
+      </trans-unit>
+      <trans-unit id="B_1sz2v" resname="Mail">
+        <source>Mail</source>
+        <target>Mail</target>
+      </trans-unit>
+      <trans-unit id="hmX3IJA" resname="registration.submit">
+        <source>registration.submit</source>
+        <target>__registration.submit</target>
+      </trans-unit>
+      <trans-unit id="tuAV77Z" resname="security.login.submit">
+        <source>security.login.submit</source>
+        <target>__security.login.submit</target>
+      </trans-unit>
+      <trans-unit id="N0UmMsc" resname="Email has been changed">
+        <source>Email has been changed</source>
+        <target>L'adresse mail a été changé</target>
+      </trans-unit>
+      <trans-unit id="EsZLUhs" resname="Total workforce:">
+        <source>Total workforce:</source>
+        <target>Effectif total :</target>
+      </trans-unit>
+      <trans-unit id="_o7Qvav" resname="Plan">
+        <source>Plan</source>
+        <target>Plan</target>
+      </trans-unit>
+      <trans-unit id="0FbHH8C" resname="Pricing table">
+        <source>Pricing table</source>
+        <target>Table de prix</target>
+      </trans-unit>
+      <trans-unit id="7KNjamQ" resname="Different price for different needs">
+        <source>Different price for different needs</source>
+        <target>Différents prix pour différents besoins</target>
+      </trans-unit>
+      <trans-unit id="ZicVexy" resname="Leave &amp; absence">
+        <source>Leave &amp; absence</source>
+        <target>Congé et absence</target>
+      </trans-unit>
+      <trans-unit id="wW4LgZR" resname="Export data">
+        <source>Export data</source>
+        <target>Exporter les données</target>
+      </trans-unit>
+      <trans-unit id="UmMpP8I" resname="Small">
+        <source>Small</source>
+        <target>Petit</target>
+      </trans-unit>
+      <trans-unit id="jliM0Yd" resname="Medium">
+        <source>Medium</source>
+        <target>Moyen</target>
+      </trans-unit>
+      <trans-unit id="q4BUDZj" resname="Large">
+        <source>Large</source>
+        <target>Grand</target>
+      </trans-unit>
+      <trans-unit id="rxN7yT2" resname="Large+">
+        <source>Large+</source>
+        <target>Très grand</target>
+      </trans-unit>
+      <trans-unit id="Ur9S6j6" resname="Plan for very small enterprise">
+        <source>Plan for very small enterprise</source>
+        <target>Offre petite entreprise</target>
+      </trans-unit>
+      <trans-unit id="tP4VHkE" resname="£">
+        <source>£</source>
+        <target>€</target>
+      </trans-unit>
+      <trans-unit id="pcfRcZ4" resname="month">
+        <source>month</source>
+        <target>mois</target>
+      </trans-unit>
+      <trans-unit id="xJ3j0mX" resname="employees">
+        <source>employees</source>
+        <target>salariés</target>
+      </trans-unit>
+      <trans-unit id="C_Alkvo" resname="Plan for medium business">
+        <source>Plan for medium business</source>
+        <target>Offre moyenne entreprise</target>
+      </trans-unit>
+      <trans-unit id="7yJW9wy" resname="Plan for large business">
+        <source>Plan for large business</source>
+        <target>Offre grande entreprise</target>
+      </trans-unit>
+      <trans-unit id="UBH6.rv" resname="Plan for very large business">
+        <source>Plan for very large business</source>
+        <target>Offre très grande entreprise</target>
+      </trans-unit>
+      <trans-unit id="pyGaBdz" resname="buy now">
+        <source>buy now</source>
+        <target>acheter</target>
+      </trans-unit>
+      <trans-unit id="BPiZbad" resname="user">
+        <source>user</source>
+        <target>utilisateur</target>
+      </trans-unit>
+      <trans-unit id="BA.4g_U" resname="Easiest">
+        <source>Easiest</source>
+        <target>Simplicité</target>
+      </trans-unit>
+      <trans-unit id="lpMvePr" resname="is easy to use, try and approved by 9 years old children">
+        <source>is easy to use, try and approved by 9 years old children</source>
+        <target>est simple d'utilisation, essayer et approuvé par une enfant de 9 ans</target>
+      </trans-unit>
+      <trans-unit id="vg8xY7I" resname="No request to process">
+        <source>No request to process</source>
+        <target>Aucune demande à traiter</target>
+      </trans-unit>
+      <trans-unit id="T31kAXa" resname="Coming soon">
+        <source>Coming soon</source>
+        <target>Prochainement</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,9 @@
+
+
+        <img src="{{ asset('images/vision/blocage.png') }}" style="width:300px;float: left;">
+        <h3 style="font-weight:bold; color:#c41515;">{% trans %}Your account has been suspended!{% endtrans %}</h3>
+
+    {# L'utilisateur est rediriger vers la deconnexion #}
+    <script>
+        window.location.replace( "{{ path('usr_deconnexion') }}" );
+    </script>

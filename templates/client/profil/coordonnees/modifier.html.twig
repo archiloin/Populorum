@@ -1,0 +1,12 @@
+{% extends "client/profil/modifier.html.twig" %}
+
+{% set page_title = 'Contact information' %}
+{% set coordonnees = 'subdrop' %}
+{% set page_icon = 'fa-pencil-square-o' %}
+{% set owlCarousel = 'cli_salaries_profil_coordonnees' %}
+
+{% block profil %}
+
+    {% include 'client/profil/coordonnees/_form.html.twig' %}
+
+{% endblock %}

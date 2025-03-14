@@ -1,0 +1,17 @@
+{% extends "client/base.html.twig" %}
+
+{% if is_granted('ROLE_ADMIN') %}
+    {% block main %}
+
+ 
+                {% else %}
+  
+                        <h1 style="color:red;"><br>
+                        Alerte de sécurité<br>
+                        Tentative d'accès a un endroits interdis, une alerte a été déclencher.
+                        </h1>
+                {% endif %}
+
+    {% endblock %}
+{% endif %}
+    

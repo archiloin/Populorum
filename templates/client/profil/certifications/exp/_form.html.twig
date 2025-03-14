@@ -1,0 +1,27 @@
+{{ form_start(expForm) }}
+{{ form_errors(expForm) }}
+<p>
+		<strong> {% trans %}Business{% endtrans %} <i>*</i> : </strong>
+		{{ form_widget(expForm.business, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(expForm.business) }}
+</p>
+<p>
+		<strong> {% trans %}Title of job{% endtrans %} <i>*</i> : </strong>
+		{{ form_widget(expForm.job, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(expForm.job) }}
+</p>
+<p>
+		<strong> {% trans %}From{% endtrans %} : </strong>
+		{{ form_widget(expForm.start, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(expForm.start) }}
+</p>
+<p>
+		<strong> {% trans %}To{% endtrans %} : </strong>
+		{{ form_widget(expForm.end, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(expForm.end) }}
+</p>
+<p>
+		<strong> {% trans %}Comment{% endtrans %} : </strong>
+		{{ form_widget(expForm.comment, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(expForm.comment) }}
+</p>

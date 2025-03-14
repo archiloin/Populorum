@@ -1,0 +1,62 @@
+{% extends "client/base.html.twig" %}
+
+{% block title %}
+  Page d'accueil - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    <section class="content">
+        <div class="container-fluid">
+            {# Changelogs #}
+            <div class="block-header">
+                <h2>Rapport de mise à jour</h2>
+            </div>
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                Alpha v2.0.2
+                                <small>19 Octobre 2018</small>
+                            </h2>
+                        </div>
+                        <div class="body">
+                            <p>- Les clients peuvent désormais crée des projets et attribuer des utilisateurs a celui-ci</p>
+                            <p>- Ajout date d'inscription et date dernière maj profil</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                Alpha v2.0.1
+                                <small>22 Septembre 2018</small>
+                            </h2>
+                        </div>
+                        <div class="body">
+                            <p>- Obligation d'accepter les <strong>C.G.U</strong> pour s'inscrire</p>
+                            <p>- Ajout date d'inscription et date dernière maj profil</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Alpha v2.0.0</h2>
+                        </div>
+                        <div class="body">
+                            <p>- Restructuration total de la structure interne</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

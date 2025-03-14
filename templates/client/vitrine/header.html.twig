@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{% trans %}Populorum is a platform for the creation of an HRMS human resource information system{% endtrans %}">
+    <meta name="author" content="Andrew Caron">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    {% for locale in locales if locale != app.request.locale %}
+        <link href="{{ asset('assets/css/theme/'~app.request.locale~'.css') }}" rel="stylesheet" type="text/css"/>
+    {% endfor %}
+    <script type="text/javascript" src="{{ asset('assets/js/script.js') }}" ></script>
+    <title>Populorum {% trans %}HRMS{% endtrans %}</title>
+</head>

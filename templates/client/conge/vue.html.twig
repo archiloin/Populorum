@@ -1,0 +1,68 @@
+{% extends "client/core/content.html.twig" %}
+
+{% set page_title = "Leave & Absence" %}
+{% set menuConges = "subdrop" %}
+{% set breadcrumb = 'Leave & Absence' %}
+{% set congeSize = "col-lg-12 col-md-12 col-sm-12 col-xs-12" %}
+
+{% block content %}
+    {% include 'client/conge/in_process.html.twig' %}
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="card align-center">
+            <div class="card-header text-center">
+                <h3>{% trans %}Accepted requests{% endtrans %}</h3>
+            </div>
+            <div id="content">
+                <table class="table table-stripped">
+                    <tr>
+                        <th>{% trans %}Full name{% endtrans %}</th>
+                        <th>{% trans %}Reason{% endtrans %}</th>
+                        <th>{% trans %}From{% endtrans %}</th>
+                        <th>{% trans %}To{% endtrans %}</th>
+                    </tr>
+                    {% for salarie in salaries %}
+                        {% for absence in salarie.absences %}
+                        {% if absence.isActive == true  %}
+                        <tr>
+                            <td>{{ salarie.profil.informationsPersonnelles.lastname }} {{ salarie.profil.informationsPersonnelles.firstname }}</td>
+                            <td>{{ absence.note }}</td>
+                            <td>{{ absence.debut|date('d-m-Y') }}</td>
+                            <td>{{ absence.fin|date('d-m-Y') }}</td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="card align-center">
+            <div class="card-header text-center">
+                <h3>{% trans %}Rejected requests{% endtrans %}</h3>
+            </div>
+            <div id="content">
+                <table class="table table-stripped">
+                    <tr>
+                        <th>{% trans %}Full name{% endtrans %}</th>
+                        <th>{% trans %}Reason{% endtrans %}</th>
+                        <th>{% trans %}From{% endtrans %}</th>
+                        <th>{% trans %}To{% endtrans %}</th>
+                    </tr>
+                    {% for salarie in salaries %}
+                        {% for absence in salarie.absences %}
+                        {% if absence.isActive == false and absence.isActive is not null  %}
+                        <tr>
+                            <td>{{ salarie.profil.informationsPersonnelles.lastname }} {{ salarie.profil.informationsPersonnelles.firstname }}</td>
+                            <td>{{ absence.note }}</td>
+                            <td>{{ absence.debut|date('d-m-Y') }}</td>
+                            <td>{{ absence.fin|date('d-m-Y') }}</td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

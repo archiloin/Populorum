@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans %}Password renewal{% endtrans %}</title>
+</head>
+<body>
+    <p>
+        {% trans %}Hello{% endtrans %}, <br>
+        {% trans %}Click on this link to change your password.{% endtrans %}
+        {# pour que le lien fonctionne, il est indispensable que le lien soit absolu. #}
+        <a href="{{absolute_url(path('cli_mdp_reset', {'id': user.id, 'token': user.token}))}}">{% trans %}Change the password{% endtrans %}</a>
+    </p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+eventClick : function(info) {
+		var locale = {
+				OK: '{% trans %}OK{% endtrans %}',
+				CONFIRM: '{% trans%}Confirm{% endtrans %}',
+				CANCEL: '{% trans %}Cancel{% endtrans %}'
+		};
+		bootbox.addLocale('custom', locale);
+
+		bootbox.confirm({
+        closeButton: false,
+		    message: "{% trans %}Do you really want to delete this task?{% endtrans %}",
+				locale: 'custom',
+		    callback: function (result) {
+					if (result == 1) {
+							console.log(info.jsEvent.target.ownerDocument.add[3]);
+								//delete event from calender
+								info.event.remove();
+								// AJAX Request
+								$.ajax({
+									url: '{{ path('cli_planning_event_delete') }}',
+									type: 'DELETE',
+									data: {
+											idEvent: info.event._def.publicId,
+									},
+									success: function(data){
+									}
+								});
+						}
+		    }
+		});
+
+},

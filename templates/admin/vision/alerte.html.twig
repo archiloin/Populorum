@@ -1,0 +1,68 @@
+{% extends "admin/base.html.twig" %}
+
+{% set page_title = 'Vision Alerte Security' %}
+
+{% block body %}
+
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb-holder">
+                            <h1 class="main-title float-left">Alerte</h1>
+                            <ol class="breadcrumb float-right">
+                                <li class="breadcrumb-item">Accueil</li>
+                                <li class="breadcrumb-item">Vision</li>
+                                <li class="breadcrumb-item active">Alerte</li>
+                            </ol>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                    <div class="card align-center">
+                        <div id="content">
+                            <table class="table table-striped">
+                                <tr>
+                                    <th class="table-bg">Id</th>
+                                    <th class="table-bg">Utilisateur</th>
+                                    <th class="table-bg">Niveau</th>
+                                    <th class="table-bg">Type</th>
+                                    <th class="table-bg">IP</th>
+                                    <th class="table-bg">UserAgent</th>
+                                    <th class="table-bg">Url</th>
+                                    <th class="table-bg">Date</th>
+                                </tr>
+                            {% if alertes %}
+                              {% for alerte in alertes %}
+                                <tr>
+                                    <td>{{ alerte.id }}</td>
+                                    <td>{{ alerte.utilisateur }}</td>
+                                    <td>{{ alerte.niveau }}</td>
+                                    <td>{{ alerte.type }}</td>
+                                    <td>{{ alerte.ip }}</td>
+                                    <td>{{ alerte.userAgent }}</td>
+                                    <td>{{ alerte.url }}</td>
+                                    <td>{{ alerte.date|date('d.m.Y h:m:s') }}</td>
+                                </tr>
+                              {% endfor %}
+                            {% else %}
+                            </table>
+                                <h3>
+                                    <b>
+                                        <small>
+                                            Aucune alerte a été déclancher
+                                        </small>
+                                    </b>
+                                </h3>
+                            {% endif %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

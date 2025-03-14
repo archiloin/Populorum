@@ -1,0 +1,80 @@
+
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">
+				<div class="card mb-3">
+						<div class="card">
+								<h3> <i class="fa fa-star"></i> {% trans %}Goal to achieve{% endtrans %}</h3>
+								<p>{% trans %}Select the skill objective to display{% endtrans %}</p>
+								 <select name="skilltaskselect" style="float:right;">
+										 <option value="0" selected> {% trans %}Select of objective{% endtrans %}:</option>
+										 {% for skill in skills %}
+										 		<option value="{{ skill.id }}">{{ skill.name }}</option>
+										 	{% endfor %}
+								 </select>
+						</div>
+
+						<div class="card-body" style="overflow: auto; max-height:333px">
+								{% for skill in skills %}
+								<div id="skill_task_{{ skill.id }}" class="skills_tasks_divs" style="display:none">
+										{% for critere in skill.criteres %}
+										{% if critere.toAcquire == 0 %}
+												{% set pourcentage = 0 %}
+										{% else %}
+												{% set pourcentage = critere.acquired * 100 / critere.toAcquire %}
+										{% endif %}
+												<p class="font-600 m-b-5">
+														{{ critere.name }}
+														<span class="
+																{% if pourcentage < 25 %} text-danger
+																{% elseif pourcentage < 50 %} text-warning
+																{% elseif pourcentage < 75 %} text-info
+																{% elseif pourcentage < 99 %} text-primary
+																{% elseif pourcentage == 99 %} text-purple
+																{% else %} text-success
+																{% endif%}
+																pull-right
+														">
+																<b>
+																		{{ pourcentage|round }}%
+																</b>
+														</span>
+												</p>
+												<div class="progress">
+														<div
+																class="
+																		progress-bar
+																		progress-bar-striped progress-xs
+																		{% if pourcentage < 25 %} bg-danger
+																		{% elseif pourcentage < 50 %} bg-warning
+																		{% elseif pourcentage < 75 %} bg-info
+																		{% elseif pourcentage < 99 %} bg-primary
+																		{% elseif pourcentage == 99 %} progress-bar-animated bg-purple
+																		{% else %} bg-success
+																		{% endif%}"
+																role="progressbar"
+																style="width: {{ pourcentage }}% "
+																aria-valuenow="{{ pourcentage }}"
+																aria-valuemin="0"
+																aria-valuemax="100">
+														</div>
+												</div>
+												<br>
+										{% endfor %}
+								</div>
+							{% else %}
+								<p style="color:red">{% trans %}Add a skill to generate the objectives to be achieved{% endtrans%}</p>
+							{% endfor %}
+
+								<script type="text/javascript">
+								// Je sélectionne le select et quand la valeur change on fait une action
+								$('select[name="skilltaskselect"]').change(function(){
+										// Je créer l'id du div qui va être affiché
+										var id = "skill_task_" + $(this).val();
+										// Je cache toutes les divs grâce à une classe qui va sélectionner le tout
+										$('div.skills_tasks_divs').hide();
+										// Et j'affiche seulement le Div que je souhaite
+										$('#'+id).show();
+								});
+								</script>
+						</div>
+				</div><!-- end card-->
+		</div>

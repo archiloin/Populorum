@@ -1,0 +1,41 @@
+
+	{{ form_start(editForm) }}
+	{{ form_errors(editForm) }}
+
+	<hr><br>
+	<p>
+			<strong>{% trans %}Title{% endtrans %}:</strong>
+			{{ form_widget(editForm.title, {'attr':{'class':'form-control'}}) }}
+			{{ form_errors(editForm.title) }}
+	</p>
+	<p>
+			<strong>{% trans %}Color{% endtrans %}:</strong>
+			{{ form_widget(editForm.color, {'attr':{'class':'form-control', 'id':'add-color'}}) }}
+			{{ form_errors(editForm.color) }}
+	</p>
+	<p>
+			<strong>{% trans %}From{% endtrans %}:</strong>
+			{{ form_widget(editForm.start, {'attr':{'class':'form-control'}}) }}
+			{{ form_errors(editForm.start) }}
+	</p>
+	<p>
+			<strong>{% trans %}To{% endtrans %}:</strong>
+			{{ form_widget(editForm.end, {'attr':{'class':'form-control'}}) }}
+			{{ form_errors(editForm.end) }}
+	</p>
+
+	<input type="submit" class="btn btn-primary" value="{% trans %}Save{% endtrans %}" />
+
+
+		<hr><br>
+{#
+	<form action='{{ path('cli_planning_event_delete', {'id': idEvent}) }}' onsubmit='return confirm(	);'>
+			<input type='hidden' name='_method' value='DELETE'><input type='hidden' name='_token' value='{{ csrf_token('supprimer' ~ idEvent) }}' />
+			<button class='btn btn-primary' style='float:left; margin:13px'>{% trans%}Delete{% endtrans %}</button>
+	</form>
+#}
+	{{ form_end(editForm) }}
+
+
+
+	{% include 'client/plugins/simpleColorPicker.html.twig' %}

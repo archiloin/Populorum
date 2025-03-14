@@ -1,0 +1,52 @@
+
+	{{ form_start(form) }}
+	{{ form_errors(form) }}
+
+	<table class="table table-striped">
+			<tr>
+					<th class="table-bg radius-left"><i class="fa fa-building"></i>{% trans %}Company information{% endtrans %}</th>
+					<td class="table-bg radius-right"></td>
+			</tr>
+			<tr>
+					<th>{% trans %}Company name{% endtrans %}:</th>
+					<td>
+							{{ form_widget(form.nomEntreprise, {'attr':{'class':'form-control'}}) }}
+							{{ form_errors(form.nomEntreprise) }}
+					</td>
+			</tr>
+			<tr>
+					<th>{% trans %}Logo{% endtrans %}</th>
+					<td>
+							{% if profil %}
+									{% if profil.logo %}
+											{% if profil.logo.imageName %}
+													<img
+															src="{{ vich_uploader_asset(profil.logo, 'imageFile') }}"
+														 	width="100px"
+															alt="{% trans %}Logo{% endtrans %}"
+													/>
+											{% else %}
+													<img src="{{ asset('assets/img/logo.jpg') }}"
+															 width="100px"
+ 															alt="{% trans %}Logo{% endtrans %}"
+													/>
+											{% endif %}
+									{% else %}
+											<img src="{{ asset('assets/img/logo.jpg') }}"
+													 width="100px"
+													 alt="{% trans %}Logo{% endtrans %}"
+											/>
+									{% endif %}
+							{% else %}
+									<img src="{{ asset('assets/img/logo.jpg') }}"
+											 width="100px"
+											 alt="{% trans %}Logo{% endtrans %}"
+									/>
+							{% endif %}
+							{{ form_widget(form.logo) }}
+							{{ form_errors(form.logo) }}
+					</td>
+			</tr>
+	</table>
+	<input type="submit" class="btn btn-primary" value="{% trans %}Save{% endtrans %}" />
+	{{ form_end(form) }}

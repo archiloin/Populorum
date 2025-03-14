@@ -1,0 +1,15 @@
+
+{% set page = 'certifications' %}
+{% set form_end = true %}
+
+{% set filename_html = 'etudes/_form.html.twig' %}
+
+{% set modalLabel = 'Add degree' %}
+{% set page_title = 'Studies' %}
+{% set title = 'Studies' %}
+{% set page_icon = 'fa-graduation-cap' %}
+
+{% block exp %}
+		{% include 'client/profil/modal.html.twig' %}
+		{{ form_end(etudesForm) }}
+{% endblock %}

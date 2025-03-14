@@ -1,0 +1,22 @@
+{{ form_start(languesForm) }}
+{{ form_errors(languesForm) }}
+<p>
+		<strong> {% trans %}Language{% endtrans %} <i>*</i> : </strong>
+		{{ form_widget(languesForm.langues, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(languesForm.langues) }}
+</p>
+<p>
+		<strong> {% trans %}Level{% endtrans %} <i>*</i> : </strong>
+		{{ form_widget(languesForm.lvl, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(languesForm.lvl) }}
+</p>
+<p>
+		<strong> {% trans %}Skill{% endtrans %} <i>*</i> : </strong>
+		{{ form_widget(languesForm.skill, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(languesForm.skill) }}
+</p>
+<p>
+		<strong> {% trans %}Comment{% endtrans %} : </strong>
+		{{ form_widget(languesForm.comment, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(languesForm.comment) }}
+</p>

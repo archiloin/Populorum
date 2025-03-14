@@ -1,0 +1,405 @@
+
+.buttons-html5, .buttons-print {
+    background-color: midnightblue;
+    color: white;
+    font-weight: bold;
+}
+
+.buttons-html5:hover, .buttons-print:hover {
+    background-color: #F2F2F2;
+    color: midnightblue;
+    font-weight: bold;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show > .btn-secondary.dropdown-toggle {
+    background-color: white;
+    color: midnightblue;
+    font-weight: bold;
+}
+
+.buttons-columnVisibility {
+    background-color: #C10401;
+    font-weight: bold;
+}
+
+.buttons-columnVisibility:hover {
+    background-color: #F2F2F2;
+    color: midnightblue;
+    font-weight: bold;
+}
+.list-group-item {
+    border-right: 2px solid midnightblue;
+    border-left: 2px solid midnightblue;
+}
+
+h4 button i.fa {
+  color: white;
+}
+
+#owlCarousel {
+		color:midnightblue;
+		z-index:1;
+		display: contents
+}
+
+* {
+  scrollbar-color: midnightblue white;
+}
+
+a {
+  color: #FFF;
+}
+a:hover {
+  color: midnightblue;
+}
+
+/* Theme */
+.white-background {
+  background-color: #FFF;
+  color:midnightblue;
+  border: 3px groove midnightblue;
+}
+
+.white-background th, .white-background td {
+  border: 2px groove midnightblue;
+  font-weight: bold;
+}
+
+.white-background th {
+  color: midnightblue;
+}
+
+.white-background #content a {
+  color: midnightblue;
+}
+
+.card a {
+  color:midnightblue;
+  font-weight: bold;
+}
+
+.card a:hover {
+  color:#C10401 !important;
+  font-weight: bold;
+}
+
+ .table-card-sm-left {
+  margin:33px 33px;
+  width:33%;
+  float:left
+}
+
+.white-background .table-card-sm-left h6 {
+  font-style: italic;
+  font-weight: lighter;
+  color: midnightblue;
+}
+
+.table-bg {
+	background-color: midnightblue;
+	color: white;
+	text-align: left;
+  border: 1px dotted;
+	width: 40%;
+}
+
+
+.btn-bottom {margin-bottom:16px;}
+.table-bordered td, .table-bordered th {border: 1px solid white;}
+a:hover { color: #fff}
+td a:hover { color: white !important;}
+i { color: midnightblue}
+td, th {text-align: left;}
+.theme-color{color: midnightblue;}
+
+/* Menu */
+/* Au survol des liens du menu */
+#sidebar-menu > ul > li > a:hover {
+  color: midnightblue !important;
+	background-color: #efefef !important;
+  text-decoration: none;
+	border-right: 2px solid midnightblue;
+	border-left: 2px solid midnightblue; }
+
+/* Fond sous-menu */
+#sidebar-menu ul ul {
+	background-color: white;
+}
+
+/* Sous-menu */
+#sidebar-menu ul ul a {
+	background-color: white;
+  color: #FFF;
+}
+
+/* Au survol des liens du menu */
+#sidebar-menu ul ul a:hover {
+  background-color: #efefef !important;
+  color: midnightblue !important;
+}
+
+#profil-menu ul li {
+  width:250px;
+  padding: 4.3%;
+  border-radius: 7.77%;
+  border-bottom: 1px solid #dee2e6;
+	border-right: 2px solid midnightblue ;
+  border-left: 2px solid midnightblue;
+  background-color: white;
+}
+
+#profil-menu li a {
+    color: midnightblue !important;
+    font-weight: bold;
+}
+#profil-menu li a:hover {
+    color: midnightblue !important;
+}
+
+#profil-menu .subdrop a {
+    color: midnightblue !important;
+}
+#profil-menu .subdrop {
+    color: midnightblue !important;
+  	background-color: #efefef;
+}
+
+.subMenuActive a {
+  background-color: #efefef !important;
+  color: #fff !important;
+ }
+
+ /* Au survol des liens du sous-menu */
+ul ul li a:hover {
+  color: midnightblue !important;
+  background-color: #efefef !important;
+}
+
+ul ul li {
+  color: midnightblue !important;
+  background-color: white;
+	border-right: 2px solid midnightblue !important;
+  border-left: 2px solid midnightblue !important;
+}
+
+.subMenuActive ul li a {
+  background-color: #262830 !important;
+  color: midnightblue;
+}
+
+/* Enlever le dédoublement de bordures lors d'un déroulement */
+.subMenuActive {
+  border-right: 0px !important;
+  border-left: 0px !important;
+  background-color: #efefef !important;
+}
+
+.subMenuActive ul .linkMenuActive a {
+  background-color: #efefef !important;
+  color: #fff !important;
+}
+
+#sidebar-menu .subdrop .active {color: midnightblue !important;}
+
+#sidebar-menu > ul > li > a {
+  color: midnightblue;
+  display: block;
+  padding: 12px 12px 15px 12px;
+  font-weight: 400;
+  font-size: 0.90rem;
+  border-left: 2px solid transparent;}
+
+#sidebar-menu > ul > li > a.active {
+  color: #ffffff !important;
+  background-color: #efefef;}
+
+.fixmenu {
+  background-color: midnightblue;
+}
+
+.footer a {
+	color: midnightblue;
+}
+
+
+  .btn-primary {
+    background-color: midnightblue;
+    color: #fff !important;
+    font-weight: bold;
+    border-color: midnightblue;
+  }
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .open > .dropdown-toggle.btn-primary {
+  background-color: midnightblue;
+  border-color: white;
+  color: white;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: midnightblue;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem midnightblue;
+}
+
+.dataTable th {
+  color: midnightblue;}
+
+.page-item:last-child .page-link {color: midnightblue;}
+.page-item:first-child .page-link {color: midnightblue;}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: white !important;
+  background-color: midnightblue;
+  border-color: white;
+}
+
+.page-item.disabled .page-link {
+  color: midnightblue;
+  pointer-events: none;
+  cursor: auto;
+  border-color: midnightblue;
+}
+
+.page-link:focus {
+  z-index: 2;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem midnightblue;
+}
+.page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: midnightblue !important;
+    border: 1px solid midnightblue;
+}
+.page-link:hover{
+    color: midnightblue !important;
+    border: 1px solid midnightblue;
+}
+
+
+/* inscription */
+#inscription a {color : white;}
+#inscription a:hover {color : midnightblue;}
+#connexion a {color : white;}
+#connexion a:hover {color : midnightblue;}
+/* #inscription */
+
+.card-header {
+    border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -ms-border-radius: 5px 5px 0 0;
+    color: midnightblue;
+}
+.breadcrumb-item.active {
+    color: midnightblue;
+}
+
+/* Notification d'alerte */
+.alert-info {
+    color: midnightblue;
+    background-color: white;
+    border-color: midnightblue;
+}
+button.close {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    color: #000;
+}
+button.close:hover {
+    color: #000 !important;
+}
+/* #Notification d'alerte */
+
+.dropdown-item {
+    font-size: 0.9rem;
+    white-space: inherit;
+    color: midnightblue;
+    background-color: white;
+}
+
+.notif .noti-title {
+    border-radius: 0;
+    background-color: white;
+    margin: 0;
+    margin-top: -1%;
+    width: auto;
+    padding: 8px 15px 12px 15px;
+}
+
+.notif .notify-all {
+    border-radius: 0;
+    margin: 0;
+    background-color: white;
+    color: midnightblue;
+}
+
+.link {
+  color: white;
+}
+
+.link:hover {
+  color: midnightblue;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  color: midnightblue;
+  text-decoration: none;
+  background-color: white;}
+
+  .dropdown-item.active, .dropdown-item:active {
+  	background-color: midnightblue;
+  }
+
+  .bg-primary {
+    background-color: midnightblue !important; }
+
+  .text-primary {
+    color: midnightblue !important;
+  }
+
+  .nav-pills .nav-item.show .nav-link, .nav-pills .nav-link.active {
+      background-color: midnightblue;
+  }
+
+  #sidebar-menu .subdrop {
+    color: midnightblue !important;
+  	background-color: #efefef;
+  	border-left: 2px solid midnightblue;
+  }
+  #main.enlarged #sidebar-menu ul ul li.active a {
+    color: midnightblue;
+  }
+
+  .btn-outline-primary {
+    color: midnightblue;
+    background-image: none;
+    background-color: transparent;
+    border-color: midnightblue; }
+
+  .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.active,
+  .btn-outline-primary.focus, .btn-outline-primary:active, .btn-outline-primary:focus, .btn-outline-primary:hover,
+  .open > .dropdown-toggle.btn-outline-primary {
+    color: #ffffff;
+    background-color: midnightblue;
+    border-color: midnightblue; }
+
+
+  .notif .noti-title h5 {
+      color: midnightblue;
+      margin: 0;
+  }
+
+  .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+      background: midnightblue !important;
+  }
+
+  .item:hover {color:#C10401}

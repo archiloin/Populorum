@@ -1,0 +1,13 @@
+{% extends "client/core/content.html.twig" %}
+
+{% set page_title = 'Skills' %}
+{% set menuSkills = 'subdrop' %}
+{% set owlCarousel = 'cli_skills_voir' %}
+{% set breadcrumb = 'Skills' %}
+{% set radar_col_lg = 12 %}
+{% set radar_col_xl = 6 %}
+
+{% block content %}
+    {{ include ('client/plugins/radarChart.html.twig') }}
+
+{% endblock %}

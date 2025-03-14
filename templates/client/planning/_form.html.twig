@@ -1,0 +1,28 @@
+
+	{{ form_start(form) }}
+	{{ form_errors(form) }}
+
+<hr><br>
+	<table class="table table-striped">
+			<tr>
+					<th class="table-bg radius-left"><i style="font-size:1em" class="fa fa-plus"></i>{% trans %}Add task{% endtrans %}</th>
+					<td class="table-bg radius-right"></td>
+			</tr>
+			<tr>
+					<th>{% trans %}Title{% endtrans %} :</th>
+					<td>
+							{{ form_widget(form.title, {'attr':{'class':'form-control'}}) }}
+							{{ form_errors(form.title) }}
+					</td>
+			</tr>
+			    {% include 'client/plugins/simpleColorPicker.html.twig' %}
+			<tr>
+					<th>{% trans %}Color{% endtrans %}:</th>
+					<td>
+							{{ form_widget(form.color, {'attr':{'class':'form-control'}}) }}
+							{{ form_errors(form.color) }}
+					</td>
+			</tr>
+	</table>
+	<input type="submit" class="btn btn-primary" value="{% trans %}Save{% endtrans %}" />
+	{{ form_end(form) }}

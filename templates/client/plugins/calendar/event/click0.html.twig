@@ -1,0 +1,55 @@
+eventClick: function(info) {
+		console.log(info);
+
+		$('#fullCalModal').modal({ backdrop: 'static', keyboard: false });
+
+		$('.modalLoad')
+		.html('<i class="fa fa-spinner fa-pulse" style="font-size:9em"></i>');
+
+		$('.modalTitre')
+		.html(info.event.title);
+
+
+
+		 $('#fullCalModal').on('shown.bs.modal', function () {
+			 var modal = $(this);
+			 var url = "{{ path('cli_planning_event_edit', {'idEvent': 'id' }) }}";
+			 var url = url.replace("id", info.event.id);
+
+			 $.ajax(url, {
+					 success: function(data) {
+							 modal.find('.modal-body').html(data);
+					 }
+			 });
+		 });
+
+
+
+		 $(document).on('submit', 'editForm', function(e){
+
+				 e.preventDefault(); // il est impératif de commencer avec cette méthode qui va empêcher le navigateur d'envoyer le formulaire lui-même
+
+				 $form = $(e.target);
+				 modal = $('#fullCalModal');
+
+				 var modalTitre = $('.modalTitre').val();
+
+				 var $submitButton = $form.find(':submit');
+				 $submitButton.html('<i class="fa fa-spinner fa-pulse"></i>');
+				 $submitButton.prop('disabled', true);
+
+				 // ajaxSubmit du plugin ajaxForm nécessaire pour l'upload de fichier
+				 $form.ajaxSubmit({
+						 type: 'post',
+						 success: function(data) {
+								 if (data == 'ok') {
+										 $('ul').append('<li>' + modalTitre + '</li>');
+										 modal.modal('toggle');
+								 }
+								 else {
+										 modal.find('.modal-body').html(data);
+								 }
+						 },
+				 });
+		 });
+},

@@ -1,0 +1,65 @@
+{% extends "client/profil/voir.html.twig" %}
+
+{% set page_title = 'Contact information' %}
+{% set coordonnees = 'subdrop' %}
+{% set page_icon = 'fa-pencil-square-o' %}
+{% set owlCarousel = 'cli_salaries_profil_coordonnees' %}
+
+{% block profil %}
+
+    <table class="table table-striped">
+        <tr>
+            <th class="table-bg radius-left"><i class="fa fa-pencil-square-o"></i>{{ page_title|trans }}</th>
+            <td class="table-bg radius-right"></td>
+        </tr>
+        <tr>
+            <th> {% trans %}Address{% endtrans %}: </th>
+            <td> {{ profil.address }} </td>
+        </tr>
+        <tr>
+            <th style="width:20%"> {% trans %}Address (continued){% endtrans %}:</th>
+            <td> {{ profil.addresscontinued }} </td>
+        </tr>
+        <tr>
+            <th style="width:20%"> {% trans %}City{% endtrans %}:</th>
+            <td> {{ profil.city }} </td>
+        </tr>
+        <tr>
+            <th style="width:20%"> {% trans %}Postal code{% endtrans %}:</th>
+            <td> {% if profil.postalcode %}{{ profil.postalcode }}{% endif %}</td>
+        </tr>
+        <tr>
+            <th style="width:20%"> {% trans %}Country{% endtrans %}:</th>
+            <td> {{ profil.country }} </td>
+        </tr>
+        <tr>
+            <th> {% trans %}Phone{% endtrans %}: </th>
+            <td> {{ profil.landline }} </td>
+        </tr>
+        <tr>
+            <th> {% trans %}Cellphone{% endtrans %}: </th>
+            <td> {{ profil.phone }} </td>
+        </tr>
+        <tr>
+            <th> {% trans %}Professional phone{% endtrans %}: </th>
+            <td> {{ profil.professionalphone }} </td>
+        </tr>
+        <tr>
+            <th> {% trans %}Professional email{% endtrans %}: </th>
+            <td> {% if salarie is defined %}{{ salarie.email }} {% else %} {{ user.email }} {% endif %} </td>
+        </tr>
+        <tr>
+            <th> {% trans %}Email{% endtrans %}:</th>
+            <td> {{ profil.email }} </td>
+        </tr>
+    </table>
+        {% if salarie is not defined %}
+            <a href="{{ path('cli_profil_modifier_coordonnees') }}" class="btn btn-primary">{% trans %}Edit{% endtrans %}</a>
+        {% else %}
+            <a href="{{ path('cli_salaries_profil_modifier_coordonnees', {'id':salarie.id}) }}" class="btn btn-primary">{% trans %}Edit{% endtrans %}</a>
+        {% endif %}
+
+    {% include 'client/profil/profilUpdate.html.twig' %}
+    {% include 'client/profil/pj.html.twig' %}
+
+{% endblock %}

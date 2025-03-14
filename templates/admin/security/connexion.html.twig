@@ -1,0 +1,104 @@
+
+    {# Header #}
+    {% include 'admin/core/header.html.twig' %}
+    {# #Header #}
+
+    <body class="adminbody bg-color">
+
+
+{% set page_title = 'Connexion' %}
+
+{% block body %}
+<div class="content">
+    <div class="container-fluid">
+        <div id="content">
+            <div class="row clearfix">
+                <div class="login-box" style="margin:0 auto;margin-top:33px;margin-bottom:33px;">
+                    <div class="logo">
+                        <i class="fa fa-group" style="font-size:9em"></i>
+                        <h4>
+                            <small>
+                                <b>Populorum.fr</b>
+                                Connexion à l'espace administration
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="card">
+                        <div style="margin:0 auto;margin-top:33px;margin-bottom:33px;">
+                            <form action="{{ path('adm_connexion') }}" id="connexion" method="POST">
+                                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+                                <div class="input-group"> {# icône css #}
+                                    <div class="form-line">
+                                        <label for="username">
+                                            <small style="font-size:1.5em;">
+                                                <i class="fa fa-at"></i>
+                                                Adresse mail
+                                            </small>
+                                        </label>
+                                        <input type="text" class="form-control" id="username" name="_username" placeholder="Adresse mail" value="{{ last_username }}" required="required" autocomplete="username" />
+                                    </div>
+                                </div>
+                                <div class="input-group" style="margin-top:9px">
+                                    <div class="form-line">
+                                        <label for="password">
+                                            <small style="font-size:1.5em;">
+                                                <i class="fa fa-unlock-alt"></i>
+                                                Mot de passe
+                                            </small>
+                                        </label>
+                                        <input type="password" class="form-control" id="password" name="_password" placeholder="Mot de passe" required="required" autocomplete="current-password" />
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:12px; margin-bottom:12px;">
+                                    <div class="col-xs-4" style="position: relative; left: 30%;">
+                                        <button class="btn btn-block bg-ao waves-effect btn-primary" style="margin-top:0px" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}">Connexion</button>
+                                    </div>
+                                    <div class="col-xs-8 p-t-5" style="position: relative; left: 30%;">
+                                        <input type="checkbox" id="remember_me" name="_remember_me" value="on"  />
+                                        <label for="remember_me">Se souvenir de moi </label>
+                                    </div>
+                                </div>
+
+                                {% if error %}
+                                    <div style="color:red;">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                {% endif %}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+    {% block javascript %}
+        <script src="{{ asset('js/modernizr.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/moment.min.js') }}"></script>
+
+        <script src="{{ asset('js/popper.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+        <script src="{{ asset('js/detect.js') }}"></script>
+        <script src="{{ asset('js/fastclick.js') }}"></script>
+        <script src="{{ asset('js/jquery.blockUI.js') }}"></script>
+        <script src="{{ asset('js/jquery.nicescroll.js') }}"></script>
+
+        {# App js #}
+        <script src="{{ asset('js/pikeadmin.js') }}"></script>
+    {% endblock %}
+
+    <footer class="footer">
+        <span class="text-right">
+            &copy; {{ 'now'|date('Y') }} <a target="_blank" href="#">Populorum.fr</a>
+        </span>
+    </footer>
+
+    </div>
+    {# END main #}
+
+    </body>
+</html>

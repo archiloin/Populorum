@@ -1,0 +1,194 @@
+    {# Left Sidebar #}
+    <div class="left main-sidebar">
+        <div class="sidebar-inner leftscroll">
+            <div id="sidebar-menu">
+                <ul>
+                    <li class="submenu {% if menuDashboard is defined %}{{ menuDashboard }}{% endif %}">
+                        <a href="{{ path('cli_dashboard') }}"><i class="fa fa-fw fa-desktop"></i><span>Dashboard </span> </a>
+                    </li>
+                    <li class="submenu {% if menuAdmin is defined %}{{ menuAdmin }}{% endif %}">
+                        <a href="#" {% if menuAdmin is defined %}class="{{ menuAdmin }}{% endif %}><i class="fa fa-magic"></i><span><s>Administrer</s></span> <span class="menu-arrow"></span></a>
+                        <ul style="{% if menuAdmin is defined %}{{ menuUL }}{% endif %}">
+                            <li class="submenu {% if menuUtilisateurs is defined %}{{ menuUtilisateurs }}{% endif %}">
+                                <a href="#" class="fa fa-group{% if menuUtilisateurs is defined %}{{ menuAdmin }}{% endif %}"> <span><s>Utilisateurs</s></span></a>
+                            </li>
+                            <li class="submenu {% if menuEmploi is defined %}{{ menuEmploi }}{% endif %}">
+                                <a href="#" {% if menuEmploi is defined %}class="{{ menuAdmin }}{% endif %}><i class="fa fa-suitcase"></i><span><s>Emploi</s></span> <span class="menu-arrow"></span> </a>
+                                <ul style="{% if menuEmploi is defined %}{{ menuUL }}{% endif %}">
+                                    <li class="{% if menuTitresDePostes is defined %}{{ menuTitresDePostes }}{% endif %}">
+                                        <a href="#" class="fa fa-text-width"> <s>Titres de postes</s></a>
+                                    </li>
+                                    <li class="{% if menuRemuneration is defined %}{{ menuRemuneration }}{% endif %}">
+                                        <a href="#" class="fa fa-euro"> <s>Échelons de rémunération</s></a>
+                                    </li>
+                                    <li class="{% if menuStatutEmploi is defined %}{{ menuStatutEmploi }}{% endif %}">
+                                        <a href="#" class="fa fa-strikethrough"> <s>Statut emploi</s></a>
+                                    </li>
+                                    <li class="{% if menuCategoriesEmplois is defined %}{{ menuCategoriesEmplois }}{% endif %}">
+                                        <a href="#" class="fa fa-barcode"> <s>Catégories d'emplois</s></a>
+                                    </li>
+                                    <li class="{% if menuEquipesDeTravail is defined %}{{ menuEquipesDeTravail }}{% endif %}">
+                                        <a href="#" class="fa fa-users"> <s>Équipes de travail</s></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="submenu {% if menuOrganisation is defined %}{{ menuOrganisation }}{% endif %}">
+                                <a href="#" {% if menuOrganisation is defined %}class="{{ menuAdmin }}{% endif %}><i class="fa fa-institution"></i><span><s>Organisation</s></span> <span class="menu-arrow"></span> </a>
+                                <ul style="{% if menuOrganisation is defined %}{{ menuUL }}{% endif %}">
+                                    <li class="{% if menuInformationGenerales is defined %}{{ menuInformationGenerales }}{% endif %}">
+                                        <a href="#" class="fa fa-file-text-o"> <s>Informations générales</s></a>
+                                    </li>
+                                    <li class="{% if menuFiliale is defined %}{{ menuFiliale }}{% endif %}">
+                                        <a href="#" class="fa fa-sitemap"> <s>Filiales</s></a>
+                                    </li>
+                                    <li class="{% if menuStructure is defined %}{{ menuStructure }}{% endif %}">
+                                        <a href="#" class="fa fa-codepen"> <s>Structure</s></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="submenu {% if menuCertif is defined %}{{ menuCertif }}{% endif %}">
+                                <a href="#" {% if menuCertif is defined %}class="{{ menuAdmin }}{% endif %}><i class="fa fa-certificate"></i><span><s>Certifications</s></span> <span class="menu-arrow"></span> </a>
+                                <ul style="{% if menuCertif is defined %}{{ menuUL }}{% endif %}">
+                                    <li class="{% if menuCompetences is defined %}{{ menuCompetences }}{% endif %}">
+                                        <a href="#" class="fa fa-sliders"> <s>Compétences</s></a>
+                                    </li>
+                                    <li class="{% if menuEtudes is defined %}{{ menuEtudes }}{% endif %}">
+                                        <a href="#" class="fa fa-mortar-board"> <s>Études</s></a>
+                                    </li>
+                                    <li class="{% if menuPermis is defined %}{{ menuPermis }}{% endif %}">
+                                        <a href="#" class="fa fa-drivers-license-o"> <s>Permis</s></a>
+                                    </li>
+                                    <li class="{% if menuLangues is defined %}{{ menuLangues }}{% endif %}">
+                                        <a href="#" class="fa fa-sign-language"> <s>Langues</s></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="submenu {% if menuNationalites is defined %}{{ menuNationalites }}{% endif %}">
+                                <a href="#" class="fa fa-vcard-o{% if menuNationalites is defined %}{{ menuAdmin }}{% endif %}"> <span><s>Nationalités</s></span></a>
+                            </li>
+                            <li class="submenu {% if menuConfig is defined %}{{ menuConfig }}{% endif %}">
+                                <a href="#" class="fa fa-gear{% if menuConfig is defined %}{{ menuAdmin }}{% endif %}"> <span><s>Configuration</s></span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="submenu {% if menuSalaries is defined %}{{ menuSalaries }}{% endif %}">
+                        <a href="#" {% if menuSalaries is defined %}class="{{ menuSalaries }}{% endif %}><i class="fa fa-address-book-o"></i><span>Gestion</span> <span class="menu-arrow"></span> </a>
+                        <ul style="{% if menuSalaries is defined %}{{ menuUL }}{% endif %}">
+                            <li class="{% if menuVoirSalaries is defined %}{{ menuVoirSalaries }}{% endif %}">
+                                <a href="{{ path('cli_salaries') }}" class="fa fa-group"> Listes des salariés</a>
+                            </li>
+                            <li class="{% if menuAjouterSalaries is defined %}{{ menuAjouterSalaries }}{% endif %}">
+                                <a href="{{ path('cli_salaries_ajouter') }}" class="fa fa-user"> Ajouter un salarié</a>
+                            </li>
+                            <li class="{% if menuFinDeContrat is defined %}{{ menuFinDeContrat }}{% endif %}">
+                                <a href="#" class="fa fa-user-times"> <s>Fin de contrat</s></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="submenu {% if menuConges is defined %}{{ menuConges }}{% endif %}">
+                        <a href="#" {% if menuConges is defined %}class="{{ menuConges }}{% endif %}><i class="fa fa-hotel"></i><span><s>Congé</s></span> <span class="menu-arrow"></span> </a>
+                        <ul style="{% if menuConges is defined %}{{ menuUL }}{% endif %}">
+                            <li class="{% if menuCongesDemande is defined %}{{ menuCongesDemande }}{% endif %}">
+                                <a href="#" class="fa fa-question-circle-o"> <s>Faire une demande</s></a>
+                            </li>
+                            <li class="{% if menuMesConges is defined %}{{ menuMesConges }}{% endif %}">
+                                <a href="{{ path('cli_conges') }}" class="fa fa-hotel"> <s>Mes congés</s></a>
+                            </li>
+                            <li class="submenu {% if menuAutorisationsConges is defined %}{{ menuAutorisationsConges }}{% endif %}">
+                                <a href="#" {% if menuAutorisationsConges is defined %}class="{{ menuConges }}{% endif %}><i class="fa fa-thumbs-o-up"></i><span><s>Autorisations</s></span> <span class="menu-arrow"></span> </a>
+                                <ul style="{% if menuAutorisationsConges is defined %}{{ menuUL }}{% endif %}">
+                                    <li class="{% if menuAutorisationsAjout is defined %}{{ menuAutorisationsAjout }}{% endif %}">
+                                        <a href="#" class="fa fa-plus"> <s>Ajouter</s></a>
+                                    </li>
+                                    <li class="{% if menuAutorisationsSalarie is defined %}{{ menuAutorisationsSalarie }}{% endif %}">
+                                        <a href="#" class="fa fa-list-alt"> <s>Salarié</s></a>
+                                    </li>
+                                    <li class="{% if menuMesAutorisations is defined %}{{ menuMesAutorisations }}{% endif %}">
+                                        <a href="#" class="fa fa-outdent"> <s>Mes autorisations</s></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="submenu {% if menuRapports is defined %}{{ menuRapports }}{% endif %}">
+                                <a href="#" {% if menuRapports is defined %}class="{{ menuConges }}{% endif %}><i class="fa fa-clipboard"></i><span><s>Rapports d'utilisation</s></span> <span class="menu-arrow"></span> </a>
+                                <ul style="{% if menuRapports is defined %}{{ menuUL }}{% endif %}">
+                                    <li class="{% if menuRapportsAutorisationsConge is defined %}{{ menuRapportsAutorisationsConge }}{% endif %}">
+                                        <a href="#" class="fa fa-thumbs-o-up"> <s>Autorisations</s></a>
+                                    </li>
+                                    <li class="{% if menuRapportsMesAutorisationsConge is defined %}{{ menuRapportsMesAutorisationsConge }}{% endif %}">
+                                        <a href="#" class="fa fa-outdent"> <s>Mes autorisations</s></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="{% if menuPermis is defined %}{{ menuPermis }}{% endif %}">
+                                <a href="#" class="fa fa-th-list"> <s>Liste des congés</s></a>
+                            </li>
+                            <li class="{% if menuLangues is defined %}{{ menuLangues }}{% endif %}">
+                                <a href="#" class="fa fa-toggle-on"> <s>Attribuer congés</s></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="submenu {% if menuTemps is defined %}{{ menuTemps }}{% endif %}">
+                        <a href="#" {% if menuTemps is defined %}class="{{ menuTemps }}{% endif %}><i class="fa fa-clock-o"></i><span><s>Temps</s></span> <span class="menu-arrow"></span> </a>
+                        <ul style="{% if menuTemps is defined %}{{ menuUL }}{% endif %}">
+                            <li class="submenu {% if menuFeuilleDeTemps is defined %}{{ menuFeuilleDeTemps }}{% endif %}">
+                                <a href="#" {% if menuFeuilleDeTemps is defined %}class="{{ menuTemps }}{% endif %}><i class="fa fa-file-o"></i><span><s>Feuille de temps</s></span> <span class="menu-arrow"></span> </a>
+                                <ul style="{% if menuFeuilleDeTemps is defined %}{{ menuUL }}{% endif %}">
+                                    <li class="{% if menuTempsMesFeuilles is defined %}{{ menuTempsMesFeuilles }}{% endif %}">
+                                        <a href="#" class="fa fa-window-restore"> <s>Mes feuilles</s></a>
+                                    </li>
+                                    <li class="{% if menuTempsFeuillesSalarie is defined %}{{ menuTempsFeuillesSalarie }}{% endif %}">
+                                        <a href="#" class="fa fa-files-o"> <s>Feuilles du salarié</s></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="submenu {% if menuTempsPresence is defined %}{{ menuTempsPresence }}{% endif %}">
+                                <a href="#" {% if menuTempsPresence is defined %}class="{{ menuTemps }}{% endif %}><i class="fa fa-universal-access"></i><span><s>Présence</s></span> <span class="menu-arrow"></span> </a>
+                                <ul style="{% if menuTempsPresence is defined %}{{ menuUL }}{% endif %}">
+                                    <li class="{% if menuTempsPresenceMesDossiers is defined %}{{ menuTempsPresenceMesDossiers }}{% endif %}">
+                                        <a href="#" class="fa fa-folder"> <s>Mes dossiers</s></a>
+                                    </li>
+                                    <li class="{% if menuTempsPresencePointage is defined %}{{ menuTempsPresencePointage }}{% endif %}">
+                                        <a href="#" class="fa fa-hand-o-right"> <s>Pointage d'arrivée & départ</s></a>
+                                    </li>
+                                    <li class="{% if menuTempsPresenceDossiers is defined %}{{ menuTempsPresenceDossiers }}{% endif %}">
+                                        <a href="#" class="fa fa-folder-open-o"> <s>Dossiers du salarié</s></a>
+                                    </li>
+                                    <li class="{% if menuTempsPresenceConfiguration is defined %}{{ menuTempsPresenceConfiguration }}{% endif %}">
+                                        <a href="#" class="fa fa-gear"> <s>Configuration</s></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="submenu {% if menuTempsRapports is defined %}{{ menuTempsRapports }}{% endif %}">
+                                <a href="#" {% if menuTempsRapports is defined %}class="{{ menuTemps }}{% endif %}><i class="fa fa-clipboard"></i><span><s>Rapports</s></span> <span class="menu-arrow"></span> </a>
+                                <ul style="{% if menuTempsRapports is defined %}{{ menuUL }}{% endif %}">
+                                    <li class="{% if menuTempsRapportsProjets is defined %}{{ menuTempsRapportsProjets }}{% endif %}">
+                                        <a href="#" class="fa fa-object-group"> <s>Projets</s></a>
+                                    </li>
+                                    <li class="{% if menuTempsRapportsSalarie is defined %}{{ menuTempsRapportsSalarie }}{% endif %}">
+                                        <a href="#" class="fa fa-user"> <s>Salarié</s></a>
+                                    </li>
+                                    <li class="{% if menuTempsRapportsSynthese is defined %}{{ menuTempsRapportsSynthese }}{% endif %}">
+                                        <a href="#" class="fa fa-universal-access"> <s>Synthèse de présence</s></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="submenu {% if menuTempsInformations is defined %}{{ menuTempsInformations }}{% endif %}">
+                                <a href="#" {% if menuTempsInformations is defined %}class="{{ menuTemps }}{% endif %}><i class="fa fa-info"></i><span><s>Informations</s></span> <span class="menu-arrow"></span> </a>
+                                <ul style="{% if menuTempsInformations is defined %}{{ menuUL }}{% endif %}">
+                                    <li class="{% if menuTempsInformationsClients is defined %}{{ menuTempsInformationsClients }}{% endif %}">
+                                        <a href="#" class="fa fa-user-o"> <s>Clients</s></a>
+                                    </li>
+                                    <li class="{% if menuTempsInformationsProjets is defined %}{{ menuTempsInformationsProjets }}{% endif %}">
+                                        <a href="#" class="fa fa-object-group"> <s>Projets</s></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="submenu {% if menuPlanning is defined %}{{ menuPlanning }}{% endif %}">
+                        <a href="#"><i class="fa fa-fw fa-object-group"></i><span><s>Planning</s> </span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

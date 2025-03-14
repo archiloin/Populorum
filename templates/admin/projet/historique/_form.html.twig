@@ -1,0 +1,110 @@
+{{ form_start(form) }}
+{{ form_errors(form) }}
+    <table class="table table-card-sm-left">
+        <tr>
+            <td>
+                <h6> Validation : </h6>
+                {{ form_widget(form.isActive, {'attr':{'class':'form-control'}}) }}
+                {{ form_errors(form.isActive) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6> Nom : </h6>
+                {{ form_widget(form.nom, {'attr':{'class':'form-control'}}) }}
+                {{ form_errors(form.nom) }}
+            </td>
+        </tr>
+        <tr>
+            <td style="width:100%">
+            <div style="float:left; margin-right:23%">
+                <h6 style="float:left;"> Du : </h6>
+                {{ form_widget(form.date) }}
+                {{ form_errors(form.date) }}
+            </div>
+            <div>
+                <h6> Au : </h6>
+                {{ form_widget(form.dateFin) }}
+                {{ form_errors(form.dateFin) }}
+            </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6> Lieu : </h6>
+                {{ form_widget(form.lieu, {'attr':{'class':'form-control'}}) }}
+                {{ form_errors(form.lieu) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6> Adresse : </h6>
+                {{ form_widget(form.address, {'attr':{'class':'form-control'}}) }}
+                {{ form_errors(form.address) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6> Ville : </h6>
+                {{ form_widget(form.ville, {'attr':{'class':'form-control'}}) }}
+                {{ form_errors(form.ville) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6> Code postal : </h6>
+                {{ form_widget(form.codePostal, {'attr':{'class':'form-control'}}) }}
+                {{ form_errors(form.codePostal) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6> Lieu Covoiturage 1 : </h6>
+                {{ form_widget(form.lieuCovoit, {'attr':{'class':'form-control'}}) }}
+                {{ form_errors(form.lieuCovoit) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6> Lieu Covoiturage 2 : </h6>
+                {{ form_widget(form.lieuCovoitDeux, {'attr':{'class':'form-control'}}) }}
+                {{ form_errors(form.lieuCovoitDeux) }}
+            </td>
+        </tr>
+    </table>
+
+    {% if is_granted('ROLE_ADMIN') %}
+      <table class="table table-bordered table-card-sm-left">
+          <tr>
+              <th class="table-bg">Gestionnaire(s) attribuer au projet</th>
+          </tr>
+          <tr>
+              <td>
+                  {{ form_widget(form.gestionnaires) }}
+                  {{ form_errors(form.gestionnaires) }}
+              </td>
+          </tr>
+      </table>
+    {% endif %}
+
+    <a
+        href="javascript: window.history.go(-1)"
+        class="fa fa-reply btn btn-primary"
+        style="
+            font-size:3em;
+            position:fixed;
+            right:39%;
+            top:30%;
+            border-radius:23px  ">
+    </a>
+    <button
+        type="submit"
+        class="fa fa-save btn btn-primary"
+        style="
+            font-size:3em;
+            position:fixed;
+            right:33%;
+            top:30%;
+            border-radius:23px  ">
+    </button>
+{{ form_end(form) }}

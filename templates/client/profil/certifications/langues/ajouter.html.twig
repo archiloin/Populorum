@@ -1,0 +1,16 @@
+
+{% set page = 'certifications' %}
+{% set form_end = true %}
+
+{% set filename_html = 'langues/_form.html.twig' %}
+{% set form_end = '{{ form_end(languesForm) }}' %}
+
+{% set modalLabel = 'Add language' %}
+{% set page_title = 'Language' %}
+{% set title = 'Languages' %}
+{% set page_icon = 'fa-asl-interpreting' %}
+
+{% block exp %}
+		{% include 'client/profil/modal.html.twig' %}
+		{{ form_end(languesForm) }}
+{% endblock %}

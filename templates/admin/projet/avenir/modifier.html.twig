@@ -1,0 +1,33 @@
+{% extends 'admin/base.html.twig' %}
+
+{% set page_title = 'Modifier le projet' %}
+{% set menuProjet = 'subdrop' %}
+
+{% block body %}
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb-holder">
+                            <h1 class="main-title float-left">Modifier le projet</h1>
+                            <ol class="breadcrumb float-right">
+                                <li class="breadcrumb-item">Accueil</li>
+                                <li class="breadcrumb-item">Les projets</li>
+                                <li class="breadcrumb-item active">Modifier</li>
+                            </ol>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card align-center">
+                            {{ include('admin/projet/avenir/_form.html.twig', {'button_label': 'Update'}) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

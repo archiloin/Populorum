@@ -1,0 +1,33 @@
+
+<div id="main">
+    {# top bar navigation #}
+    <div class="headerbar">
+
+        {# LOGO #}
+        <div class="headerbar-left">
+            <a href="{{ path('adm_dashboard') }}" class="logo"><img alt="Logo" src="{{ asset('images/logo.png') }}" /> <span class="color-orange">Admin</span></a>
+        </div>
+        <nav class="navbar-custom">
+            <ul class="list-inline float-right mb-0">
+                <li class="list-inline-item dropdown notif">
+                    {% if is_granted('ROLE_PREVIOUS_ADMIN') %}
+                    <a href="{{ path('adm_utilisateur_listing', {'_switch_user': '_exit'}) }}" class="dropdown-item notify-item">
+                        <i class="fa fa-unsorted"></i> <span>Se désincarner</span>
+                    </a>
+                    {% elseif app.user %}
+                    <a href="{{ path('adm_deconnexion') }}" class="dropdown-item notify-item">
+                        <i class="fa fa-power-off"></i> <span>Déconnexion</span>
+                    </a>
+                    {% endif %}
+                </li>
+            </ul>
+            <ul class="list-inline menu-left mb-0">
+                <li class="float-left">
+                    <button class="button-menu-mobile open-left">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+{# End Navigation #}

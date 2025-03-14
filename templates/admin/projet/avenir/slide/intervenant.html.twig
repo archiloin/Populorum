@@ -1,0 +1,139 @@
+{% extends 'admin/base.html.twig' %}
+
+{% set page_title = 'Assigner des utilisateurs' %}
+{% set menuProjet = 'subdrop' %}
+
+{% block body %}
+    <link href="{{ asset('plugins/bootstrap-select/css/bootstrap-select.css') }}" rel="stylesheet" />
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb-holder">
+                            <h1 class="main-title float-left">Assigner des utilisateur</h1>
+                            <ol class="breadcrumb float-right">
+                                <li class="breadcrumb-item">Accueil</li>
+                                <li class="breadcrumb-item active">Assigner des utilisateurs</li>
+                            </ol>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+                        <div class="card mb-3">
+                            <div id="content">
+                                {{ include('admin/projet/avenir/slide/utilisateur_form.html.twig', {'button_label': 'Update'}) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+                        <div class="card mb-3">
+                            <div id="content">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th class="table-bg">Les utilisateurs désignés pour cet tâche</th>
+                                    </tr>
+                                </table>
+
+                                {% if projet.lieuCovoit == null %}
+                                  Lieu Covoit 1 : n/a
+                                {% else %}
+                                  Lieu Covoit 1 : {{ projet.lieuCovoit }}
+                                {% endif %}
+                                <br>
+
+                                {% if projet.lieuCovoitDeux == null %}
+                                  Lieu Covoit 2 : n/a
+                                {% else %}
+                                  Lieu Covoit 2 : {{ projet.lieuCovoitDeux }}
+                                {% endif %}
+
+
+                                {{ form_start(formCovoit) }}
+                                {{ form_errors(formCovoit) }}
+                                <div style="margin-bottom:13px">
+                                    {{ form_label(formCovoit.horaireRDV, 'Horaire rendez-vous 1 :') }}
+                                    {{ form_widget(formCovoit.horaireRDV) }}
+                                    {{ form_errors(formCovoit.horaireRDV) }}
+                                    {{ form_label(formCovoit.horaireRDVDeux, 'Horaire rendez-vous 2 :') }}
+                                    {{ form_widget(formCovoit.horaireRDVDeux) }}
+                                    {{ form_errors(formCovoit.horaireRDVDeux) }}
+                                </div>
+
+                                {% for utilisateur in slide.utilisateurs %}
+                                    {{ utilisateur.profil.firstname }}
+                                    {{ utilisateur.profil.lastname }}<br>
+                                {% endfor %}
+
+                                <hr>
+                                <div class="align-left">
+                                    <h6><b>Chef d'équipe</b></h6>
+                                    <span>Salaire : € Brut</span><br>
+                                    <span>Vacation : Heures</span>
+                                </div>
+                                    <a href="javascript: window.history.go(-1)" class="btn btn-primary">Retour</a>
+                                    <input type="submit" class="btn btn-primary" value="Enregistrer" />
+                                {{ form_end(formCovoit) }}
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+                        <div class="card mb-3">
+                            <div id="content">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+                                        <th class="table-bg">Récapitulatif de la tâche</th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b>Nom du projet</b> : {{ projet.nom }} <br>
+                                            <b>Client</b> : {{ projet.utilisateur.profil.nomEntreprise }} <br>
+                                            <b>Lieu</b> : {{ projet.lieu }} <br>
+                                            <b>Gestionnaire</b> :
+                                            {% for gestionnaires in projet.gestionnaires %}
+                                                {{ gestionnaires.profil.firstname|join(', ') }}
+                                                {{ gestionnaires.profil.lastname|join(', ') }}
+                                            {% endfor %} <br>
+                                            <b>Spécialité</b> : {{ slide.specialites }} <br>
+                                            <b>Compétence</b> : {{ slide.competences }} <br>
+                                            <b>Get-in</b> :
+                                                {% if slide.getIn %}
+                                                    {{ slide.getIn|date('H:i') }}
+                                                {% endif %}
+                                            <br>
+                                            <b>Du</b> :
+                                                {% if slide.date %}
+                                                    {{ slide.date|date('d-m-y H:i') }}
+                                                {% endif %}
+                                            <br>
+                                            <b>Horaire coupure</b> :
+                                                {% if slide.coupure %}
+                                                    {{ slide.coupure|date('H:i') }}
+                                                {% endif %}
+                                            <br>
+                                            <b>Horaire reprise</b> :
+                                                {% if slide.reprise %}
+                                                    {{ slide.reprise|date('H:i') }}
+                                                {% endif %}
+                                            <br>
+                                            <b>Au</b> :
+                                                {% if slide.dateFin %}
+                                                    {{ slide.dateFin|date('d-m-y H:i') }}
+                                                {% endif %}
+                                            <br>
+                                            <b>Vacation</b> : {{ slide.vac }} <br>
+                                            <b>Salaire</b> : {{ slide.salaire }}€ Brut
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

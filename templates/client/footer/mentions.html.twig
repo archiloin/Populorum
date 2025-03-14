@@ -1,0 +1,40 @@
+{% extends "client/base.html.twig" %}
+
+{% set page_title = "Legal Notice" %}
+
+{% block body %}
+<div class="content-page">
+		<div class="content">
+				<div class="container-fluid">
+						<div class="row">
+								<div class="col-xl-12">
+										<div class="breadcrumb-holder">
+												<h1 class="main-title float-left">{% trans %}Legal Notice{% endtrans %}</h1>
+												<ol class="breadcrumb float-right">
+														<li class="breadcrumb-item">{% trans %}Home{% endtrans %}</li>
+														<li class="breadcrumb-item active">{% trans %}Legal Notice{% endtrans %}</li>
+												</ol>
+												<div class="clearfix"></div>
+										</div>
+								</div>
+						</div>
+						<div class="row clearfix">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+										<div class="card">
+												<h5>
+														<ul>
+																<li>{% trans %}Microbusiness{% endtrans %}</li>
+																<li>SIRET : 794 958 553 00024</li>
+																<li>{% trans %}Host:{% endtrans %} o2switch.fr</li>
+																<li>
+																		{% trans %}Website realized & maintained by{% endtrans %} <strong>Andrew Caron</strong>
+																</li>
+														</ul>
+												</h5>
+										</div>
+								</div>
+						</div>
+				</div>
+		</div>
+</div>
+{% endblock %}

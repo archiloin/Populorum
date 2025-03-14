@@ -1,0 +1,16 @@
+
+{% set page = 'certifications' %}
+{% set form_end = true %}
+
+{% set filename_html = 'skill/_form.html.twig' %}
+{% set form_end = '{{ form_end(skillForm) }}' %}
+
+{% set modalLabel = 'Add skill' %}
+{% set page_title = 'Skills' %}
+{% set title = 'Skill' %}
+{% set page_icon = 'fa-briefcase' %}
+
+{% block exp %}
+		{% include 'client/profil/modal.html.twig' %}
+		{{ form_end(skillForm) }}
+{% endblock %}

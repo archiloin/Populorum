@@ -1,0 +1,15 @@
+
+{% set page = 'certifications' %}
+{% set form_end = true %}
+
+{% set filename_html = 'permis/_form.html.twig' %}
+
+{% set modalLabel = 'Add driver license' %}
+{% set page_title = 'Driver license' %}
+{% set title = 'Driver license' %}
+{% set page_icon = 'fa-drivers-license' %}
+
+{% block exp %}
+		{% include 'client/profil/modal.html.twig' %}
+		{{ form_end(permisForm) }}
+{% endblock %}

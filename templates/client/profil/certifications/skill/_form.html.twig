@@ -1,0 +1,17 @@
+{{ form_start(skillForm) }}
+{{ form_errors(skillForm) }}
+<p>
+		<strong> {% trans %}Skill{% endtrans %} <i>*</i> : </strong>
+		{{ form_widget(skillForm.skill, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(skillForm.skill) }}
+</p>
+<p>
+		<strong> {% trans %}Years of experience{% endtrans %} : </strong>
+		{{ form_widget(skillForm.yearsExp, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(skillForm.yearsExp) }}
+</p>
+<p>
+		<strong> {% trans %}Comment{% endtrans %} : </strong>
+		{{ form_widget(skillForm.comment, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(skillForm.comment) }}
+</p>

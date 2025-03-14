@@ -1,0 +1,11 @@
+{% extends "client/profil/modifier.html.twig" %}
+
+{% set page_title = 'Personal informations' %}
+{% set informationsPersonnelles = 'subdrop' %}
+{% set page_icon = 'fa-info' %}
+
+{% block profil %}
+
+    {% include 'client/profil/informationsPersonnelles/_form.html.twig' %}
+
+{% endblock %}

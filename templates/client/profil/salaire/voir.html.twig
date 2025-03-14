@@ -1,0 +1,49 @@
+{% extends "client/base.html.twig" %}
+
+{% set page_title = 'Salaire' %}
+{% set salaire = 'subdrop' %}
+
+{% block body %}
+
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb-holder">
+                            <h1 class="main-title float-left">
+                                <i class="fa fa-euro"></i>
+                                {{ page_title }}
+                            </h1>
+                            <ol class="breadcrumb float-right">
+                                <li class="breadcrumb-item">Accueil</li>
+                                <li class="breadcrumb-item">Profil</li>
+                                <li class="breadcrumb-item active">Salaire</li>
+                            </ol>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div id="content" style="text-align:left">
+                                {% include 'client/profil/menu.html.twig' %}
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="float:right">
+                                    <table class="table table-striped">
+                                        <tr>
+                                            <th class="table-bg radius-left"><i class="fa fa-euro"></i> Salaire</th>
+                                            <td class="table-bg radius-right"></td>
+                                        </tr>
+                                    </table>
+                                    {# <a href="{{ path('cli_profil_modifier_informations_personnelles') }}" class="btn btn-primary">Modifier</a> #}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

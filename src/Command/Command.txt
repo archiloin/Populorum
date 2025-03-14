@@ -1,0 +1,5 @@
+php bin/console doctrine:migration:diff
+php bin/console doctrine:migration:migrate
+
+bin/console app:create-user
+bin/console app:set-role-user

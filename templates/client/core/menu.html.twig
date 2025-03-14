@@ -1,0 +1,54 @@
+    {# Left Sidebar #}
+    <div class="left main-sidebar">
+        <div class="sidebar-inner leftscroll">
+            <div id="sidebar-menu">
+                <ul>
+                    <li class="submenu {% if menuDashboard is defined %}{{ menuDashboard }}{% endif %}">
+                        <a href="{{ path('cli_dashboard') }}">
+                            <i class="fa fa-fw fa-desktop"></i>
+                            <span>{% trans %}Dashboard{% endtrans %}</span>
+                        </a>
+                    </li>
+                    {% if is_granted('ROLE_GESTIONNAIRE') %}
+                        <li class="submenu {% if menuSalaries is defined %}{{ menuSalaries }}{% endif %}">
+                            <a href="{{ path('cli_salaries') }}">
+                                <i class="fa fa-fw fa-group"></i>
+                                <span>
+                                    {% trans %}Employees{% endtrans %}
+                                </span>
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if is_granted('ROLE_GESTIONNAIRE') %}
+                        <li class="submenu {% if menuConges is defined %}{{ menuConges }}{% endif %}">
+                            <a href="{{ path('cli_conges') }}">
+                                <i class="fa fa-fw fa-hotel"></i>
+                                <span>
+                                    {% trans %}Leave & Absence{% endtrans %}
+                                </span>
+                            </a>
+                        </li>
+                    {% endif %}
+                    <li class="submenu" style="text-align:center;margin-top:33%">
+                        <span>{% trans %}Coming soon{% endtrans %}</span>
+                    </li>
+                    <li class="submenu {% if menuPlanning is defined %}{{ menuPlanning }}{% endif %}">
+                        <a href="{{ path('cli_planning_calendar')}}">
+                            <i class="fa fa-fw fa-object-group"></i>
+                            <span>
+                                {% trans %}Planning{% endtrans %}
+                            </span>
+                        </a>
+                    </li>
+                    <li class="submenu {% if menuSkills is defined %}{{ menuSkills }}{% endif %}">
+                        <a href="{{ path('cli_skills')}}">
+                            <i class="fa fa-fw fa-briefcase"></i>
+                            <span>
+                                {% trans %}Skills{% endtrans %}
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

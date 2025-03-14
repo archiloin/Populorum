@@ -1,0 +1,115 @@
+{{ form_start(form) }}
+{{ form_errors(form) }}
+
+    <table class="table table-card-sm-left">
+        {% if is_granted('ROLE_ADMIN') %}
+          <tr>
+              <td>
+                  <h6> Antenne : </h6>
+                  {{ form_widget(form.antenne) }}
+                  {{ form_errors(form.antenne) }}
+              </td>
+          </tr>
+        {% endif %}
+        <tr>
+            <td>
+                <h6> Nombres d'utilisateurs : </h6>
+                {{ form_widget(form.nbrInter, {'attr':{'class':'form-control'}}) }}
+                {{ form_errors(form.nbrInter) }}
+            </td>
+        </tr>
+        <tr>
+            <td style="width:100%">
+                <div style="margin-bottom:3%">
+                    <h6> Get-in </h6>
+                    {{ form_widget(form.getIn) }}
+                    {{ form_errors(form.getIn) }}
+                </div>
+                <div style="float:left; margin-right:13%">
+                    <h6> Du : </h6>
+                    {{ form_widget(form.date) }}
+                    {{ form_errors(form.date) }}
+                </div>
+                <div>
+                    <h6> Au : </h6>
+                    {{ form_widget(form.dateFin) }}
+                    {{ form_errors(form.dateFin) }}
+                </div>
+                <br>
+                <div style="float:left; margin-right:13%">
+                    <h6> Heure de coupure </h6>
+                    {{ form_widget(form.coupure) }}
+                    {{ form_errors(form.coupure) }}
+                </div>
+                <div>
+                    <h6> Heure de reprise </h6>
+                    {{ form_widget(form.reprise) }}
+                    {{ form_errors(form.reprise) }}
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6> Salaire brut </h6>
+                {{ form_widget(form.salaire, {'attr':{'class':'form-control'}}) }}
+                {{ form_errors(form.salaire) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6> Nombres d'heures </h6>
+                {{ form_widget(form.vac, {'attr':{'class':'form-control'}}) }}
+                {{ form_errors(form.vac) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6> Description </h6>
+                {{ form_widget(form.description, {'attr':{'class':'form-control'}}) }}
+                {{ form_errors(form.description) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6> Poste </h6>
+                {{ form_widget(form.postes, {'attr':{'class':'form-control'}}) }}
+                {{ form_errors(form.postes) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6> Spécialités </h6>
+                {{ form_widget(form.specialites, {'attr':{'class':'form-control'}}) }}
+                {{ form_errors(form.specialites) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6> Compétences </h6>
+                {{ form_widget(form.competences, {'attr':{'class':'form-control'}}) }}
+                {{ form_errors(form.competences) }}
+            </td>
+        </tr>
+    </table>
+
+    <a
+        href="javascript: window.history.go(-1)"
+        class="fa fa-reply btn btn-primary"
+        style="
+            font-size:3em;
+            position:fixed;
+            right:39%;
+            top:33%;
+            border-radius:23px  ">
+    </a>
+    <button
+        type="submit"
+        class="fa fa-save btn btn-primary"
+        style="
+            font-size:3em;
+            position:fixed;
+            right:33%;
+            top:33%;
+            border-radius:23px  ">
+    </button>
+{{ form_end(form) }}

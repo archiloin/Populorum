@@ -1,0 +1,16 @@
+<table class="table table-striped">
+		<tr>
+				<th class="table-bg radius-left">{% trans %}Language{% endtrans %}</th>
+				<th class="table-bg">{% trans %}Ease{% endtrans %}</th>
+				<th class="table-bg">{% trans %}Skill{% endtrans %}</th>
+				<th class="table-bg radius-right">{% trans %}Comment{% endtrans %}</th>
+		</tr>
+		{% for langues in languess %}
+			<tr>
+					<td> {{ langues.langues }} </td>
+					<td> {{ langues.lvl }} </td>
+					<td> {{ langues.skill }} </td>
+					<td> {{ langues.comment }} </td>
+			</tr>
+		{% endfor %}
+</table>

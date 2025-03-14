@@ -1,0 +1,101 @@
+{% if is_granted('ROLE_USER') and app.user.isActive == true %}
+
+    {% include 'client/core/header.html.twig' %}
+
+    <body class="adminbody">
+
+        {# Top Bar #}
+        {% include 'client/core/top.html.twig' %}
+
+        {# Menu #}
+        {% include 'client/core/menu.html.twig' %}
+
+        {% block javascript %}
+            <script src="{{ asset('js/modernizr.min.js') }}"></script>
+            <script src="{{ asset('js/moment.min.js') }}"></script>
+
+            <script src="{{ asset('js/jquery.min.js') }}"></script>
+            <script src="{{ asset('js/popper.min.js') }}"></script>
+            <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+            <script src="{{ asset('js/detect.js') }}"></script>
+            <script src="{{ asset('js/fastclick.js') }}"></script>
+            <script src="{{ asset('js/jquery.blockUI.js') }}"></script>
+            <script src="{{ asset('js/jquery.nicescroll.js') }}"></script>
+
+            {# App js #}
+            <script src="{{ asset('js/pikeadmin.js') }}"></script>
+
+            {# Alerte notification #}
+            <script src="{{ asset('js/bootstrap-notify.js') }}"></script>
+
+        {% endblock %}
+
+        {% block body %}
+        {% endblock %}
+        <script>
+            {% for message in app.flashes('notice') %}
+                $.notify({
+                  message: '{{ message }}'
+                },{
+                  placement: {
+                    from: "top",
+                    align: "center"
+                },
+                  delay: 9000,
+                });
+            {% endfor %}
+
+            {% for message in app.flashes('success') %}
+                $.notify({
+                  message: '{{ message }}'
+                },{
+                  placement: {
+                    from: "top",
+                    align: "center"
+                },
+                  delay: 9000,
+                });
+            {% endfor %}
+
+            {% for message in app.flashes('error') %}
+                $.notify({
+                  message: '{{ message }}'
+                },{
+                  placement: {
+                    from: "top",
+                    align: "center"
+                },
+                  delay: 9000,
+                });
+            {% endfor %}
+        </script>
+
+        <footer class="footer">
+            <span class="text-right">
+                &copy; {{ 'now'|date('Y') }} Populorum.fr par <a href="https://andrew-caron.fr">Andrew Caron</a>
+                <span style="margin-left: 33px;">
+                    <a href="{{ path('cli_footer_cgu') }}"> - {% trans %}Terms of Service{% endtrans %}</a>
+                </span>
+                <span style="margin-left: 33px;">
+                    <a href="{{ path('cli_footer_mentions') }}"> - {% trans %}Legal Notice{% endtrans %}</a>
+                </span>
+                <span style="margin-left: 33px;">
+                    <a href="https://forum.populorum.fr"> - {% trans %}Forum{% endtrans %}</a>
+                </span>
+            </span>
+            <span class="float-right">
+                Beta <a href="#"><b>2.0</b></a>
+            </span>
+        </footer>
+
+    </body>
+</html>
+
+{% else %}
+{% block vision %}
+
+    {% include('vision/bannissement/index.html.twig') %}
+
+{% endblock %}
+{% endif %}

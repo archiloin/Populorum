@@ -1,0 +1,21 @@
+eventDrop: function(eventDropInfo){
+console.log(eventDropInfo);
+var start = eventDropInfo.event._instance.range.start.toUTCString();
+var end = eventDropInfo.event._instance.range.end.toUTCString();
+
+var xhr = $.ajax({
+				url: '{{ path('cli_planning_calendar_drop') }}',
+		data: {
+					idEvent:eventDropInfo.event._def.publicId,
+					start:start,
+					end:end,
+		},
+		type: "POST",
+		success: function(data) {
+				//alert('json');
+		},
+		error: function() {
+				alert("erreur lors de l'appel de l'url dans POST event/drop : contactez l'administrateur du site");
+		},
+});
+},

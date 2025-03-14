@@ -1,0 +1,61 @@
+{% extends "client/core/content.html.twig" %}
+
+{% set page_title = 'Account review' %}
+{% set menuDashboard = 'subdrop' %}
+{% set breadcrumb = 'Account review' %}
+{% set nb_salaries = user.salaries.count -1 %}
+
+{% block content %}
+
+    <div class="col-xs-12 col-md-4 col-lg-4 col-xl-3">
+    		<div class="card-box tilebox-one noradius">
+    				<div class="card align-center">
+    						<h5>{% trans %}Account review{% endtrans %}</h5>
+
+                <ul style="font-size:1.3em">
+                    <li>
+                        {{ user.plan }}
+                    </li>
+                    <li>
+                        {% if nb_salaries < 99 %}
+                            {% trans %}The offer was automatically upgrade in:{% endtrans %}<br>
+                            {{ 99 - nb_salaries }} {% trans %}Employees{% endtrans %}
+                        {% elseif nb_salaries < 999 %}
+                            {% trans %}The offer was automatically upgrade in:{% endtrans %}<br>
+                            {{ 999 - nb_salaries }} {% trans %}Employees{% endtrans %}
+                        {% elseif nb_salaries < 4999 %}
+                            {% trans %}The offer was automatically upgrade in:{% endtrans %}<br>
+                            {{ 4999 - nb_salaries }} {% trans %}Employees{% endtrans %}
+                        {% else %}
+                            {% trans %}Actually you have the best offer{% endtrans %}
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% trans %}Employees{% endtrans %} : {{ nb_salaries }}
+                    </li>
+                    <li>
+                        {% trans %}Actual price{% endtrans %} :
+
+                        {% if nb_salaries < 99 %}
+                            {{ nb_salaries * 1.99 }}
+                        {% elseif nb_salaries < 999 %}
+                            {{ nb_salaries * 1.69 }}
+                        {% elseif nb_salaries < 4999 %}
+                            {{ nb_salaries * 1.39 }}
+                        {% else %}
+                            {{ nb_salaries * 1.09 }}
+                        {% endif %}
+                        {% trans %}£{% endtrans %}/{% trans %}month{% endtrans %}
+                    </li>
+                    <li>
+                        {% trans %}Last payment sent:{% endtrans %} 01/01/2021 {% trans %}With Sepa{% endtrans %}
+                    </li>
+                </ul>
+
+
+    				</div>
+    		</div>
+    </div>
+
+
+{% endblock %}

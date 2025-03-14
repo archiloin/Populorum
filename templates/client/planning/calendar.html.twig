@@ -1,0 +1,86 @@
+{% extends "client/core/content.html.twig" %}
+
+{% set page_title = 'Planning management' %}
+{% set menuPlanning = 'subdrop' %}
+{% set owlCarousel = 'cli_salaries_planning_calendar' %}
+{% set breadcrumb = 'Planning' %}
+
+{% block content %}
+{% if is_granted('ROLE_GESTIONNAIRE') %}
+    <div class="col-xs-12 col-md-4 col-lg-4 col-xl-3">
+        <div class="card-box tilebox-one noradius">
+            <div id="card-header" class="align-center">
+                {% if salarie.profil.informationsPersonnelles.identity %}
+                    {% if salarie.profil.informationsPersonnelles.identity.imageName %}
+                        <img
+                            src="{{ vich_uploader_asset(salarie.profil.informationsPersonnelles.identity, 'imageFile') }}"
+                            class="avatar-rounded d-block w-25 auto"
+                            alt="
+                                {{ salarie.profil.informationsPersonnelles.firstname }}
+                                {{ salarie.profil.informationsPersonnelles.lastname|upper }}
+                            "
+                        />
+                    {% else %}
+                        <img src="{{ asset('images/identite.png') }}"
+                            class="d-block w-25 avatar-rounded auto"
+                            alt="{% trans %}Mug shot{% endtrans %}"
+                        />
+                    {% endif %}
+                {% else %}
+                    <img src="{{ asset('images/identite.png') }}"
+                        class="d-block w-25 avatar-rounded auto"
+                        alt="{% trans %}Mug shot{% endtrans %}"
+                    />
+                {% endif %}
+                {{ salarie.profil.informationsPersonnelles.identifiant }}
+                {{ salarie.profil.informationsPersonnelles.firstname|truncate(9, false, '..') }}
+                {{ salarie.profil.informationsPersonnelles.lastname|truncate(9, false, '..')|upper }}
+                <br><hr /><br>
+            </div>
+            <div id='external-events'>
+                <h4>{% trans %}Assign tasks{% endtrans %}</h4>
+                <p>{% trans %}Move and place the task to be assigned{% endtrans %}</p>
+                {% for tache in taches %}
+                    <div class='fc-event' style="background-color:{{ tache.color }}">{{ tache.title }}</div>
+                {% endfor %}
+                {#
+                <input type='checkbox' id='drop-remove' />
+                <label for='drop-remove'>{% trans %}Remove after adding {% endtrans %}</label>
+                #}
+                    {% include 'client/planning/_form.html.twig' %}
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
+    {{ include ('client/plugins/calendar/calendar.html.twig') }}
+    {% elseif is_granted('ROLE_USER') %}
+        <div class="col-xs-12 col-md-4 col-lg-4 col-xl-3">
+            <div class="card-box tilebox-one noradius">
+                <div id="card-header" class="align-center">
+                    {{ include('client/planning/conge/_form.html.twig') }}
+                    <div class="card-box tilebox-one noradius" style="margin-top:23%">
+                        <h5> {% trans %}Current requests{% endtrans %}</h5>
+                            <table class="table auto">
+                                <tr>
+                                    <th>{% trans %}From{% endtrans %}</th>
+                                    <th>{% trans %}To{% endtrans %}</th>
+                                    <th>{% trans %}Note{% endtrans %}</th>
+                                    <th>{% trans %}Validate{% endtrans %}</th>
+                                </tr>
+                                {% for absence in salarie.absences %}
+                                <tr>
+                                    <td>{{ absence.debut|date('d-m-Y') }}</td>
+                                    <td>{{ absence.fin|date('d-m-Y') }}</td>
+                                    <td>{{ absence.note }}</td>
+                                    <td>{{ absence.isActive }}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ include ('client/plugins/calendar/calendarSalarie.html.twig') }}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,68 @@
+{{ form_start(form) }}
+{{ form_errors(form) }}
+
+<table class="table table-striped">
+		<tr>
+				<th class="table-bg radius-left"><i class="fa fa-object-group"></i> {% trans %}Employment{% endtrans %}</th>
+				<td class="table-bg radius-right"></td>
+		</tr>
+		<tr>
+				<th> {% trans %}Structure{% endtrans %}:</th>
+				<td>
+						{{ form_widget(form.structure, {'attr':{'class':'form-control'}}) }}
+						{{ form_errors(form.structure) }}
+				</td>
+		</tr>
+		<tr>
+				<th> {% trans %}Job{% endtrans %}:</th>
+				<td>
+						{{ form_widget(form.job, {'attr':{'class':'form-control'}}) }}
+						{{ form_errors(form.job) }}
+				</td>
+		</tr>
+		<tr>
+				<th style="width:20%"> {% trans %}Job description{% endtrans %}:</th>
+				<td>
+						{{ form_widget(form.description, {'attr':{'class':'form-control'}}) }}
+						{{ form_errors(form.description) }}
+				</td>
+		</tr>
+		<tr>
+				<th style="width:20%"> {% trans %}Status{% endtrans %}:</th>
+				<td>
+						{{ form_widget(form.statut, {'attr':{'class':'form-control'}}) }}
+						{{ form_errors(form.statut) }}
+				</td>
+		</tr>
+		<tr>
+				<th style="width:20%"> {% trans %}Start of activity{% endtrans %}:</th>
+				<td>
+						{{ form_widget(form.startedAt, {'attr':{'class':'form-control'}}) }}
+						{{ form_errors(form.startedAt) }}
+				</td>
+		</tr>
+		<tr>
+				<th> {% trans %}Beginning of contract{% endtrans %}:</th>
+				<td>
+						{{ form_widget(form.start, {'attr':{'class':'form-control'}}) }}
+						{{ form_errors(form.start) }}
+				</td>
+		</tr>
+		<tr>
+				<th> {% trans %}End of contract{% endtrans %}:</th>
+				<td>
+						{{ form_widget(form.end, {'attr':{'class':'form-control'}}) }}
+						{{ form_errors(form.end) }}
+				</td>
+		</tr>
+		<tr>
+				<th> {% trans %}Contract details{% endtrans %}:</th>
+				<td>
+						{{ form_widget(form.info, {'attr':{'class':'form-control'}}) }}
+						{{ form_errors(form.info) }}
+				</td>
+		</tr>
+</table>
+<input type="submit" class="btn btn-primary" value="{% trans %}Save{% endtrans %}" />
+
+{{ form_end(form) }}

@@ -1,0 +1,12 @@
+{% extends "client/profil/modifier.html.twig" %}
+
+{% set page_title = 'Employment' %}
+{% set emploi = 'subdrop' %}
+{% set page_icon = 'fa-object-group' %}
+{% set owlCarousel = 'cli_salaries_profil_emploi' %}
+
+{% block profil %}
+
+    {% include 'client/profil/emploi/_form.html.twig' %}
+
+{% endblock %}

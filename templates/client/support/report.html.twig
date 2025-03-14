@@ -1,0 +1,18 @@
+{% extends "client/core/content.html.twig" %}
+
+{% set page_title = 'Contact us' %}
+{% set breadcrumb_un = 'Support' %}
+{% set breadcrumb = 'Contact' %}
+
+{% block content %}
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="card align-center">
+            <div id="content">
+                <p>{% trans %}Tell us about the problems you encounter while browsing{% endtrans %}</p>
+                {% include 'client/support/_form.html.twig' %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

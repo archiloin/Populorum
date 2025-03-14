@@ -1,0 +1,10 @@
+{% extends "client/core/content.html.twig" %}
+
+{% set page_title = 'Planning management' %}
+{% set menuPlanning = 'subdrop' %}
+{% set owlCarousel = 'cli_salaries_planning_calendar' %}
+{% set breadcrumb = 'Planning' %}
+
+{% block content %}
+    {% include 'client/planning/_form.html.twig' %}
+{% endblock %}

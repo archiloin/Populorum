@@ -1,0 +1,18 @@
+{{ form_start(form) }}
+{{ form_errors(form) }}
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th class="table-bg">Prénom Nom</th>
+        </tr>
+
+        <tr>
+            <td>
+                {{ form_widget(form.utilisateurs) }}
+                {{ form_errors(form.utilisateurs) }}
+            </td>
+        </tr>
+    </table>
+
+    <a href="javascript: window.history.go(-1)" class="btn btn-primary">Retour</a>
+    <input type="submit" class="btn btn-primary" value="Enregistrer" />
+{{ form_end(form) }}

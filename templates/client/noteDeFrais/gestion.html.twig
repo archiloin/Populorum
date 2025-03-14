@@ -1,0 +1,40 @@
+{% extends "client/core/content.html.twig" %}
+
+{% set page_title = "Expense report" %}
+{% set menuConges = "subdrop" %}
+
+{% block content %}
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card align-center">
+            <div class="card-header text-center">
+                <h3>{% trans %}Requests to be processed{% endtrans %}</h3>
+            </div>
+            <div id="content">
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
+                <table class="table table-stripped">
+                    <tr>
+                        <th>{% trans %}Reason{% endtrans %}</th>
+                        <th>{% trans %}From{% endtrans %}</th>
+                        <th>{% trans %}To{% endtrans %}</th>
+                        <th>{% trans %}Accept or refuse{% endtrans %}</th>
+                    </tr>
+                    <tr>
+                        {#<td>{{ noteDeFrais.structure }}</td>
+                        <td>{{ noteDeFrais.poste }}</td>
+                        <td>{{ noteDeFrais.lastname }} {{ salarie.profil.firstname }}</td>#}
+                        <td>{{ noteDeFrais.note }}</td>
+                        <td>{{ noteDeFrais.debut|date('d-m-Y') }}</td>
+                        <td>{{ noteDeFrais.fin|date('d-m-Y') }}</td>
+                        <td>
+                            {{ form_widget(form.isActive) }}
+                            {{ form_errors(form.isActive) }}
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" style="margin-top:20px:; margin:0 auto;" class="btn btn-primary" value="{% trans %}Send{% endtrans %}" />
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

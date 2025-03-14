@@ -1,0 +1,108 @@
+{% extends "client/base.html.twig" %}
+
+{% set page_title = "Expense report" %}
+{% set menuConges = "subdrop" %}
+
+{% block content %}
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card align-center">
+            <div class="card-header text-center">
+                <h3>{% trans %}Requests to be processed{% endtrans %}</h3>
+            </div>
+            <div id="content">
+                <table class="table table-stripped">
+                    <tr>
+                        <th>Structure</th>
+                        <th>Poste</th>
+                        <th>Nom complet</th>
+                        <th>Raison</th>
+                        <th>Du</th>
+                        <th>Au</th>
+                        <th>Gestion</th>
+                    </tr>
+                    {% for salarie in salaries %}
+                        {% for note in salarie.notes %}
+                        {% if note.isActive is null %}
+                        <tr>
+                            <td>{{ salarie.profil.structure }}</td>
+                            <td>{{ salarie.profil.poste }}</td>
+                            <td>{{ salarie.profil.lastname }} {{ salarie.profil.firstname }}</td>
+                            <td>{{ note.note }}</td>
+                            <td>{{ note.debut|date('d-m-Y') }}</td>
+                            <td>{{ note.fin|date('d-m-Y') }}</td>
+                            <td><a href="{{ path('cli_conges_gestion', {id: indisponible.id}) }}" class="btn btn-primary btn-xs"><span class="fa fa-balance-scale"></span> Gérer</a></td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="card align-center">
+            <div class="card-header text-center">
+                <h3>Les demandes acceptées</h3>
+            </div>
+            <div id="content">
+                <table class="table table-stripped">
+                    <tr>
+                        <th>Structure</th>
+                        <th>Poste</th>
+                        <th>Nom complet</th>
+                        <th>Raison</th>
+                        <th>Du</th>
+                        <th>Au</th>
+                    </tr>
+                    {% for salarie in salaries %}
+                        {% for note in salarie.notes %}
+                        {% if note.isActive == true  %}
+                        <tr>
+                            <td>{{ salarie.profil.structure }}</td>
+                            <td>{{ salarie.profil.poste }}</td>
+                            <td>{{ salarie.profil.lastname }} {{ salarie.profil.firstname }}</td>
+                            <td>{{ note.note }}</td>
+                            <td>{{ note.debut|date('d-m-Y') }}</td>
+                            <td>{{ note.fin|date('d-m-Y') }}</td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="card align-center">
+            <div class="card-header text-center">
+                <h3>Les demandes refusées</h3>
+            </div>
+            <div id="content">
+                <table class="table table-stripped">
+                    <tr>
+                        <th>Structure</th>
+                        <th>Poste</th>
+                        <th>Nom complet</th>
+                        <th>Raison</th>
+                        <th>Du</th>
+                        <th>Au</th>
+                    </tr>
+                    {% for salarie in salaries %}
+                        {% for note in salarie.notes %}
+                        {% if note.isActive != true and note.isActive is not null  %}
+                        <tr>
+                            <td>{{ salarie.profil.structure }}</td>
+                            <td>{{ salarie.profil.poste }}</td>
+                            <td>{{ salarie.profil.lastname }} {{ salarie.profil.firstname }}</td>
+                            <td>{{ note.note }}</td>
+                            <td>{{ note.debut|date('d-m-Y') }}</td>
+                            <td>{{ note.fin|date('d-m-Y') }}</td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

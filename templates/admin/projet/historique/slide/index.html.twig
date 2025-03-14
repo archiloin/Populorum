@@ -1,0 +1,136 @@
+{% extends 'admin/base.html.twig' %}
+
+{% set page_title = 'Voir les tâches' %}
+{% set menuProjet = 'subdrop' %}
+
+{% block body %}
+
+    <link href="{{ asset('plugins/bootstrap-select/css/bootstrap-select.css') }}" rel="stylesheet" />
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb-holder">
+                            <h1 class="main-title float-left">Voir les tâches</h1>
+                            <ol class="breadcrumb float-right">
+                                <li class="breadcrumb-item">Accueil</li>
+                                <li class="breadcrumb-item">Les projets</li>
+                                <li class="breadcrumb-item active">Voir les tâches</li>
+                            </ol>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <table class="table table-striped">
+                                <tr>
+                                    <th class="table-bg radius-left">Nom</th>
+                                    <th class="table-bg">Client</th>
+                                    <th class="table-bg">Début</th>
+                                    <th class="table-bg">Fin</th>
+                                    <th class="table-bg">Lieu</th>
+                                    <th class="table-bg">Gestionnaire(s)</th>
+                                </tr>
+                                {% if projet %}
+                                  <tr>
+                                      <td>{{ projet.nom }}</td>
+                                      <td>{{ projet.utilisateur.profil.nomEntreprise }}</td>
+                                      <td>{{ projet.date|date('d-m-Y H:i') }}</td>
+                                      <td>{{ projet.dateFin|date('d-m-Y H:i') }}</td>
+                                      <td>{{ projet.lieu }}</td>
+                                      <td>
+                                          {% for gestionnaires in projet.gestionnaires %}
+                                              {{ gestionnaires.profil.firstname|join(', ') }}
+                                              {{ gestionnaires.profil.lastname|join(', ') }}
+                                          {% endfor %}
+                                      </td>
+                                  </tr>
+                                {% endif %}
+                            </table>
+                            {% if slides %}
+                            <table class="table table-striped">
+                                <tr>
+                                    <th class="table-bg">Nombre d'utilisateur</th>
+                                    <th class="table-bg">Poste</th>
+                                    <th class="table-bg">Spécialité</th>
+                                    <th class="table-bg">Compétence</th>
+                                    <th class="table-bg">Get-in</th>
+                                    <th class="table-bg">Du</th>
+                                    <th class="table-bg">Heure de coupure</th>
+                                    <th class="table-bg">Heure de reprise</th>
+                                    <th class="table-bg">Au</th>
+                                    <th class="table-bg">Salaire (brut)</th>
+                                    <th class="table-bg">Vac (Heures)</th>
+                                    <th class="table-bg">Description</th>
+                                    <th class="table-bg">Tâche</th>
+                                    <th class="table-bg">Utilisateur(s)</th>
+                                </tr>
+                                {% else %}
+                                    <div id="content">
+                                        <h3><em>Vous n'avez aucune tâche en cours</em></h3>
+                                    </div>
+                                {% endif %}
+                                {% for slide in slides %}
+                                <tr>
+                                    <td>{{ slide.utilisateurs.count }}/{{ slide.nbrInter }}</td>
+                                    <td>{{ slide.postes }}</td>
+                                    <td>{{ slide.specialites }}</td>
+                                    <td>{{ slide.competences }}</td>
+                                    <td>{{ slide.getIn|date('H:i') }}</td>
+                                    <td>{{ slide.date|date('d-m-Y H:i') }}</td>
+                                    <td>
+                                      {% if slide.coupure %} {# Si l'heure de coupure est renseigné #}
+                                        {{ slide.coupure|date('H:i') }} {# Afficher l'heure de coupure #}
+                                      {% else %}
+                                        -- {# Afficher -- #}
+                                      {% endif %}
+                                    </td>
+                                    <td>
+                                      {% if slide.reprise %} {# Si l'heure de reprise est renseigné #}
+                                        {{ slide.reprise|date('H:i') }} {# Afficher l'heure de reprise #}
+                                      {% else %}
+                                        -- {# Afficher -- #}
+                                      {% endif %}
+                                    </td>
+                                    <td>{{ slide.dateFin|date('d-m-Y H:i') }}</td>
+                                    <td>{{ slide.salaire }}</td>
+                                    <td>{{ slide.vac }}</td>
+                                    <td>{{ slide.description|nl2br }}</td>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                      <td>
+                                          <a class="btn btn-primary btn-xs" href="{{ path('adm_projet_historique_slide_modifier', { 'id': slide.id, 'idEvenement': projet.id }) }}">
+                                              <span class="fa fa-edit"></span> Modifier
+                                          </a>
+                                          {{ include('admin/projet/historique/slide/_delete_form.html.twig') }}
+                                      </td>
+                                    {% else %}
+                                      <td>
+                                          <a class="btn btn-primary btn-xs" href="{{ path('gestion_projet_slide_modifier', { 'id': slide.id, 'idEvenement': projet.id }) }}">
+                                              <span class="fa fa-edit"></span> Modifier
+                                          </a>
+                                      </td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            </table>
+                            {% if is_granted('ROLE_ADMIN') %}
+                              <div class="align-center btn-bottom">
+                                  <a href="{{ path('adm_projet_historique') }}" class="btn btn-primary btn-bottom">
+                                      Retour aux projets
+                                  </a>
+                              </div>
+                            {% else %}
+                              <div class="align-center btn-bottom">
+                                  <a href="{{ path('gestion_projet_historique') }}" class="btn btn-primary btn-bottom">Retour aux projets</a>
+                              </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

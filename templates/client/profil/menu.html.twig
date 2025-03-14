@@ -1,0 +1,77 @@
+
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="float:left; display:table">
+      <div id="profil-menu">
+          <ul>
+              {% if app.user.profil.informationsPersonnelles %}
+                  {% if app.user.profil.informationsPersonnelles.identity %}
+                      {% if app.user.profil.informationsPersonnelles.identity.imageName %}
+                          <img
+                              src="{{ vich_uploader_asset(app.user.profil.informationsPersonnelles.identity, 'imageFile') }}"
+                              alt="{% trans %}Logo{% endtrans %}"
+                              class="avatar-rounded"
+                              width="250px"
+                          />
+                      {% else %}
+                          <img src="{{ asset('assets/img/logo.jpg') }}"
+                               width="250px"
+                               class="avatar-rounded"
+                               alt="{% trans %}Logo{% endtrans %}"
+                          />
+                      {% endif %}
+                  {% else %}
+                      <img src="{{ asset('assets/img/logo.jpg') }}"
+                           width="250px"
+                           class="avatar-rounded"
+                           alt="{% trans %}Logo{% endtrans %}"
+                      />
+                  {% endif %}
+              {% else %}
+                  <img src="{{ asset('assets/img/logo.jpg') }}"
+                       width="250px"
+                       class="avatar-rounded"
+                       alt="{% trans %}Logo{% endtrans %}"
+                  />
+              {% endif %}
+              <li {% if informationsEntreprise is defined %} class="{{ informationsEntreprise }}" {% endif %}>
+                  <a href="{{ path('cli_profil_informations_entreprise') }}">
+                      <i class="fa fa-building"></i> {% trans %}Company information{% endtrans %}
+                  </a>
+              </li>
+              <li {% if informationsPersonnelles is defined %} class="{{ informationsPersonnelles }}" {% endif %}>
+                  <a href="{{ path('cli_profil_informations_personnelles') }}">
+                      <i class="fa fa-info"></i> {% trans %}Personal informations{% endtrans %}
+                  </a>
+              </li>
+              <li {% if coordonnees is defined %} class="{{ coordonnees }}" {% endif %}>
+                  <a href="{{ path('cli_profil_coordonnees') }}">
+                      <i class="fa fa-pencil-square-o"></i> {% trans %}Contact information{% endtrans %}
+                  </a>
+              </li>
+              <li {% if certifications is defined %} class="{{ certifications }}" {% endif %}>
+                  <a href="{{ path('cli_profil_certifications') }}">
+                      <i class="fa fa-certificate"></i> {% trans %}Certificates{% endtrans %}
+                  </a>
+              </li>
+              <li {% if contact is defined %} class="{{ contact }}" {% endif %}>
+                  <a href="{{ path('cli_profil_contact') }}">
+                      <i class="fa fa-ambulance"></i> {% trans %}Emergency contact{% endtrans %}
+                  </a>
+              </li>
+              <li {% if personnes is defined %} class="{{ personnes }}" {% endif %}>
+                  <a href="{{ path('cli_profil_personnes') }}">
+                      <i class="fa fa-users"></i> {% trans %}Dependents{% endtrans %}
+                  </a>
+              </li>
+              <li {% if immigration is defined %} class="{{ immigration }}" {% endif %}>
+                  <a href="{{ path('cli_profil_immigration') }}">
+                      <i class="fa fa-globe"></i> {% trans %}Immigration{% endtrans %}
+                  </a>
+              </li>
+              <li {% if emploi is defined %} class="{{ emploi }}" {% endif %}>
+                  <a href="{{ path('cli_profil_emploi') }}">
+                      <i class="fa fa-object-group"></i> {% trans %}Employment{% endtrans %}
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>

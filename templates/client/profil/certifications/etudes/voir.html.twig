@@ -1,0 +1,16 @@
+<table class="table table-striped">
+		<tr>
+				<th class="table-bg radius-left">{% trans %}Specialization{% endtrans %}</th>
+				<th class="table-bg">{% trans %}Level{% endtrans %}</th>
+				<th class="table-bg">{% trans %}Year{% endtrans %}</th>
+				<th class="table-bg radius-right">{% trans %}Result{% endtrans %}</th>
+		</tr>
+		{% for etudes in etudess %}
+			<tr>
+					<td> {{ etudes.speciality }} </td>
+					<td> {{ etudes.lvl }} </td>
+					<td> {% if etudes.end != null %} {{ etudes.end|date('Y') }} {% endif %} </td>
+					<td> {{ etudes.result }} </td>
+			</tr>
+		{% endfor %}
+</table>

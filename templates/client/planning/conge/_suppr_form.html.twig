@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('usr_agenda_indisponible_suppr', {'id': indisponible.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet indisponibilité ?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('supprimer' ~ indisponible.id) }}">
+    <button class="btn">Supprimer cet indisponibilité ?</button>
+</form>

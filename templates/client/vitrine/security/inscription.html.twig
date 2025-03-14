@@ -1,0 +1,115 @@
+{% extends "client/vitrine/base.html.twig" %}
+
+{% block vitrine %}
+{% if is_granted('ROLE_USER') %}
+    <meta http-equiv="refresh" content="0;URL={{ path('cli_dashboard') }}">
+{% else %}
+    {{ form_start(form, {'method': 'post', 'attr': {'novalidate': 'novalidate', 'id': 'inscription'}}) }}
+<div class="wow">
+    <div class="container">
+        <div class="row">
+            <div class="helmet text-center">
+                  <div class="input-group">
+                      <span class="input-group-addon">
+                          <i class="fa fa-object-group"></i>
+                      </span>
+                      <div class="form-line">
+                          <span>{% trans %}Plan{% endtrans %}*</span>
+                          {{ form_widget(form.plan) }}
+                          {{ form_errors(form.plan) }}
+                      </div>
+                  </div>
+                  <div class="input-group">
+                      <span class="input-group-addon">
+                          <i class="fa fa-at"></i>
+                      </span>
+                      <div class="form-line">
+                          <span>{% trans %}Email{% endtrans %}*</span>
+                          {{ form_widget(form.email, {'attr':{'placeholder':'Mail address'}}) }}
+                          <div class="error-message">
+                              {{ form_errors(form.email) }}
+                          </div>
+                      </div>
+                  </div>
+                  <div class="input-group">
+                      <span class="input-group-addon">
+                          <i class="fa fa-university"></i>
+                      </span>
+                      <div class="form-line">
+                          <span>{% trans %}Company name{% endtrans %}*</span>
+                          {{ form_widget(form.profil.informationsEntreprise.nomEntreprise, {'attr':{'placeholder':'Company name'}}) }}
+                          <div class="error-message">
+                              {{ form_errors(form.profil.informationsEntreprise.nomEntreprise) }}
+                          </div>
+                      </div>
+                  </div>
+                  <div class="input-group">
+                      <span class="input-group-addon">
+                          <i class="fa fa-lock"></i>
+                      </span>
+                      <div class="form-line">
+                          <span>{% trans %}Password{% endtrans %}*</span>
+                          {{ form_widget(form.plainPassword.first, {'attr':{'placeholder':'Password'}}) }}
+                          <div class="error-message">
+                              {{ form_errors(form.plainPassword.first) }}
+                          </div>
+                      </div>
+                  </div>
+                  <div class="input-group">
+                      <span class="input-group-addon">
+                          <i class="fa fa-lock"></i>
+                      </span>
+                      <div class="form-line">
+                          <span>{% trans %}Repeat password{% endtrans %}*</span>
+                          {{ form_widget(form.plainPassword.second, {'attr':{'placeholder':'Repeat password'}}) }}
+                          <div class="error-message">
+                              {{ form_errors(form.plainPassword.second) }}
+                          </div>
+                      </div>
+                  </div>
+                  <div class="input-group">
+                      <div class="form-line">
+                            {% trans %}I accept{% endtrans %}
+                            <button type="button" data-toggle="modal" data-target="#cgu">
+                              {% trans %}G.C.U{% endtrans %}
+                            </button>
+                            {{ form_widget(form.cgu) }}
+                            <div class="error-message">
+                                {{ form_errors(form.cgu) }}
+                            </div>
+                      </div>
+                  </div>
+                  <div class="wow-btn text-center">
+                      <button type="submit" id="_submit" name="_submit" value="{{ 'registration.submit'|trans }}" class="btn btn-default wow-button">
+                          {% trans %}Registration{% endtrans %}
+                      </button>
+                  </div>
+                  <div class="modal fade" id="cgu" tabindex="-1" role="dialog" aria-labelledby="cguLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="cguLabel">{% trans %}G.C.U{% endtrans %}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                              {{ include('cgu.html.twig') }}
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans %}Close{% endtrans %}</button>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+{{ form_end(form) }}
+{% endif %}
+{% endblock %}

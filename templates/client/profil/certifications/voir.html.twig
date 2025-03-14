@@ -1,0 +1,26 @@
+{% extends "client/profil/voir.html.twig" %}
+
+{% set page_title = 'Certificates' %}
+{% set certifications = 'subdrop' %}
+{% set page_icon = 'fa-certificate' %}
+{% set owlCarousel = 'cli_salaries_profil_certifications' %}
+
+{% block profil %}
+
+    {% include 'client/profil/certifications/exp/ajouter.html.twig' %}
+    {% include 'client/profil/certifications/exp/voir.html.twig' %}
+
+    {% include 'client/profil/certifications/etudes/ajouter.html.twig' %}
+    {% include 'client/profil/certifications/etudes/voir.html.twig' %}
+
+    {% include 'client/profil/certifications/skill/ajouter.html.twig' %}
+    {% include 'client/profil/certifications/skill/voir.html.twig' %}
+
+    {% include 'client/profil/certifications/langues/ajouter.html.twig' %}
+    {% include 'client/profil/certifications/langues/voir.html.twig' %}
+
+    {% include 'client/profil/certifications/permis/ajouter.html.twig' %}
+    {% include 'client/profil/certifications/permis/voir.html.twig' %}
+
+    {% include 'client/profil/pj.html.twig' %}
+{% endblock %}

@@ -1,0 +1,180 @@
+
+		<link href="{{ asset('plugins/fullcalendar/core/main.min.css') }}" rel="stylesheet" />
+		<link href="{{ asset('plugins/fullcalendar/daygrid/main.min.css') }}" rel="stylesheet" />
+		<link href="{{ asset('plugins/fullcalendar/timegrid/main.min.css') }}" rel="stylesheet" />
+		<link href="{{ asset('plugins/fullcalendar/list/main.min.css') }}" rel="stylesheet" />
+		<style>
+		#external-events .fc-event {
+			margin: 10px 0;
+			cursor: pointer;
+		}
+
+		#calendar {
+			width: 100%;
+		}
+
+		.fc-event {
+		font-size: 1em;
+		border-radius: 2px;
+		border: none;
+		padding: 5px;
+		}
+
+		.fc-day-grid-event .fc-content {
+		color: #fff;
+		}
+
+		.fc-button {
+		background: #eaeaea;
+		border: none;
+		color: #666b6f;
+		margin: 0 3px !important;
+		padding: 5px 12px !important;
+		text-transform: capitalize;
+		height: auto !important;
+		box-shadow: none !important;
+		border-radius: 3px !important;
+		}
+
+		.fc-state-down, .fc-state-active, .fc-state-disabled {
+		background-color: #009ffc !important;
+		color: #ffffff !important;
+		text-shadow: none !important;
+		}
+
+		.fc-toolbar h2 {
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 28px;
+		text-transform: uppercase;
+		}
+
+		.fc th.fc-widget-header {
+		background: #e6e6e6;
+		font-size: 13px;
+		text-transform: uppercase;
+		line-height: 18px;
+		padding: 10px 0px;
+		}
+
+		.fc-unthemed th, .fc-unthemed td, .fc-unthemed thead, .fc-unthemed tbody, .fc-unthemed .fc-divider, .fc-unthemed .fc-row, .fc-unthemed .fc-popover {
+		border-color: #eff1f3;
+		}
+		</style>
+
+
+
+		<div class="col-xs-12 col-md-8 col-lg-8 col-xl-9">
+				<div class="card-box tilebox-one noradius">
+						<div id="calendar"></div>
+
+				</div>
+		</div>
+		<div id="fullCalModal" class="modal fade" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content modalColor" style="width: 750px !important">
+                <div class="modal-header" style="border:none">
+                    <h4 class="modal-title modalTitre"></h4>
+                    <hr>
+                    <a href="#" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></a>
+                </div>
+                <div id="modalBody" class="modal-body">
+                    <div id="modalLoad"></div>
+                </div>
+                <div class="modal-footer" style="border:none">
+                    <a href="#" data-dismiss="modal" class="btn btn-primary close">{% trans %}Close{% endtrans %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('plugins/fullcalendar/core/locales/fr.js') }}"></script>
+<script src="{{ asset('plugins/fullcalendar/core/main.js') }}"></script>
+<script src="{{ asset('plugins/fullcalendar/daygrid/main.js') }}"></script>
+<script src="{{ asset('plugins/fullcalendar/list/main.js') }}"></script>
+<script src="{{ asset('plugins/fullcalendar/interaction/main.js') }}"></script>
+<script src="{{ asset('plugins/fullcalendar/timegrid/main.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
+<script>
+
+
+			document.addEventListener('DOMContentLoaded', function() {
+			  var Calendar = FullCalendar.Calendar;
+			  var Draggable = FullCalendarInteraction.Draggable;
+
+			  var containerEl = document.getElementById('external-events');
+			  var calendarEl = document.getElementById('calendar');
+			  var checkbox = document.getElementById('drop-remove');
+
+			  // initialize the external events
+			  // -----------------------------------------------------------------
+
+			  new Draggable(containerEl, {
+			    itemSelector: '.fc-event',
+			    eventData: function(eventEl) {
+			      return {
+			        title: eventEl.innerText,
+			        color: eventEl.style.backgroundColor,
+			      };
+			    }
+			  });
+
+
+			  // initialize the calendar
+			  // -----------------------------------------------------------------
+
+			  var calendar = new Calendar(calendarEl, {
+			    plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
+			    header: {
+			      left: 'prev,next today',
+			      center: 'title',
+			      right: 'dayGridMonth,timeGridWeek,timeGridDay'
+			    },
+			    editable: true,
+					locale: '{% if app.request.locale == 'en' %}en{% else %}fr{% endif %}',
+					timezone: ('Europe/Paris'),
+					timeFormat: 'HH:mm',
+					events: [
+
+						{% for event in events %}
+							{
+								id             : '{{ event.id }}',
+								title          : '{{ event.title }}',
+								start          : '{{ event.start|date("Y-m-d h:i") }}',
+								end            : '{{ event.end|date("Y-m-d h:i") }}',
+								backgroundColor: '{{ event.color }}',
+								extendedProps: {
+										id: '{{ event.idUtilisateur }}',
+									},
+							},
+						{% else %}
+
+						{% endfor %}
+
+					],
+					allDaySlot: false,
+					defaultTimedEventDuration: '08:00',
+					lazyFetching: true,
+					firstDay: 1,
+					selectable: true,
+					editable: true,
+					eventDurationEditable: true,
+			    droppable: true,
+	        eventTimeFormat: {
+		        hour: '2-digit',
+		        minute: '2-digit',
+		        meridiem: false,
+	        },
+			    defaultView: 'timeGridWeek',
+					{% include 'client/plugins/calendar/event/drop.html.twig' %}
+					{% include 'client/plugins/calendar/event/receive.html.twig' %}
+					{% include 'client/plugins/calendar/event/click.html.twig' %}
+					{% include 'client/plugins/calendar/event/resize.html.twig' %}
+
+
+			  });
+
+			  calendar.render();
+			});
+</script>

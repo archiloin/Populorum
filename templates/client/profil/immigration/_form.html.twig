@@ -1,0 +1,42 @@
+{{ form_start(profilForm) }}
+{{ form_errors(profilForm) }}
+<p>
+		<strong> {% trans %}Document{% endtrans %}<i>*</i>:</strong>
+		{{ form_widget(profilForm.document, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(profilForm.document) }}
+</p>
+<p>
+		<strong> {% trans %}Number{% endtrans %}<i>*</i>:</strong>
+		{{ form_widget(profilForm.number, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(profilForm.number) }}
+</p>
+<p>
+		<strong> {% trans %}Publication date{% endtrans %}:</strong>
+		{{ form_widget(profilForm.publish, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(profilForm.publish) }}
+</p>
+<p>
+		<strong> {% trans %}Expiration date{% endtrans %}:</strong>
+		{{ form_widget(profilForm.exp, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(profilForm.exp) }}
+</p>
+<p>
+		<strong> {% trans %}Eligible status{% endtrans %}:</strong>
+		{{ form_widget(profilForm.statut, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(profilForm.statut) }}
+</p>
+<p>
+		<strong> {% trans %}Published by{% endtrans %}:</strong>
+		{{ form_widget(profilForm.publishedby, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(profilForm.publishedby) }}
+</p>
+<p>
+		<strong> {% trans %}Eligible assessment date{% endtrans %}:</strong>
+		{{ form_widget(profilForm.eval, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(profilForm.eval) }}
+</p>
+<p>
+		<strong> {% trans %}Comment{% endtrans %}:</strong>
+		{{ form_widget(profilForm.comment, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(profilForm.comment) }}
+</p>

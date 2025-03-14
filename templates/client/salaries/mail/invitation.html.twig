@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% trans %}Invitation{% endtrans %}</title>
+</head>
+<body>
+    <p>
+        {% trans %}Hello{% endtrans %}, <br>
+        {% trans %}You have been invited to join POPULORUM.FR{% endtrans %}<br>
+				{% trans %}Here are your identifiers{% endtrans %} : <br>
+				{% trans %}Email{% endtrans %} : {{ email }}<br>
+				{% trans %}Password{% endtrans %} : {{ password }}<br>
+        {# pour que le lien fonctionne, il est indispensable que le lien soit absolu. #}
+        <a href="{{absolute_url(path('cli_connexion'))}}">{% trans %}Login{% endtrans %}</a>
+    </p>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{% if is_granted('ROLE_ARCHITECT') %}
+    {# Header #}
+    {% include 'admin/core/header.html.twig' %}
+    {# #Header #}
+
+    <body class="adminbody">
+
+    {# Top Bar #}
+    {% include 'admin/core/top.html.twig' %}
+    {# #Top Bar #}
+
+    {# Menu #}
+    {% include 'admin/core/menu.html.twig' %}
+    {# #Menu #}
+
+    {% block javascript %}
+        <script src="{{ asset('js/modernizr.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/moment.min.js') }}"></script>
+
+        <script src="{{ asset('js/popper.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+        <script src="{{ asset('js/detect.js') }}"></script>
+        <script src="{{ asset('js/fastclick.js') }}"></script>
+        <script src="{{ asset('js/jquery.blockUI.js') }}"></script>
+        <script src="{{ asset('js/jquery.nicescroll.js') }}"></script>
+
+        {# App js #}
+        <script src="{{ asset('js/pikeadmin.js') }}"></script>
+
+        {# Alerte notification #}
+        <script src="{{ asset('js/bootstrap-notify.js') }}"></script>
+    {% endblock %}
+
+    {% block body %}
+    {% endblock %}
+
+    {% for message in app.flashes('notice') %}
+        <script>
+            $.notify({
+              message: '{{ message }}'
+            },{
+              placement: {
+                from: "top",
+                align: "center"
+            },
+              delay: 9000,
+            });
+        </script>
+    {% endfor %}
+
+    <footer class="footer">
+        <span class="text-right">
+            &copy; {{ 'now'|date('Y') }} <a target="_blank" href="#">Populorum.fr</a>
+        </span>
+        <span class="float-right">
+            Alpha <a target="_blank" href="#"><b>2.4</b></a>
+        </span>
+    </footer>
+
+    </div>
+    {# END main #}
+
+    </body>
+</html>
+
+{% else %}
+{% block vision %}
+
+    {% include('vision/securitySystem.html.twig') %}
+
+{% endblock %}
+{% endif %}

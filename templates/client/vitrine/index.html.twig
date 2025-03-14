@@ -1,0 +1,216 @@
+{% extends "client/vitrine/base.html.twig" %}
+
+{% block vitrine %}
+			<div class="wow">
+					<div class="container">
+							<div class="row">
+			            {% include 'client/vitrine/logo.html.twig' %}
+									<div class="font-1 helmet text-center">
+											<p>
+													{% trans %}A human resource information management system{% endtrans %} <strong>{% trans %}HRMS{% endtrans %}</strong>
+											</p>
+									</div>
+									<div class="wow-btn text-center">
+											<form action="{{ path('cli_connexion') }}" method="POST">
+													<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+													<input type="hidden" name="_username" value="test" required="required" />
+													<input type="hidden" name="_password" value="test" required="required" />
+													<button type="submit" class="btn btn-default wow-button">
+															{% trans %}Demonstration{% endtrans %}
+													</button>
+											</form>
+									</div>
+							</div>
+					</div>
+			</div>
+{% endblock %}
+{% block body %}
+
+
+       <section class="index-part-2" id="pricing-tables">
+		        <div class="container">
+								<div class="row">
+								   <div class="text-center">
+								     <h2>{% trans %}Pricing table{% endtrans %}</h2>
+								   </div>
+								   <hr class="hr-mid">
+								   <div class="sub-text text-center">
+								         <p class="font-1">
+								            {% trans %}Different price for different needs{% endtrans %}
+								         </p>
+								   </div>
+								</div>
+		            <div class="col-md-3 col-sm-6 col-xs-12 row">
+		                <div class="single-table text-center">
+		                    <div class="plan-header">
+		                        <h3>{% trans %}Small{% endtrans %}</h3>
+		                        <p>{% trans %}Plan for very small enterprise{% endtrans %}</p>
+														<h4 class="plan-price">{% trans %}£{% endtrans %}1.99<span>/{% trans %}user{% endtrans %}/{% trans %}month{% endtrans %}</span></h4>
+		                    </div>
+
+
+		                    <ul class="plan-features">
+		                        <li>{% trans %}Manage your employees{% endtrans %}</li>
+		                        <li>{% trans %}Leave & absence{% endtrans %}</li>
+		                        <li>{% trans %}Export data{% endtrans %} (pdf, xls, csv, {% trans %}print{% endtrans %})</li>
+		                        <li>0 - 99 {% trans %}employees{% endtrans %}</li>
+		                    </ul>
+		                    <a href="{{ path('cli_inscription', { 'plan': 'Small' }) }}" class="plan-submit hvr-bounce-to-right">{% trans %}buy now{% endtrans %}</a>
+		                </div>
+		            </div>
+		            <div class="col-md-3 col-sm-6 col-xs-12">
+		                <div class="single-table text-center">
+		                    <div class="plan-header">
+		                        <h3>{% trans %}Medium{% endtrans %}</h3>
+		                        <p>{% trans %}Plan for medium business{% endtrans %}</p>
+														<h4 class="plan-price">{% trans %}£{% endtrans %}1.66<span>/{% trans %}user{% endtrans %}/{% trans %}month{% endtrans %}</span></h4>
+		                    </div>
+
+
+		                    <ul class="plan-features">
+		                        <li>{% trans %}Manage your employees{% endtrans %}</li>
+		                        <li>{% trans %}Leave & absence{% endtrans %}</li>
+		                        <li>{% trans %}Export data{% endtrans %} (pdf, xls, csv, {% trans %}print{% endtrans %})</li>
+		                        <li>100 - 999 {% trans %}employees{% endtrans %}</li>
+		                    </ul>
+		                    <a href="{{ path('cli_inscription', { 'plan': 'Medium' }) }}" class="plan-submit hvr-bounce-to-right">{% trans %}buy now{% endtrans %}</a>
+		                </div>
+		            </div>
+		            <div class="col-md-3 col-sm-6 col-xs-12">
+		                <div class="single-table text-center">
+		                    <div class="plan-header">
+		                        <h3>{% trans %}Large{% endtrans %}</h3>
+		                        <p>{% trans %}Plan for large business{% endtrans %}</p>
+														<h4 class="plan-price">{% trans %}£{% endtrans %}1.33<span>/{% trans %}user{% endtrans %}/{% trans %}month{% endtrans %}</span></h4>
+		                    </div>
+
+		                    <ul class="plan-features">
+		                        <li>{% trans %}Manage your employees{% endtrans %}</li>
+		                        <li>{% trans %}Leave & absence{% endtrans %}</li>
+		                        <li>{% trans %}Export data{% endtrans %} (pdf, xls, csv, {% trans %}print{% endtrans %})</li>
+		                        <li>1000 - 4999 {% trans %}employees{% endtrans %}</li>
+		                    </ul>
+		                    <a href="{{ path('cli_inscription', { 'plan': 'Large' }) }}" class="plan-submit hvr-bounce-to-right">{% trans %}buy now{% endtrans %}</a>
+		                </div>
+		            </div>
+								<div class="col-md-3 col-sm-6 col-xs-12">
+										<div class="single-table text-center">
+												<div class="plan-header">
+														<h3>{% trans %}Large+{% endtrans %}</h3>
+		                        <p>{% trans %}Plan for very large business{% endtrans %}</p>
+														<h4 class="plan-price">{% trans %}£{% endtrans %}1.09<span>/{% trans %}user{% endtrans %}/{% trans %}month{% endtrans %}</span></h4>
+												</div>
+
+
+												<ul class="plan-features">
+														<li>{% trans %}Manage your employees{% endtrans %}</li>
+														<li>{% trans %}Leave & absence{% endtrans %}</li>
+		                        <li>{% trans %}Export data{% endtrans %} (pdf, xls, csv, {% trans %}print{% endtrans %})</li>
+														<li>+5000 {% trans %}employees{% endtrans %}</li>
+												</ul>
+		                    <a href="{{ path('cli_inscription', { 'plan': 'Large+' }) }}" class="plan-submit hvr-bounce-to-right">{% trans %}buy now{% endtrans %}</a>
+										</div>
+								</div>
+		        </div>
+		    </section>
+
+
+        <section class="index-part-3">
+            <div class="container">
+                <div class="row why-div">
+                    <div class="text-center">
+                           <h2>{% trans %}Why choose{% endtrans %} Populorum</h2>
+                    </div>
+                     <hr class="hr-mid">
+                </div>
+
+                    <div class="row">
+                        <div class="col-lg-9 col-sm-12 col-md-9 col-xs-12">
+                         <div class="holder-para">
+                          <h3>{% trans %}Instant installation{% endtrans %}</h3>
+                          <hr class="hr-short">
+                          <p class="font-2">
+                              {% trans %}No more long waiting periods, no need to make a quote, to wait again and again for creation, implementation...{% endtrans %}<br>
+                              {% trans %}With Populorum take advantage of an immediate installation of your space allowing you to manage the registration of your employees from your registration in a few minutes and those very easily{% endtrans %}
+                          </p>
+                         </div>
+                        </div>
+                        <div class="col-lg-3 col-xs-12 col-sm-12 col-md-3">
+                                <div class="holder-img">
+                                  <img class="round-img img-responsive center-block" src="assets/img/2.jpg">
+                                </div>
+                        </div>
+                    </div>
+
+                    <hr class="line-full">
+
+                    <div class="row">
+                        <div class="col-lg-9 col-xs-12 col-sm-12 col-md-9 col-md-push-3">
+                         <div class="holder-para">
+                          <h3>{% trans %}Security{% endtrans %}</h3>
+                          <hr class="hr-short">
+                          <p class="font-2">
+                              {% trans %}Populorum is equipped with a draconian security system allowing it to be very reactive in the event of an anomaly within the network{% endtrans %}.<br>
+                              <small><i>{% trans %}No analysis of your behavior and no tracking on your use of the site{% endtrans %}.</i></small>
+                          </p>
+                         </div>
+                        </div>
+                        <div class="col-lg-3 col-xs-12 col-sm-12 col-md-3 col-md-pull-9">
+                                <div class="holder-img">
+                                  <img class="round-img img-responsive center-block" src="assets/img/3.jpg">
+                                </div>
+                        </div>
+                    </div>
+
+                    <hr class="line-full">
+
+                    <div class="row">
+                        <div class="col-lg-9 col-xs-12 col-sm-12 col-md-9">
+                         <div class="holder-para">
+                          <h3>{% trans %}Easiest{% endtrans %}</h3>
+                          <hr class="hr-short">
+                          <p class="font-2">
+                              Populorum {% trans %}is easy to use, try and approved by 9 years old children{% endtrans %}
+                          </p>
+                         </div>
+                        </div>
+                        <div class="col-lg-3 col-xs-12 col-sm-12 col-md-3">
+                                <div class="holder-img">
+                                  <img class="round-img img-responsive center-block" src="assets/img/4.jpg">
+                                </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <section class="index-part-4">
+             <div class="container">
+
+                    <div class="row">
+                           <div class="text-center">
+                             <h2>
+															 {% trans %}Made with{% endtrans %}
+															 {% if app.request.locale == "fr" %}
+															 		<i class="fa fa-heart" style="color:#C10401"></i>
+															 {% elseif app.request.locale == 'en' %}
+															 		<i class="fa fa-heart" style="color:midnightblue"></i>
+															 {% endif %}
+														</h2>
+                           </div>
+                           <hr class="hr-mid">
+                           <div class="sub-text text-center">
+                                 <p class="font-1">
+                                    {% trans %}Register to use Populorum for free{% endtrans %}
+                                 </p>
+                           </div>
+                    </div>
+
+                    <div class="row text-center">
+                         <a class="btn btn-default wow-button" href="{{ path('cli_inscription') }}">{% trans %}Acquire access to Populorum{% endtrans %}</a>
+                    </div>
+              </div>
+        </section>
+
+
+
+{% endblock %}

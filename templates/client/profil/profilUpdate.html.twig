@@ -1,0 +1,7 @@
+<p class="text-right">
+		{% if profil.nameupdate and profil.dateupdate %}
+			<i>
+					{% trans %}The profile was last updated by{% endtrans %} <strong>{{ profil.nameupdate }}</strong> {% trans %}the{% endtrans %} <strong>{{ profil.dateupdate|date('d-m-Y à h:i') }}</strong> &nbsp;
+			</i>
+		{% endif %}
+</p>

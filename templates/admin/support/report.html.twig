@@ -1,0 +1,89 @@
+{% extends "admin/base.html.twig" %}
+
+{% set page_title = 'Reporter un bug' %}
+
+{% block body %}
+
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb-holder">
+                            <h1 class="main-title float-left">Les reports</h1>
+                            <ol class="breadcrumb float-right">
+                                <li class="breadcrumb-item">Accueil</li>
+                                <li class="breadcrumb-item">Support</li>
+                                <li class="breadcrumb-item active">Les reports</li>
+                            </ol>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                    <div class="card align-center">
+                        <div id="content">
+                            <table class="table table-striped">
+                                <tr>
+                                    <th class="table-bg">Id</th>
+                                    <th class="table-bg">Date</th>
+                                    <th class="table-bg">Sujet</th>
+                                    <th class="table-bg">Description</th>
+                                    <th class="table-bg">Auteur</th>
+                                    <th class="table-bg">Image</th>
+                                </tr>
+                            {% if reports %}
+                              {% for report in reports %}
+                                <tr>
+                                    <td>{{ report.id }}</td>
+                                    <td>{{ report.date|date('d.m.Y m:h:s') }}</td>
+                                    <td>{{ report.sujet }}</td>
+                                    <td>{{ report.description }}</td>
+                                    <td>
+                                        <b>{{ report.utilisateur.profil.firstname }} {{ report.utilisateur.profil.lastname }}</b>
+                                        ayant pour id :
+                                        <b>{{ report.utilisateur.id }}</b>
+                                    </td>
+                                    <td>
+                                    {% if report.pj %}
+                                        <div class="image" style="float:left;margin-left:33px;">
+                                            <a href="{{ vich_uploader_asset(report.pj, 'imageFile') }}">
+                                                <img
+                                                    src="{{ vich_uploader_asset(report.pj, 'imageFile') }}"
+                                                    width="100"
+                                                    height="50"
+                                                    alt="{{ report.pj.imageName }}"
+                                                />
+                                            </a>
+                                    {% else %}
+                                            <h5>
+                                                <b>
+                                                    <small>
+                                                        Aucune PJ
+                                                    </small>
+                                                </b>
+                                            </h5>
+                                        </div>
+                                    {% endif %}
+                                    </td>
+                                </tr>
+                              {% endfor %}
+                            {% else %}
+                            </table>
+                                <h3>
+                                    <b>
+                                        <small>
+                                            Aucun signalement n'a été reporter
+                                        </small>
+                                    </b>
+                                </h3>
+                            {% endif %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

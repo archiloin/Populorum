@@ -1,0 +1,61 @@
+{% extends "client/vitrine/base.html.twig" %}
+
+{% block vitrine %}
+{% if is_granted('ROLE_USER') %}
+    <meta http-equiv="refresh" content="0;URL={{ path('cli_dashboard') }}">
+{% else %}
+    <div class="wow">
+        <div class="container">
+            <div class="row">
+                {% include 'client/vitrine/logo.html.twig' %}
+                <div class="font-1 helmet text-center">
+                    <form action="{{ path('cli_connexion') }}" id="connexion" method="POST">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+                        <div class="input-group"> {# icône css #}
+                            <div class="form-line">
+                                <label for="username">
+                                    <small>
+                                        <i class="fa fa-at"></i>
+                                        {% trans %}Mail address{% endtrans %}
+                                    </small>
+                                </label>
+                                <input type="text" id="username" name="_username" placeholder="{% trans %}Mail address{% endtrans %}" value="{{ last_username }}" required="required" autocomplete="username" />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="form-line">
+                                <label for="password">
+                                    <small>
+                                        <i class="fa fa-unlock-alt"></i>
+                                        {% trans %}Password{% endtrans %}
+                                    </small>
+                                </label>
+                                <input type="password" id="password" name="_password" placeholder="{% trans %}Password{% endtrans %}" required="required" autocomplete="current-password" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                            </div>
+                            <div class="col-xs-8 p-t-5">
+                                <input type="checkbox" id="remember_me" name="_remember_me" value="on"  />
+                                <label for="remember_me">{% trans %}Remember me{% endtrans %}</label>
+                            </div>
+                        </div>
+                        <button type="submit" id="_submit" name="_submit" value="{{ 'registration.submit'|trans }}" class="btn btn-default wow-button">
+                            {% trans %}Sign in{% endtrans %}
+                        </button>
+
+                        {% if error %}
+                            <div style="color:red;">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+
+                        <div class="m-t-25 m-b-5">
+                            <a href="{{ path('cli_mdp_oublier') }}">{% trans %}Forgot your password?{% endtrans %}</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endblock %}

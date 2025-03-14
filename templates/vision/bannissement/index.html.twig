@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+    <body>
+        <img src="{{ asset('images/vision/blocage.png') }}" style="width:300px;float: left;">
+        <h3 style="font-weight:bold; color:#c41515;">{% trans %}Your account has been suspended or is not active!{% endtrans %}</h3>
+
+        <p>{% trans %}You see this message because{% endtrans %}:</p>
+        <ul>
+            <li>{% trans %}Your account has not yet been activated{% endtrans %}</li>
+            <li>{% trans %}Attempt to access unauthorized data{% endtrans %}</li>
+            <li>{% trans %}You have been banned{% endtrans %}</li>
+        </ul>
+    </body>
+
+</html>

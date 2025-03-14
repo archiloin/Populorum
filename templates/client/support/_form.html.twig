@@ -1,0 +1,43 @@
+
+	{{ form_start(form) }}
+	{{ form_errors(form) }}
+
+		<h4>
+				<b>
+						<small>
+								{% trans %}Choose the problem encountered{% endtrans %}:
+						</small>
+				</b>
+		</h4>
+
+	{{ form_widget(form.sujet) }}
+	{{ form_errors(form.sujet) }}
+
+			<hr>
+			<h4>
+					<b>
+							<small>
+									{% trans %}Add attachment{% endtrans %}:
+									<br>
+									<h6>{% trans %}(Optional, but it can help us better understand the problem){% endtrans %}</h6>
+							</small>
+					</b>
+			</h4>
+		{{ form_widget(form.pj) }}
+		{{ form_errors(form.pj) }}
+
+		<hr>
+		<h4>
+				<b>
+						<small>
+								{% trans %}Explain the problem encountered{% endtrans %}:
+						</small>
+				</b>
+		</h4>
+	{{ form_widget(form.description, {'attr':{'class':'form-control'}}) }}
+	{{ form_errors(form.description) }}
+
+		<input type="submit" style="margin-top:20px;" class="btn btn-primary" value="{% trans %}Send{% endtrans %}" />
+	{{ form_end(form) }}
+
+	<style> #report_description {height:200px;}</style>

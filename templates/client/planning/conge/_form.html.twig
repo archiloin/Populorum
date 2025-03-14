@@ -1,0 +1,48 @@
+		{{ form_start(form) }}
+		{{ form_errors(form) }}
+
+		<h6>
+				{% trans %}Request leave, absence or illness{% endtrans %}
+		</h6>
+		<hr>
+		<table class="auto">
+				<tr>
+						<td>
+								<b>
+										{% trans %}From{% endtrans %}:
+								</b>
+						</td>
+						<td>
+								<b>
+										{% trans %}To{% endtrans %}:
+								</b>
+						</td>
+				</tr>
+				<tr>
+						<td>
+								{{ form_widget(form.debut) }}
+								{{ form_errors(form.debut) }}
+						</td>
+						<td>
+								{{ form_widget(form.fin) }}
+								{{ form_errors(form.fin) }}
+						</td>
+				</tr>
+		</table>
+		<hr>
+		<table class="auto" style=margin-top:23px>
+				<tr>
+						<td>
+								<b>
+										{% trans %}Note{% endtrans %}:
+								</b>
+						</td>
+						<td>
+								{{ form_widget(form.note) }}
+								{{ form_errors(form.note) }}
+						</td>
+				</tr>
+		</table>
+
+		 <input type="submit" style="margin-top:20px;" class="btn btn-primary" value="{% trans %}Send{% endtrans %}" />
+		{{ form_end(form) }}

@@ -1,0 +1,84 @@
+security:
+    role_hierarchy:
+        ROLE_GESTIONNAIRE: ROLE_USER
+        ROLE_CLIENT: ROLE_GESTIONNAIRE
+        ROLE_ADMIN: ROLE_CLIENT
+        ROLE_ARCHITECT: ROLE_ADMIN
+
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    encoders:
+        App\Entity\Client\Utilisateur:
+            algorithm: auto
+        App\Entity\Admin\Utilisateur:
+            algorithm: auto
+
+    providers:
+        chain_provider:
+            chain:
+                providers: [cli_db_provider, adm_db_provider]
+
+        cli_db_provider:
+            entity:
+                class: App\Entity\Client\Utilisateur
+
+        adm_db_provider:
+            entity:
+                class: App\Entity\Admin\Utilisateur
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+            remember_me:
+                secret:   '%kernel.secret%'
+                lifetime: 604800 # 1 week in seconds
+                path:     /
+
+        client:
+            pattern: ^/client
+            user_checker: App\Security\Client\ConnexionChecker
+            http_basic: ~
+            provider: cli_db_provider
+            anonymous: true
+
+            form_login:
+                default_target_path: cli_dashboard
+                login_path: cli_connexion
+                check_path: cli_connexion
+                csrf_token_generator: security.csrf.token_manager
+
+            logout:
+                path: cli_deconnexion
+                target: /
+
+        admin:
+            pattern:    ^/architect
+            user_checker: App\Security\Admin\ConnexionChecker
+            http_basic: ~
+            provider: adm_db_provider
+            anonymous: true
+
+            form_login:
+                default_target_path: adm_dashboard
+                login_path: adm_connexion
+                check_path: adm_connexion
+                csrf_token_generator: security.csrf.token_manager
+
+            logout:
+                path: adm_deconnexion
+                target: adm_connexion
+
+
+    # Vérification des authorisation d'accès
+    # Note : Un seul 'acces_control' peut être utiliser
+    access_control:
+        - { path: ^/inscription, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/client/connexion, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/mot-de-passe/oublier, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/client/deconnexion, roles: ROLE_USER }
+        - { path: ^/client, roles: ROLE_USER }
+        - { path: ^/architect/connexion, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/architect/deconnexion, roles: ROLE_ARCHITECT }
+        - { path: ^/architect/1n5c21p710n, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/architect, roles: ROLE_ARCHITECT }
+        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }

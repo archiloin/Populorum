@@ -1,0 +1,131 @@
+
+		<link href="{{ asset('plugins/fullcalendar/core/main.min.css') }}" rel="stylesheet" />
+		<link href="{{ asset('plugins/fullcalendar/daygrid/main.min.css') }}" rel="stylesheet" />
+		<link href="{{ asset('plugins/fullcalendar/timegrid/main.min.css') }}" rel="stylesheet" />
+		<link href="{{ asset('plugins/fullcalendar/list/main.min.css') }}" rel="stylesheet" />
+		<style>
+		#external-events .fc-event {
+			margin: 10px 0;
+			cursor: pointer;
+		}
+
+		#calendar {
+			width: 100%;
+		}
+
+		.fc-event {
+		font-size: 1em;
+		border-radius: 2px;
+		border: none;
+		padding: 5px;
+		}
+
+		.fc-day-grid-event .fc-content {
+		color: #fff;
+		}
+
+		.fc-button {
+		background: #eaeaea;
+		border: none;
+		color: #666b6f;
+		margin: 0 3px !important;
+		padding: 5px 12px !important;
+		text-transform: capitalize;
+		height: auto !important;
+		box-shadow: none !important;
+		border-radius: 3px !important;
+		}
+
+		.fc-state-down, .fc-state-active, .fc-state-disabled {
+		background-color: #009ffc !important;
+		color: #ffffff !important;
+		text-shadow: none !important;
+		}
+
+		.fc-toolbar h2 {
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 28px;
+		text-transform: uppercase;
+		}
+
+		.fc th.fc-widget-header {
+		background: #e6e6e6;
+		font-size: 13px;
+		text-transform: uppercase;
+		line-height: 18px;
+		padding: 10px 0px;
+		}
+
+		.fc-unthemed th, .fc-unthemed td, .fc-unthemed thead, .fc-unthemed tbody, .fc-unthemed .fc-divider, .fc-unthemed .fc-row, .fc-unthemed .fc-popover {
+		border-color: #eff1f3;
+		}
+		</style>
+
+
+		<div class="col-xs-12 col-md-8 col-lg-8 col-xl-9">
+				<div class="card-box tilebox-one noradius">
+						<div id="calendar"></div>
+
+				</div>
+		</div>
+
+<script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('plugins/fullcalendar/core/locales/fr.js') }}"></script>
+<script src="{{ asset('plugins/fullcalendar/core/main.js') }}"></script>
+<script src="{{ asset('plugins/fullcalendar/daygrid/main.js') }}"></script>
+<script src="{{ asset('plugins/fullcalendar/list/main.js') }}"></script>
+<script src="{{ asset('plugins/fullcalendar/timegrid/main.js') }}"></script>
+<script>
+
+
+			document.addEventListener('DOMContentLoaded', function() {
+			  var Calendar = FullCalendar.Calendar;
+
+			  var calendarEl = document.getElementById('calendar');
+
+			  // initialize the calendar
+			  // -----------------------------------------------------------------
+
+			  var calendar = new Calendar(calendarEl, {
+			    plugins: [ 'dayGrid', 'timeGrid' ],
+			    header: {
+			      left: 'prev,next today',
+			      center: 'title',
+			      right: 'dayGridMonth,timeGridWeek,timeGridDay'
+			    },
+			    editable: true,
+					locale: '{{ app.request.locale }}',
+					timeZone: 'Europe/Paris',
+					events: [
+
+						{% for event in events %}
+							{
+								id             : '{{ event.id }}',
+								title          : '{{ event.title }}',
+								start          : '{{ event.start|date("Y-m-d h:i") }}',
+								end            : '{{ event.end|date("Y-m-d h:i") }}',
+								backgroundColor: '{{ event.color }}',
+								extendedProps: {
+										id: '{{ event.idUtilisateur }}',
+									},
+							},
+						{% endfor %}
+
+					],
+					allDaySlot: false,
+					defaultTimedEventDuration: '08:00',
+					lazyFetching: true,
+					firstDay: 1,
+	        eventTimeFormat: {
+	        hour: '2-digit',
+	        minute: '2-digit',
+	        meridiem: false
+	        },
+			    defaultView: 'timeGridWeek',
+
+			  });
+
+			  calendar.render();
+			});
+</script>

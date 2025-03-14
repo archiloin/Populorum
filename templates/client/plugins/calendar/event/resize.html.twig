@@ -1,0 +1,21 @@
+eventResize: function(eventResizeInfo) {
+		var start = eventResizeInfo.event._instance.range.start.toUTCString();
+		var end = eventResizeInfo.event._instance.range.end.toUTCString();
+
+		var xhr = $.ajax({
+						url: '{{ path('cli_planning_calendar_resize') }}',
+				data: {
+							idEvent:eventResizeInfo.event._def.publicId,
+							start:start,
+							end:end,
+				},
+				type: "POST",
+				success: function(data) {
+						window.location.reload(true);
+						//alert('json');
+				},
+				error: function() {
+						alert("erreur lors de l'appel de l'url dans POST event/drop : contactez l'administrateur du site");
+				},
+		});
+},

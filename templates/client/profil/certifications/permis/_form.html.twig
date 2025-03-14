@@ -1,0 +1,22 @@
+{{ form_start(permisForm) }}
+{{ form_errors(permisForm) }}
+<p>
+		<strong> {% trans %}Type of permit{% endtrans %} <i>*</i> : </strong>
+		{{ form_widget(permisForm.type, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(permisForm.type) }}
+</p>
+<p>
+		<strong> {% trans %}License number{% endtrans %} : </strong>
+		{{ form_widget(permisForm.number, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(permisForm.number) }}
+</p>
+<p>
+		<strong> {% trans %}Publication date{% endtrans %} : </strong>
+		{{ form_widget(permisForm.start, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(permisForm.start) }}
+</p>
+<p>
+		<strong> {% trans %}Expiration date{% endtrans %} : </strong>
+		{{ form_widget(permisForm.end, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(permisForm.end) }}
+</p>

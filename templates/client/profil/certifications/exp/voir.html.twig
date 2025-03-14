@@ -1,0 +1,18 @@
+<table class="table table-striped">
+		<tr>
+				<th class="table-bg radius-left">{% trans %}Business{% endtrans %}</th>
+				<th class="table-bg">{% trans %}Title of job{% endtrans %}</th>
+				<th class="table-bg">{% trans %}From{% endtrans %}</th>
+				<th class="table-bg">{% trans %}To{% endtrans %}</th>
+				<th class="table-bg radius-right">{% trans %}Comment{% endtrans %}</th>
+		</tr>
+		{% for exp in exps %}
+			<tr>
+					<td> {{ exp.business }} </td>
+					<td> {{ exp.job }} </td>
+					<td> {% if exp.start != null %} {{ exp.start|date('d-m-Y') }} {% endif %} </td>
+					<td> {% if exp.end != null %} {{ exp.end|date('d-m-Y') }} {% endif %} </td>
+					<td> {{ exp.comment }} </td>
+			</tr>
+		{% endfor %}
+</table>

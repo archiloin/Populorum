@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+{# Ont vérifie que l'utilisateur soit bien connecter #}
+{% if app.user %}
+    <meta charset="UTF-8">
+    <title>{% block title %}Impression populorum.fr{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/v/bs/jszip-2.5.0/pdfmake-0.1.18/dt-1.10.12/b-1.2.2/b-colvis-1.2.2/b-flash-1.2.2/b-html5-1.2.2/b-print-1.2.2/fc-3.2.2/fh-3.1.2/r-2.1.0/datatables.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/css/bootstrap-editable.css">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/noelboss/featherlight/1.7.1/release/featherlight.min.css">
+        {# Google Fonts #}
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+        {# Waves Effect Css #}
+         <link rel="stylesheet" href="{{ asset('plugins/node-waves/waves.css') }}">
+
+        {# Animation Css #}
+         <link rel="stylesheet" href="{{ asset('plugins/animate-css/animate.css') }}">
+
+        {# Custom Css #}
+         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('css/themes/all-themes.css') }}">
+    {% endblock %}
+    {% block head_javascripts %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment-with-locales.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.js" charset="UTF-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+        <script src="https://cdn.rawgit.com/noelboss/featherlight/1.7.1/release/featherlight.min.js"></script>
+
+        <script src="{{ asset('bundles/sgdatatables/js/pipeline.js') }}"></script>
+    {% endblock %}
+       <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    </head> 
+<body class="theme-black" style="background-color:#FFF;">
+    
+{% endif %}
+                {% if is_granted('ROLE_GESTIONNAIRE') %}
+{% block main %}
+
+                <div id="content" style="text-align: center;font-size:1em;">
+                    <h1>{{ utilisateur.profil.firstname }} {{ utilisateur.profil.lastname }} </h1>
+                    <img src="{{ asset('images/identite.png') }}" />
+                    <table class="table table-bordered" style="width: 900px; margin:0 auto;">
+                        <tr>
+                            <th style="background-color: #666; color:#FFF; text-align: left; border-color:#666">État civil </th>
+                            <td style="background-color: #666; color:#FFF; text-align: left; border-color:#666"></td>
+                        </tr>
+                        <tr>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666; width:33%;"> Civilité : </th>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.civilite }} </td>
+                        </tr>
+                        <tr>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> Prénom : </th>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.firstname}} </td>
+                        </tr>
+                        <tr>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> Nom : </th>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.lastname}} </td>
+                        </tr>
+                        <tr>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> Date de naissance : </th>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.dob|date('d/m/Y') }} </td>
+                        </tr>
+                        <tr>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> Lieu de naissance : </th>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.birthPlace}} </td>
+                        </tr>
+                        <tr>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> Numéro de sécurité sociale : </th>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.ssn }} </td>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered" style="width: 900px; margin:0 auto;">
+                        <tr>
+                            <th style="background-color: #666; color:#FFF; text-align: left; border-color:#666; width:33%;">Coordonnées </th>
+                            <td style="background-color: #666; color:#FFF; text-align: center; border-color:#666"></td>
+                        </tr>
+                        <tr>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> Adresse : </th>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.address}} </td>
+                        </tr>
+                        <tr>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> Code Postal : </th>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.postalcode}} </td>
+                        </tr>
+                        <tr>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> Ville : </th>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.ville}} </td>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered" style="width: 900px;margin:0 auto;">
+                        <tr>
+                            <th style="background-color: #666; color:#FFF; text-align: left; border-color:#666; width:33%;">Informations supplémentaires </th>
+                            <td style="background-color: #666; color:#FFF; text-align: center; border-color:#666"></td>
+                        </tr>
+                        <tr>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> Régime : </th>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.regime }} </td>
+                        </tr>
+                        <tr>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> Numéro congés spectacles : </th>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.ncs }} </td>
+                        </tr>
+                        <tr>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> Numéro guso : </th>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.guso }} </td>
+                        </tr>
+
+                    </table>
+                <table class="table table-bordered" style="width: 900px;margin:0 auto;">
+                        <tr>
+                            <th style="background-color: #666; color:#FFF; text-align: left; border-color:#666">Données bancaires</th>
+                            <td style="background-color: #666; color:#FFF; text-align: center; border-color:#666"></td>
+                            <td style="background-color: #666; color:#FFF; text-align: center; border-color:#666"></td>
+                            <td style="background-color: #666; color:#FFF; text-align: center; border-color:#666"></td>
+                            <td style="background-color: #666; color:#FFF; text-align: center; border-color:#666"></td>
+                        <tr>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> Code banque : </th>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> Code agence : </th>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> Numéro de compte : </th>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> Clé RIB : </th>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> Agence de domiciliation : </th>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.codeBanque }} </td>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.codeAgence }} </td>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.numCompte }} </td>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.keyRib }}</td>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.agenceDom }} </td>
+                        </tr>
+                        <tr>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> IBAN : </th>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.iban }}</td>
+                        </tr>
+                        <tr>
+                            <th style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> BIC : </th>
+                            <td style="background-color: #FFF; color:#000; text-align: left; border-color:#666"> {{ utilisateur.profil.bic }} </td>
+                        </tr>
+                    </table>
+                    <h5 style="margin-left:33px;">Fiche généré par <a href="http://www.populorum.fr">populorum.fr</a></h5>
+                </div>
+{% endblock %}
+                {% else %}
+  
+                        <h1 style="color:red;"><br>
+                        Alerte de sécurité<br>
+                        Tentative d'accès a un endroits interdis, une alerte a été déclencher.
+                        </h1>
+                {% endif %}
+
+
+    {# Ont vérifie que l'utilisateur soit bien connecter avant de charger le JS #}
+    {% if app.user %}
+    
+    {% block javascripts %}
+    {# Waves Effect Plugin Js #}
+    <script src="{{ asset('plugins/node-waves/waves.js') }}"></script>
+
+    {# Custom Js #}
+    <script src="{{ asset('js/admin.js') }}"></script>
+
+
+    {% endblock %}
+</body>
+
+</html>
+{% endif %}
+    

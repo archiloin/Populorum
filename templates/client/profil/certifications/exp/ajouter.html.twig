@@ -1,0 +1,16 @@
+
+{% set page = 'certifications' %}
+{% set form_end = true %}
+
+{% set filename_html = 'exp/_form.html.twig' %}
+{% set form_end = '{{ form_end(expForm) }}' %}
+
+{% set modalLabel = 'Add professional experience' %}
+{% set page_title = 'Professional experience' %}
+{% set title = 'Professional experience' %}
+{% set page_icon = 'fa-line-chart' %}
+
+{% block exp %}
+		{% include 'client/profil/modal.html.twig' %}
+		{{ form_end(expForm) }}
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>{% if page_title is defined %} {{ page_title|trans }} | {% endif %} Populorum.fr</title>
+
+    {# Favicon#}
+    <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon"/>
+
+    {# Bootstrap CSS #}
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+
+    {# Font Awesome CSS #}
+    <link href="{{ asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"/>
+
+    {# CSS Perso #}
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css"/>
+
+    {% for locale in locales if locale != app.request.locale %}
+        <link href="{{ asset('css/theme/'~app.request.locale~'.css') }}" rel="stylesheet" type="text/css"/>
+    {% endfor %}
+</head>

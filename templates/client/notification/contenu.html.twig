@@ -1,0 +1,33 @@
+<p class="notify-details">
+		{% set array_notification = [] %}
+		{% for notification in app.user.notifications %}
+			{% if app.user.notifications %}
+
+				{% if app.user.projets %}
+					{% for projet in app.user.projets %}
+						{% if projet.id == notification.idSlide %}
+
+							{% if notification.idSlide not in array_notification %}
+								{% if notification.date > "now"|date_modify('-1 month') %}
+									{% set array_notification = array_notification|merge([notification.idSlide]) %}
+									<a href="{{ path('usr_tache_voir', {'id': notification.idSlide}) }}" style="float:left">
+											<span>{{ notification.message }}</span>
+											<small class="text-muted">{{ notification.date|date('d-m-Y H:i') }}</small>
+									</a>
+									<br>
+								{% endif %}
+							{% endif %}
+
+						{% else %}
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+
+			{% endif %}
+		{% endfor %}
+
+		{% if array_notification is empty %}
+			{% set array_notification = array_notification|merge(['aucune notif']) %}
+			<span>{% trans %}You have no notifications{% endtrans %}</span>
+		{% endif %}
+</p>

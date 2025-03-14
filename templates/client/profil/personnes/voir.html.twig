@@ -1,0 +1,32 @@
+{% extends "client/profil/voir.html.twig" %}
+
+{% set personnes = 'subdrop' %}
+{% set page = 'personnes' %}
+{% set page_title = 'Dependents' %}
+{% set page_icon = 'fa-group' %}
+{% set modalLabel = 'Add a dependent' %}
+{% set title = 'Dependents' %}
+{% set owlCarousel = 'cli_salaries_profil_personnes' %}
+
+{% block profil %}
+
+        {% include 'client/profil/modal.html.twig' %}
+
+        <table class="table table-striped">
+            <tr>
+                <th class="table-bg radius-left">{% trans %}Name{% endtrans %}</th>
+                <th class="table-bg">{% trans %}Relation{% endtrans %}</th>
+                <th class="table-bg radius-right">{% trans %}Date of birth{% endtrans %}</th>
+            </tr>
+            {% for personnes in personness %}
+            <tr>
+                <td> {{ personnes.name }} </td>
+                <td> {{ personnes.relation }} </td>
+                <td> {% if personnes.dob != null %} {{ personnes.dob|date('d-m-Y') }} {% endif %} </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        {% include 'client/profil/pj.html.twig' %}
+
+{% endblock %}

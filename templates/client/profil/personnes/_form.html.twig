@@ -1,0 +1,19 @@
+{{ form_start(profilForm) }}
+{{ form_errors(profilForm) }}
+
+<p>
+		<strong>{% trans %}Name{% endtrans %}<i>*</i>: </strong>
+		{{ form_widget(profilForm.name, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(profilForm.name) }}
+</p>
+
+<p>
+		<strong>{% trans %}Relation{% endtrans %}<i>*</i>: </strong>
+		{{ form_widget(profilForm.relation, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(profilForm.relation) }}
+</p>
+<p>
+		<strong>{% trans %}Date of birth{% endtrans %}: </strong>
+		{{ form_widget(profilForm.dob, {'attr':{'class':'form-control'}}) }}
+		{{ form_errors(profilForm.dob) }}
+</p>

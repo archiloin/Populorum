@@ -1,0 +1,75 @@
+
+	{{ form_start(form) }}
+	{{ form_errors(form) }}
+
+	<table class="table table-striped">
+			<tr>
+					<th class="table-bg radius-left"><i class="fa fa-info"></i>{% trans %}Contact information{% endtrans %}:</th>
+					<td class="table-bg radius-right"></td>
+			</tr>
+			<tr>
+					<th>{% trans %}Address{% endtrans %}:</th>
+					<td>
+							{{ form_widget(form.address, {'attr':{'class':'form-control'}}) }}
+							{{ form_errors(form.address) }}
+					</td>
+			</tr>
+			<tr>
+					<th style="width:20%">{% trans %}Address (continued){% endtrans %}:</th>
+					<td>
+							{{ form_widget(form.addresscontinued, {'attr':{'class':'form-control'}}) }}
+							{{ form_errors(form.addresscontinued) }}
+					</td>
+			</tr>
+			<tr>
+					<th style="width:20%">{% trans %}City{% endtrans %}:</th>
+					<td>
+							{{ form_widget(form.city, {'attr':{'class':'form-control'}}) }}
+							{{ form_errors(form.city) }}
+					</td>
+			</tr>
+			<tr>
+					<th style="width:20%">{% trans %}Postal code{% endtrans %}:</th>
+					<td>
+							{{ form_widget(form.postalcode, {'attr':{'class':'form-control'}}) }}
+							{{ form_errors(form.postalcode) }}
+					</td>
+			</tr>
+			<tr>
+					<th style="width:20%">{% trans %}Country{% endtrans %}:</th>
+					<td>
+							{{ form_widget(form.country, {'attr':{'class':'form-control'}}) }}
+							{{ form_errors(form.country) }}
+					</td>
+			</tr>
+			<tr>
+					<th> {% trans %}Phone{% endtrans %}:</th>
+					<td>
+							{{ form_widget(form.landline, {'attr':{'class':'form-control'}}) }}
+							{{ form_errors(form.landline) }}
+					</td>
+			</tr>
+			<tr>
+					<th> {% trans %}Cellphone{% endtrans %}:</th>
+					<td>
+							{{ form_widget(form.phone, {'attr':{'class':'form-control'}}) }}
+							{{ form_errors(form.phone) }}
+					</td>
+			</tr>
+			<tr>
+					<th> {% trans %}Professional phone{% endtrans %}:</th>
+					<td>
+							{{ form_widget(form.professionalphone, {'attr':{'class':'form-control'}}) }}
+							{{ form_errors(form.professionalphone) }}
+					</td>
+			</tr>
+			<tr>
+					<th> {% trans %}Email{% endtrans %}:</th>
+					<td>
+							{{ form_widget(form.email, {'attr':{'class':'form-control'}}) }}
+							{{ form_errors(form.email) }}
+					</td>
+			</tr>
+	</table>
+	<input type="submit" class="btn btn-primary" value="{% trans %}Save{% endtrans %}" />
+	{{ form_end(form) }}

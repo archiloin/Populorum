@@ -1,0 +1,56 @@
+{% extends "client/profil/voir.html.twig" %}
+
+{% set emploi = 'subdrop' %}
+{% set page = 'emploi' %}
+{% set page_title = 'Employment' %}
+{% set page_icon = 'fa-object-group' %}
+{% set title = 'Employment' %}
+{% set owlCarousel = 'cli_salaries_profil_emploi' %}
+
+{% block profil %}
+    <table class="table table-striped">
+        <tr>
+            <th class="table-bg radius-left"><i class="fa fa-object-group"></i> {% trans %}Employment{% endtrans %}</th>
+            <td class="table-bg radius-right"></td>
+        </tr>
+        <tr>
+            <th> {% trans %}Structure{% endtrans %}:</th>
+            <td> {{ profil.structure }} </td>
+        </tr>
+        <tr>
+            <th> {% trans %}Job{% endtrans %}:</th>
+            <td> {{ profil.job }} </td>
+        </tr>
+        <tr>
+            <th style="width:20%"> {% trans %}Job description{% endtrans %}:</th>
+            <td> {{ profil.description }} </td>
+        </tr>
+        <tr>
+            <th style="width:20%"> {% trans %}Status{% endtrans %}:</th>
+            <td> {{ profil.statut }} </td>
+        </tr>
+        <tr>
+            <th style="width:20%"> {% trans %}Start of activity{% endtrans %}:</th>
+            <td> {% if profil.startedAt != null %} {{ profil.startedAt|date('d-m-Y') }} {% endif %} </td>
+        </tr>
+        <tr>
+            <th> {% trans %}Beginning of contract{% endtrans %}:</th>
+            <td> {% if profil.start != null %} {{ profil.start|date('d-m-Y') }} {% endif %} </td>
+        </tr>
+        <tr>
+            <th> {% trans %}End of contract{% endtrans %}:</th>
+            <td> {% if profil.end != null %} {{ profil.end|date('d-m-Y') }} {% endif %} </td>
+        </tr>
+        <tr>
+            <th> {% trans %}Contract details{% endtrans %}:</th>
+            <td> {{ profil.info }} </td>
+        </tr>
+    </table>
+    {% if salarie is not defined %}
+    {% else %}
+        <a href="{{ path('cli_salaries_profil_modifier_emploi', {'id':salarie.id}) }}" class="btn btn-primary">{% trans %}Edit{% endtrans %}</a>
+    {% endif %}
+
+    {% include 'client/profil/profilUpdate.html.twig' %}
+    {% include 'client/profil/pj.html.twig' %}
+{% endblock %}

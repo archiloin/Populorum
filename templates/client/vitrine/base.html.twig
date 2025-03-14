@@ -1,0 +1,80 @@
+
+    {% include 'client/vitrine/header.html.twig' %}
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <body>
+    <!-- div used to make the body blur -->
+        <div class="overlay" id="overlay" onclick="closeNav()"></div>
+
+        <section class="head index-part-1">
+            <div class="head-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-xs-6 col-sm-6 col-md-6">
+                            {% for locale in locales if locale != app.request.locale %}
+                                <a class="" href="{{ path('change_locale', {'locale': locale}) }}">
+                                    <img src="{{ asset('images/locales/'~app.request.locale~'.png') }}" alt="{{ app.request.locale }}">
+                                </a>
+                            {% endfor %}
+                        </div>
+                        <div class="col-lg-6 col-xs-6 col-sm-6 col-md-6 text-right">
+                            <div id="mySidenav" class="sidenav text-center">
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br>
+                                <hr>
+                                <a href="{{ path('cli_connexion') }}">{% trans %}Sign in{% endtrans %}</a><hr>
+                                <a href="{{ path('cli_inscription') }}">{% trans %}Registration{% endtrans %}</a><hr>
+                            </div>
+                            <div class="main" id="main">
+                              <a href="#" onclick="openNav()">{% trans %}Sign in{% endtrans %} / {% trans %}Registration{% endtrans %} &#9776;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+                {% block vitrine %}
+                {% endblock %}
+        </section>
+        {% block body %}
+        {% endblock %}
+        <section class="social">
+          <ul>
+            <li><a href="https://www.facebook.com/Populorum-101045108113254" class="fa fa-facebook fa-2x" aria-hidden="true" target="_blank"></a></li>
+            <li><a href="https://twitter.com/PopulorumSIRH" class="fa fa-twitter fa-2x" aria-hidden="true" target="_blank"></a></li>
+          </ul>
+        </section>
+
+        <section class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                <div class="footer-p1">
+                    <p class="font-2">&copy; {{ date('now')|date('Y') }} <a href="https://populorum.fr">Populorum.fr</a></p>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                  <a href="{{ path('accueil') }}">
+                      <img class="img-responsive foot-img" src="{{ asset('assets/img/footer_logo.png') }}">
+                      <p class="font-3" style="text-align:center">POPULORUM</p>
+                  </a>
+              </div>
+              <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                <div class="footer-p2" >
+                    <p class="font-2"> {% trans %}By{% endtrans %} <a href="https://andrew-caron.fr/" target="_blank">Andrew Caron</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    </body>
+</html>

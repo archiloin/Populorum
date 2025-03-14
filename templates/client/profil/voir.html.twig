@@ -1,0 +1,25 @@
+{% extends "client/core/content.html.twig" %}
+
+{% set breadcrumb = 'See' %}
+{% set breadcrumb_un = 'Profile' %}
+{% set breadcrumb_deux = page_title %}
+
+{% block content %}
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div id="content" class="text-left">
+                {% if salarie is not defined %}
+                    {% include 'client/profil/menu.html.twig' %}
+                {% else %}
+                    {% include 'client/salaries/profil/menu.html.twig' %}
+                {% endif %}
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="float:right">
+                    {% block profil %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

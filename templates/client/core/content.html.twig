@@ -1,0 +1,50 @@
+{% extends "client/base.html.twig" %}
+
+{% block body %}
+		<div class="content-page">
+				<div class="content">
+						<div class="container-fluid">
+								<div class="row">
+										<div class="col-xl-12">
+												<div class="breadcrumb-holder">
+                            <h1 class="main-title float-left">
+                                {% if page_icon is defined %} <i class="fa {{ page_icon }}"></i> {% endif %}
+                                {% if page_title is defined %} {{ page_title|trans }} {% endif %}
+                            </h1>
+														<ol class="breadcrumb float-right">
+																<li class="breadcrumb-item">{% trans %}Home{% endtrans %}</li>
+																{% if breadcrumb_un is defined %}
+																		<li class="breadcrumb-item">{{ breadcrumb_un|trans }}</li>
+																{% endif %}
+																{% if breadcrumb_deux is defined %}
+																		<li class="breadcrumb-item">{{ breadcrumb_deux|trans }}</li>
+																{% endif %}
+																<li class="breadcrumb-item active">{{ breadcrumb|trans }}</li>
+														</ol>
+														<div class="clearfix"></div>
+												</div>
+										</div>
+                    {% if owlCarousel is defined and is_granted('ROLE_GESTIONNAIRE') %}
+                        {% include 'client/plugins/owlCarousel.html.twig' %}
+                    {% endif %}
+								</div>
+								<a href="#" id="cog"> <i class="fa fa-cog"></i> </a>
+								<div id="config">
+										Test
+								</div>
+								<div class="row clearfix">
+										{% block content %}
+										{% endblock %}
+								</div>
+						</div>
+				</div>
+		</div>
+
+		<script>
+				$(document).ready(function(){
+		  			$("#cog").click(function(){
+						    $("#config").toggle();
+					  });
+				});
+		</script>
+{% endblock %}
